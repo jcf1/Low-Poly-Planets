@@ -1,0 +1,29 @@
+// -*- c++ -*-
+{
+    name = "Little Heightfield";
+    
+    models = {
+    hf = ArticulatedModel::Specification {
+            filename = "littleHf.obj";
+            preprocess = {
+                setMaterial(all(), Color3(0.1f, 0.3f, 0.7f));
+                transformGeometry(all(), Matrix4::scale(1, 1, 1));
+            };
+       };
+    };
+    
+    entities = {
+       skybox = Skybox {
+            texture = "cubemap/whiteroom/whiteroom-*.png";
+       };
+
+        Heightfield = VisibleEntity {
+            model = "hf";
+            frame = CFrame::fromXYZYPRDegrees(0, 0, 0, 0, 0, 0);
+        };
+
+        camera = Camera {
+            frame = CFrame::fromXYZYPRDegrees(9, 18, 30, -3.5, -35, 0);
+        };
+    };
+};

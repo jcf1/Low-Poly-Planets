@@ -1,0 +1,42 @@
+// -*- c++ -*-
+{
+    name = "Planet";
+    
+    models = {
+       cubeModel = ArticulatedModel::Specification {
+            filename = "land.obj";
+            preprocess = {
+                setMaterial(all(), Color3(0, 1, 0));
+                transformGeometry(all(), Matrix4::scale(1, 1, 1));
+            };
+       };
+
+       cubeModel2 = ArticulatedModel::Specification {
+            filename = "ocean.obj";
+            preprocess = {
+                setMaterial(all(), Color3(0, 0, 1));
+                transformGeometry(all(), Matrix4::scale(1, 1, 1));
+            };
+       };
+    };
+    
+    entities = {
+       skybox = Skybox {
+            texture = "cubemap/whiteroom/whiteroom-*.png";
+       };
+
+       cube0 = VisibleEntity {
+            model = "cubeModel";
+            frame = CFrame::fromXYZYPRDegrees(0, 0, 0, 0, 0, 0);
+        };
+
+        cube1 = VisibleEntity {
+            model = "cubeModel2";
+            frame = CFrame::fromXYZYPRDegrees(0, 0, 0, 0, 0, 0);
+        };
+
+        camera = Camera {
+            frame = CFrame::fromXYZYPRDegrees(34.516, 2.508, 6.3544, 68.755, 6.8756, 0);
+        };
+    };
+};

@@ -1,0 +1,1213 @@
+{ 
+    entities = { 
+        Aplanet = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(0, 3.37343e-39, 0 ); 
+            model = "Aplanet"; 
+            track = combine(
+                orbit(0, 10 ), 
+                Point3(0, 3.37343e-39, 0 ) ); 
+            
+        }; 
+        
+        Aplanetland = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(0, 3.37343e-39, 0 ); 
+            model = "Aplanetland"; 
+            track = entity("Aplanet"); 
+        }; 
+        
+        Aplanetmountain = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(0, 3.37343e-39, 0 ); 
+            model = "Aplanetmountain"; 
+            track = entity("Aplanet"); 
+        }; 
+        
+        Shine = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(0, 3.37343e-39, 0 ); 
+            model = "Shine"; 
+            track = combine(
+                orbit(0, 10 ), 
+                Point3(0, 3.37343e-39, 0 ) ); 
+            
+        }; 
+        
+        Shineland = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(0, 3.37343e-39, 0 ); 
+            model = "Shineland"; 
+            track = entity("Shine"); 
+        }; 
+        
+        Shinemountain = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(0, 3.37343e-39, 0 ); 
+            model = "Shinemountain"; 
+            track = entity("Shine"); 
+        }; 
+        
+        Test = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(3.34963, -5.75458, 0 ); 
+            model = "Test"; 
+            track = combine(
+                orbit(0, 10 ), 
+                Point3(3.34963, -5.75458, 0 ) ); 
+            
+        }; 
+        
+        Testland = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(3.34963, -5.75458, 0 ); 
+            model = "Testland"; 
+            track = entity("Test"); 
+        }; 
+        
+        Testmountain = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(3.34963, -5.75458, 0 ); 
+            model = "Testmountain"; 
+            track = entity("Test"); 
+        }; 
+        
+        camera = Camera { 
+            filmSettings = FilmSettings { 
+                antialiasingEnabled = true; 
+                antialiasingFilterRadius = 0; 
+                antialiasingHighQuality = true; 
+                bloomRadiusFraction = 0.009; 
+                bloomStrength = 0.2; 
+                debugZoom = 1; 
+                gamma = 2.2; 
+                sensitivity = 1; 
+                toneCurve = "CELLULOID"; 
+                vignetteBottomStrength = 0.05; 
+                vignetteSizeFraction = 0.17; 
+                vignetteTopStrength = 0.5; 
+            }; 
+            
+            frame = CFrame::fromXYZYPRDegrees(0.90151, 1.8599, 63.627, -0.39264, -1.1459 ); 
+            projection = Projection { 
+                farPlaneZ = -inf; 
+                fovDegrees = 50; 
+                fovDirection = "VERTICAL"; 
+                nearPlaneZ = -0.1; 
+            }; 
+            
+        }; 
+        
+        gradient = VisibleEntity { 
+            canChange = false; 
+            castsShadows = false; 
+            frame = CFrame::fromXYZYPRDegrees(-4, 0, -50 ); 
+            model = "boardModel"; 
+        }; 
+        
+        skybox = Skybox { 
+            texture = "cubemap/hipshot_m9_sky/16_*.png"; 
+        }; 
+        
+        sun = Light { 
+            attenuation = Vector3(0, 0, 1 ); 
+            bulbPower = Color3(10000, 10000, 0 ); 
+            castsShadows = false; 
+            shadowMapSize = Vector2int16(2048, 2048 ); 
+            spotHalfAngleDegrees = 8; 
+            spotSquare = true; 
+            track = lookAt(
+                Point3(0, -50, 250 ), 
+                Point3(0, 0, 0 ) ); 
+            
+            type = "SPOT"; 
+        }; 
+        
+        tree0 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-22.0892, -7.81391, 9.80121, 35.9694, 32.8313, 111.478 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-22.741, -8.0447, 10.091, 35.969, 32.831, 111.48 ) ); 
+            
+        }; 
+        
+        tree1 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-1.67917, 24.3839, 6.23888, 89.0526, -3.69754, 14.3824 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-1.7291, 25.109, 6.4244, 89.053, -3.6975, 14.382 ) ); 
+            
+        }; 
+        
+        tree10 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(16.0684, -14.5053, -11.976, 61.4596, -30.0572, -132.643 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(16.556, -14.945, -12.339, 61.46, -30.057, -132.64 ) ); 
+            
+        }; 
+        
+        tree11 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(6.32917, -3.29288, 23.7535, 104.651, -2.00812, 97.6343 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(6.5206, -3.3925, 24.472, 104.65, -2.0081, 97.634 ) ); 
+            
+        }; 
+        
+        tree12 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(17.5355, 17.0375, -4.85798, 74.8155, 42.5709, -21.8599 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(18.063, 17.55, -5.0041, 74.816, 42.571, -21.86 ) ); 
+            
+        }; 
+        
+        tree13 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-24.6721, 2.22661, 0.827374, 91.9207, -84.846 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-25.419, 2.294, 0.85241, 91.921, -84.846, -1.485e-07 ) ); 
+            
+        }; 
+        
+        tree14 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-1.63916, 21.4337, 12.6207, 88.0849, -3.24836, 30.5448 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-1.6885, 22.079, 13, 88.085, -3.2484, 30.545 ) ); 
+            
+        }; 
+        
+        tree15 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-8.84748, 21.8154, -8.05205, 97.5051, -19.4877, -21.5496 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-9.1142, 22.473, -8.2948, 97.505, -19.488, -21.55 ) ); 
+            
+        }; 
+        
+        tree16 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-0.837278, -24.1911, -7.48052, 90.5597, 1.8093, -162.808 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-0.86206, -24.907, -7.702, 90.56, 1.8093, -162.81 ) ); 
+            
+        }; 
+        
+        tree17 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-24.5584, 2.04492, 3.30876, 97.6732, -85.2825 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-25.299, 2.1066, 3.4086, 97.673, -85.282, 0 ) ); 
+            
+        }; 
+        
+        tree18 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(14.1905, 20.1869, -1.97886, 86.0955, 34.7856, -6.82212 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(14.62, 20.799, -2.0388, 86.095, 34.786, -6.8221 ) ); 
+            
+        }; 
+        
+        tree19 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-5.87563, -16.5252, -18.0431, 100.043, 9.07411, -131.687 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-6.0508, -17.018, -18.581, 100.04, 9.0741, -131.69 ) ); 
+            
+        }; 
+        
+        tree2 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-20.1787, 3.95594, 14.2012, 37.1759, -12.5143, 80.6681 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-20.784, 4.0747, 14.627, 37.176, -12.514, 80.668 ) ); 
+            
+        }; 
+        
+        tree20 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-21.1242, 12.3183, 4.58852, 60.71, -52.7147, 35.185 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-21.761, 12.69, 4.7268, 60.71, -52.715, 35.185 ) ); 
+            
+        }; 
+        
+        tree21 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-19.5463, 2.03283, 15.5387, 38.9582, -5.80866, 85.3217 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-20.131, 2.0937, 16.004, 38.958, -5.8087, 85.322 ) ); 
+            
+        }; 
+        
+        tree22 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-4.84664, -0.836942, 24.6293, 78.8799, 0.375506, 91.9097 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-4.9914, -0.86193, 25.365, 78.88, 0.37551, 91.91 ) ); 
+            
+        }; 
+        
+        tree23 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(2.77065, 1.6744, 24.8902, 96.3233, 0.424508, 86.1749 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(2.8534, 1.7244, 25.634, 96.323, 0.42451, 86.175 ) ); 
+            
+        }; 
+        
+        tree24 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-21.3311, 10.4212, 7.23139, 46.2071, -44.9231, 53.6262 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-21.976, 10.736, 7.4499, 46.207, -44.923, 53.626 ) ); 
+            
+        }; 
+        
+        tree25 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(6.54507, 19.2222, -15.6696, 80.5328, 11.4077, -40.134 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(6.7365, 19.784, -16.128, 80.533, 11.408, -40.134 ) ); 
+            
+        }; 
+        
+        tree26 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-11.011, -14.502, -16.8399, 110.578, 16.8402, -127.656 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-11.344, -14.941, -17.349, 110.58, 16.84, -127.66 ) ); 
+            
+        }; 
+        
+        tree27 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(2.0785, 20.0924, -15.7809, 87.1233, 3.65617, -38.2385 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(2.1393, 20.68, -16.243, 87.123, 3.6562, -38.238 ) ); 
+            
+        }; 
+        
+        tree28 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-9.16446, 23.1639, -1.54408, 91.504, -21.4921, -4.09908 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-9.4399, 23.86, -1.5905, 91.504, -21.492, -4.0991 ) ); 
+            
+        }; 
+        
+        tree29 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(18.9714, 13.3384, -9.14027, 56.4467, 38.8886, -46.5713 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(19.542, 13.74, -9.4153, 56.447, 38.889, -46.571 ) ); 
+            
+        }; 
+        
+        tree3 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-11.4053, 18.4542, 12.1494, 74.1532, -22.5273, 36.5345 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-11.749, 19.011, 12.516, 74.153, -22.527, 36.534 ) ); 
+            
+        }; 
+        
+        tree30 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(3.91, 4.9345, -24.0381, 81.1288, 1.8132, -78.5402 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(4.028, 5.0834, -24.764, 81.129, 1.8132, -78.54 ) ); 
+            
+        }; 
+        
+        tree31 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-12.035, 21.1375, 5.381, 82.2483, -27.9159, 16.2119 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-12.397, 21.774, 5.543, 82.248, -27.916, 16.212 ) ); 
+            
+        }; 
+        
+        tree32 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-11.5133, 18.6289, -12.2643, 105.847, -22.5273, -36.5345 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-11.857, 19.186, -12.631, 105.85, -22.527, -36.534 ) ); 
+            
+        }; 
+        
+        tree33 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-11.0881, 20.7419, -8.58393, 100.696, -24.1551, -24.777 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-11.42, 21.363, -8.8411, 100.7, -24.155, -24.777 ) ); 
+            
+        }; 
+        
+        tree34 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-0.514563, 7.48192, -23.7395, 91.1295, -0.355969, -72.5104 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-0.53006, 7.7073, -24.455, 91.13, -0.35597, -72.51 ) ); 
+            
+        }; 
+        
+        tree35 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(15.8484, 17.503, -8.92107, 69.8802, 34.015, -33.2195 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(16.319, 18.023, -9.1861, 69.88, 34.015, -33.219 ) ); 
+            
+        }; 
+        
+        tree36 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-6.64618, 19.1076, 14.3478, 80.5183, -12.3736, 37.9328 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-6.8472, 19.685, 14.782, 80.518, -12.374, 37.933 ) ); 
+            
+        }; 
+        
+        tree37 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(6.78806, -9.59303, -21.8766, 75.4125, -6.30228, -112.87 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(6.9931, -9.8828, -22.537, 75.413, -6.3023, -112.87 ) ); 
+            
+        }; 
+        
+        tree38 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(2.03331, 3.28997, -24.419, 85.3246, 0.629195, -82.3524 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(2.095, 3.3898, -25.16, 85.325, 0.62919, -82.352 ) ); 
+            
+        }; 
+        
+        tree39 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-21.9043, 10.9682, -4.07304, 123.094, -55.7798, -38.2446 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-22.566, 11.299, -4.196, 123.09, -55.78, -38.245 ) ); 
+            
+        }; 
+        
+        tree4 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-9.48524, -12.0389, 19.4794, 70.59, 11.6065, 119.726 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-9.7723, -12.403, 20.069, 70.59, 11.606, 119.73 ) ); 
+            
+        }; 
+        
+        tree40 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-22.9389, 8.89035, 3.26736, 98.1065, -69.0085 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-23.632, 9.159, 3.3661, 98.107, -69.009, 0 ) ); 
+            
+        }; 
+        
+        tree41 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(1.38629, 0.838147, 25.0475, 93.1644, 0.105833, 88.0864 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(1.4277, 0.86319, 25.796, 93.164, 0.10583, 88.086 ) ); 
+            
+        }; 
+        
+        tree42 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-9.5788, -16.9075, 15.9609, 74.2091, 16.0806, 134.405 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-9.8645, -17.412, 16.437, 74.209, 16.081, 134.41 ) ); 
+            
+        }; 
+        
+        tree43 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(0, -22.6741, 10.9467, 90, -0, 154.23 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(0, -23.35, 11.273, 90, -0, 154.23 ) ); 
+            
+        }; 
+        
+        tree44 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-22.9233, 9.18746, 2.45401, 96.1104, -68.272 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-23.616, 9.4651, 2.5282, 96.11, -68.272, 0 ) ); 
+            
+        }; 
+        
+        tree45 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-3.56999, -17.2902, -18.1488, 95.8873, 5.5812, -133.325 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-3.6757, -17.802, -18.686, 95.887, 5.5812, -133.32 ) ); 
+            
+        }; 
+        
+        tree46 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-9.13742, -22.2703, 9.21184, 81.7542, 19.123, 156.137 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-9.4033, -22.918, 9.4799, 81.754, 19.123, 156.14 ) ); 
+            
+        }; 
+        
+        tree47 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(18.2411, 10.2812, -13.3216, 49.3654, 26.6841, -62.3769 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(18.792, 10.592, -13.724, 49.365, 26.684, -62.377 ) ); 
+            
+        }; 
+        
+        tree48 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-4.15077, -2.50518, 24.5792, 80.5115, 0.96259, 95.7397 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-4.275, -2.5802, 25.315, 80.511, 0.96259, 95.74 ) ); 
+            
+        }; 
+        
+        tree49 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(5.01035, 23.5355, -7.46429, 86.4895, 10.9274, -17.9323 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(5.1595, 24.236, -7.6865, 86.49, 10.927, -17.932 ) ); 
+            
+        }; 
+        
+        tree5 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(6.83323, 0, 24.054, 105.859, -0, 90 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(7.0382, 0, 24.775, 105.86, -0, 90 ) ); 
+            
+        }; 
+        
+        tree50 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-16.4056, -8.79973, 17.0682, 52.7892, 17.3167, 111.405 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-16.893, -9.061, 17.575, 52.789, 17.317, 111.4 ) ); 
+            
+        }; 
+        
+        tree51 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-0.835626, 25.0021, 0.516445, 89.9605, -1.91342, 1.184 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-0.86067, 25.752, 0.53193, 89.96, -1.9134, 1.184 ) ); 
+            
+        }; 
+        
+        tree52 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-9.94778, 20.3085, -10.8183, 101.489, -20.5014, -30.1287 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-10.245, 20.916, -11.142, 101.49, -20.501, -30.129 ) ); 
+            
+        }; 
+        
+        tree53 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(4.23635, -19.483, -15.5549, 83.9481, -7.52258, -140.999 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(4.362, -20.061, -16.016, 83.948, -7.5226, -141 ) ); 
+            
+        }; 
+        
+        tree54 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-8.06444, -14.444, -18.6469, 105.125, 11.4268, -126.24 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-8.3071, -14.879, -19.208, 105.13, 11.427, -126.24 ) ); 
+            
+        }; 
+        
+        tree55 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-12.3802, -20.0315, -8.68749, 102.713, 26.905, -153.501 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-12.75, -20.63, -8.9471, 102.71, 26.905, -153.5 ) ); 
+            
+        }; 
+        
+        tree56 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-21.4693, 12.3323, 2.45165, 71.5858, -57.8161, 21.4735 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-22.116, 12.704, 2.5256, 71.586, -57.816, 21.473 ) ); 
+            
+        }; 
+        
+        tree57 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-12.1913, -19.726, -9.6053, 103.672, 25.893, -150.88 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-12.556, -20.315, -9.8923, 103.67, 25.893, -150.88 ) ); 
+            
+        }; 
+        
+        tree58 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-16.7703, -16.4056, -7.80123, 111.626, 37.7766, -147.09 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-17.279, -16.903, -8.0379, 111.63, 37.777, -147.09 ) ); 
+            
+        }; 
+        
+        tree59 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(12.6184, -15.4154, -14.9838, 67.7498, -21.2838, -131.581 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(12.998, -15.879, -15.435, 67.75, -21.284, -131.58 ) ); 
+            
+        }; 
+        
+        tree6 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-5.96571, -15.2693, -19.0897, 100.79, 8.51639, -127.85 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-6.1435, -15.724, -19.659, 100.79, 8.5164, -127.85 ) ); 
+            
+        }; 
+        
+        tree60 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-1.89818, -1.67057, 24.8933, 85.659, 0.291042, 93.8283 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-1.9551, -1.7206, 25.639, 85.659, 0.29104, 93.828 ) ); 
+            
+        }; 
+        
+        tree61 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(2.47743, -22.7866, 10.0743, 92.3026, -5.19237, 156.045 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(2.5516, -23.469, 10.376, 92.303, -5.1924, 156.04 ) ); 
+            
+        }; 
+        
+        tree62 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-22.7528, -5.06387, 9.88647, 28.7453, 24.184, 102.664 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-23.427, -5.2139, 10.179, 28.745, 24.184, 102.66 ) ); 
+            
+        }; 
+        
+        tree63 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-22.8987, 8.20483, 4.92347, 102.134, -70.6944 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-23.591, 8.4528, 5.0723, 102.13, -70.694, 0 ) ); 
+            
+        }; 
+        
+        tree64 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-22.5667, 10.5935, -0.821512, 87.9151, -64.8677 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-23.245, 10.912, -0.84621, 87.915, -64.868, 1.2564e-07 ) ); 
+            
+        }; 
+        
+        tree65 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-5.74017, 22.5901, -8.70431, 94.8728, -12.4322, -21.6035 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-5.9132, 23.271, -8.9667, 94.873, -12.432, -21.603 ) ); 
+            
+        }; 
+        
+        tree66 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-3.40086, -25.119, -2.98539, 90.909, 7.60331, -173.162 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-3.5008, -25.857, -3.0731, 90.909, 7.6033, -173.16 ) ); 
+            
+        }; 
+        
+        tree67 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(3.15061, -20.068, 14.2295, 94.2366, -5.94796, 144.441 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(3.2459, -20.675, 14.66, 94.237, -5.948, 144.44 ) ); 
+            
+        }; 
+        
+        tree68 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(12.8693, -12.5814, -17.0423, 63.9524, -17.9615, -122.249 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(13.259, -12.962, -17.558, 63.952, -17.962, -122.25 ) ); 
+            
+        }; 
+        
+        tree69 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-15.2195, -12.8169, 15.6579, 59.7995, 22.3798, 123.192 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-15.67, -13.197, 16.122, 59.8, 22.38, 123.19 ) ); 
+            
+        }; 
+        
+        tree7 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-9.19773, -6.55566, 22.2567, 69.1799, 5.97666, 105.313 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-9.4741, -6.7527, 22.926, 69.18, 5.9767, 105.31 ) ); 
+            
+        }; 
+        
+        tree70 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-8.63063, 20.9522, -10.6845, 99.4645, -17.8724, -28.5107 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-8.889, 21.579, -11.004, 99.464, -17.872, -28.511 ) ); 
+            
+        }; 
+        
+        tree71 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(6.35317, 21.6368, -11.9888, 82.9043, 12.5677, -29.7729 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(6.5397, 22.272, -12.341, 82.904, 12.568, -29.773 ) ); 
+            
+        }; 
+        
+        tree72 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-22.6346, -11.6506, 3.37836, 62.5409, 57.8362, 148.455 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-23.296, -11.991, 3.477, 62.541, 57.836, 148.46 ) ); 
+            
+        }; 
+        
+        tree73 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(6.79695, 8.18589, -22.7505, 75.1837, 5.25706, -70.8947 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(6.9999, 8.4303, -23.43, 75.184, 5.2571, -70.895 ) ); 
+            
+        }; 
+        
+        tree74 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(17.0857, 17.2986, -6.23204, 72.5181, 39.823, -26.1875 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(17.596, 17.816, -6.4183, 72.518, 39.823, -26.187 ) ); 
+            
+        }; 
+        
+        tree75 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-5.73629, 22.3435, -9.56982, 95.3084, -12.1889, -23.7528 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-5.9086, 23.015, -9.8572, 95.308, -12.189, -23.753 ) ); 
+            
+        }; 
+        
+        tree76 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-15.2067, 16.2746, -11.469, 113.748, -29.7462, -41.5651 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-15.662, 16.762, -11.812, 113.75, -29.746, -41.565 ) ); 
+            
+        }; 
+        
+        tree77 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-22.0776, 7.19053, 8.8511, 33.6436, -34.071, 69.5533 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-22.744, 7.4076, 9.1182, 33.644, -34.071, 69.553 ) ); 
+            
+        }; 
+        
+        tree78 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-1.68718, -24.337, 7.17707, 88.9225, 3.64869, 163.535 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-1.7369, -25.055, 7.3888, 88.922, 3.6487, 163.53 ) ); 
+            
+        }; 
+        
+        tree79 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-12.3564, -21.7189, 6.57002, 81.0398, 27.2424, 160.994 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-12.715, -22.349, 6.7607, 81.04, 27.242, 160.99 ) ); 
+            
+        }; 
+        
+        tree8 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-12.5735, -20.3443, -7.77083, 101.641, 27.8453, -156.2 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-12.948, -20.951, -8.0026, 101.64, 27.845, -156.2 ) ); 
+            
+        }; 
+        
+        tree80 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-24.6987, -1.02656, 3.32765, -82.3268, -87.6413, 180 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-25.441, -1.0574, 3.4277, -82.327, -87.641, 180 ) ); 
+            
+        }; 
+        
+        tree81 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(4.108, -22.4477, -10.2614, 86.0417, -8.5874, -155.136 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(4.2311, -23.121, -10.569, 86.042, -8.5874, -155.14 ) ); 
+            
+        }; 
+        
+        tree82 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(1.64089, -21.8591, 11.8683, 91.8029, -3.31641, 151.448 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(1.6903, -22.517, 12.225, 91.803, -3.3164, 151.45 ) ); 
+            
+        }; 
+        
+        tree83 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(3.39273, 4.10471, -24.1431, 82.2228, 1.31797, -80.4406 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(3.4957, 4.2292, -24.875, 82.223, 1.318, -80.441 ) ); 
+            
+        }; 
+        
+        tree84 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-8.83276, 22.5236, -5.45894, 95.1298, -20.2497, -14.5405 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-9.0999, 23.205, -5.624, 95.13, -20.25, -14.54 ) ); 
+            
+        }; 
+        
+        tree85 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-0.837109, -23.9176, -8.31375, 90.6219, 1.78847, -160.823 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-0.86189, -24.626, -8.5599, 90.622, 1.7885, -160.82 ) ); 
+            
+        }; 
+        
+        tree86 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-9.08401, 13.0237, -19.3983, 107.89, -11.6532, -57.9635 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-9.3558, 13.413, -19.979, 107.89, -11.653, -57.964 ) ); 
+            
+        }; 
+        
+        tree87 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-7.69966, 0, 23.9227, 72.1589, -0, 90 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-7.9294, 0, 24.637, 72.159, -0, 90 ) ); 
+            
+        }; 
+        
+        tree88 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-12.389, 18.3675, -11.7962, 107.05, -24.5391, -36.4441 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-12.759, 18.916, -12.149, 107.05, -24.539, -36.444 ) ); 
+            
+        }; 
+        
+        tree89 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(11.109, 5.66421, 21.4754, 115.81, 6.55097, 76.7271 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(11.445, 5.8353, 22.124, 115.81, 6.551, 76.727 ) ); 
+            
+        }; 
+        
+        tree9 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(14.2685, -16.4614, -11.8887, 67.6371, -27.7809, -138.566 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(14.7, -16.959, -12.248, 67.637, -27.781, -138.57 ) ); 
+            
+        }; 
+        
+        tree90 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-20.3414, 11.441, 8.30097, 49.7986, -41.6575, 51.8149 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-20.957, 11.787, 8.5523, 49.799, -41.658, 51.815 ) ); 
+            
+        }; 
+        
+        tree91 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-13.7456, -20.8358, -2.47913, 94.4258, 32.9659, -171.904 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-14.157, -21.459, -2.5533, 94.426, 32.966, -171.9 ) ); 
+            
+        }; 
+        
+        tree92 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-4.22457, -24.9155, 1.56462, 89.3923, 9.5857, 176.356 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-4.3497, -25.654, 1.611, 89.392, 9.5857, 176.36 ) ); 
+            
+        }; 
+        
+        tree93 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(15.8685, 18.3861, -6.33599, 75.1122, 36.7068, -23.9783 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(16.343, 18.935, -6.5253, 75.112, 36.707, -23.978 ) ); 
+            
+        }; 
+        
+        tree94 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-5.07635, -24.7994, 1.0451, 89.5066, 11.5481, 177.537 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-5.2266, -25.534, 1.076, 89.507, 11.548, 177.54 ) ); 
+            
+        }; 
+        
+        tree95 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-3.39285, -24.4746, 6.52132, 88.0247, 7.37089, 164.953 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-3.4924, -25.193, 6.7127, 88.025, 7.3709, 164.95 ) ); 
+            
+        }; 
+        
+        tree96 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-16.452, 3.0369, 18.6692, 49.3532, -6.04859, 83.0027 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-16.944, 3.1278, 19.228, 49.353, -6.0486, 83.003 ) ); 
+            
+        }; 
+        
+        tree97 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-22.2605, 9.86749, -4.87754, 131.865, -53.4741, -48.1174 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-22.933, 10.165, -5.0249, 131.87, -53.474, -48.117 ) ); 
+            
+        }; 
+        
+        tree98 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-22.9376, 9.49733, 1.64181, 94.0941, -67.5596 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-23.629, 9.7836, 1.6913, 94.094, -67.56, 2.7958e-07 ) ); 
+            
+        }; 
+        
+        tree99 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-5.91592, 16.6385, -18.1668, 100.043, -9.07411, -48.3132 ); 
+            model = "tree"; 
+            track = transform(
+                entity("Shinemountain"), 
+                CFrame::fromXYZYPRDegrees(-6.0911, 17.131, -18.705, 100.04, -9.0741, -48.313 ) ); 
+            
+        }; 
+        
+    }; 
+    
+    lightingEnvironment = LightingEnvironment { 
+        ambientOcclusionSettings = AmbientOcclusionSettings { 
+            bias = 0.12; 
+            blurRadius = 4; 
+            blurStepSize = 2; 
+            depthPeelSeparationHint = 0.2; 
+            edgeSharpness = 1; 
+            enabled = false; 
+            intensity = 3; 
+            monotonicallyDecreasingBilateralWeights = false; 
+            numSamples = 19; 
+            radius = 2; 
+            temporalFilterSettings = TemporalFilter::Settings { 
+                falloffEndDistance = 0.07; 
+                falloffStartDistance = 0.05; 
+                hysteresis = 0.9; 
+            }; 
+            
+            temporallyVarySamples = true; 
+            useDepthPeelBuffer = true; 
+            useNormalBuffer = true; 
+            useNormalsInBlur = true; 
+        }; 
+        
+        environmentMap = Texture::Specification { 
+            encoding = Texture::Encoding { 
+                readMultiplyFirst = 1.9; 
+            }; 
+            
+            filename = "cubemap/majestic/majestic512_*.jpg"; 
+        }; 
+        
+    }; 
+    
+    models = { 
+        Aplanet = ArticulatedModel::Specification { 
+            filename = "edgecollapse/ecWater3.obj"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        glossy = Color4(0.236111, 0.236111, 0.236111, 0.875 ); 
+                        lambertian = Texture::Specification { 
+                            encoding = Texture::Encoding { 
+                                readMultiplyFirst = Color3(0.305556, 0.541667, 1 ); 
+                            }; 
+                            
+                            filename = "reddish.jpg"; 
+                        }; 
+                        
+                    } ); 
+                transformGeometry(all(), Matrix4::scale(0.55254, 0.55254, 0.55254 ) ) }; 
+            
+        }; 
+        
+        Aplanetland = ArticulatedModel::Specification { 
+            filename = "edgecollapse/ecLand3.obj"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        glossy = Color4(0.138889, 0.138889, 0.138889, 0.583333 ); 
+                        lambertian = Texture::Specification { 
+                            encoding = Texture::Encoding { 
+                                readMultiplyFirst = Color3(1, 0.555556, 1 ); 
+                            }; 
+                            
+                            filename = "gold.jpg"; 
+                        }; 
+                        
+                    } ); 
+                transformGeometry(all(), Matrix4::scale(0.55254, 0.55254, 0.55254 ) ) }; 
+            
+        }; 
+        
+        Aplanetmountain = ArticulatedModel::Specification { 
+            filename = "edgecollapse/ecMountain3.obj"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        glossy = Color4(0.166667, 0.166667, 0.166667, 1 ); 
+                        lambertian = Color3(0, 0, 0 ); 
+                    } ); 
+                transformGeometry(all(), Matrix4::scale(0.55254, 0.55254, 0.55254 ) ) }; 
+            
+        }; 
+        
+        Shine = ArticulatedModel::Specification { 
+            filename = "Shinewater.obj"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        glossy = Color4(0.0972222, 0.0972222, 0.0972222, 0.875 ); 
+                        lambertian = Color3(1.75162e-43, 1, 0 ); 
+                    } ); 
+                transformGeometry(all(), Matrix4::scale(1, 1, 1 ) ) }; 
+            
+        }; 
+        
+        Shineland = ArticulatedModel::Specification { 
+            filename = "Shineland.obj"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        glossy = Color4(0.416667, 0.416667, 0.416667, 0.652778 ); 
+                        lambertian = Color3(1, 3.52703e-39, 0 ); 
+                    } ); 
+                transformGeometry(all(), Matrix4::scale(1, 1, 1 ) ) }; 
+            
+        }; 
+        
+        Shinemountain = ArticulatedModel::Specification { 
+            filename = "Shinemountain.obj"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        glossy = Color4(0.402778, 0.402778, 0.402778, 1 ); 
+                        lambertian = Color3(0, 5.76214e-42, 1 ); 
+                    } ); 
+                transformGeometry(all(), Matrix4::scale(1, 1, 1 ) ) }; 
+            
+        }; 
+        
+        Test = ArticulatedModel::Specification { 
+            filename = "Testwater.obj"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        glossy = Color4(0.0972222, 0.0972222, 0.0972222, 1 ); 
+                        lambertian = Color3(0.763889, 0.763889, 1 ); 
+                    } ); 
+                transformGeometry(all(), Matrix4::scale(0.132072, 0.132072, 0.132072 ) ) }; 
+            
+        }; 
+        
+        Testland = ArticulatedModel::Specification { 
+            filename = "Testland.obj"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        glossy = Color4(0.375, 0.375, 0.375, 0.333333 ); 
+                        lambertian = Texture::Specification { 
+                            encoding = Texture::Encoding { 
+                                readMultiplyFirst = Color3(0, 0, 1 ); 
+                            }; 
+                            
+                            filename = "plain.jpg"; 
+                        }; 
+                        
+                    } ); 
+                transformGeometry(all(), Matrix4::scale(0.132072, 0.132072, 0.132072 ) ) }; 
+            
+        }; 
+        
+        Testmountain = ArticulatedModel::Specification { 
+            filename = "Testmountain.obj"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        glossy = Color4(0.236111, 0.236111, 0.236111, 0.375 ); 
+                        lambertian = Texture::Specification { 
+                            encoding = Texture::Encoding { 
+                                readMultiplyFirst = Color3(0.475862, 5.76214e-42, 0.524138 ); 
+                            }; 
+                            
+                            filename = "plain.jpg"; 
+                        }; 
+                        
+                    } ); 
+                transformGeometry(all(), Matrix4::scale(0.132072, 0.132072, 0.132072 ) ) }; 
+            
+        }; 
+        
+        boardModel = ArticulatedModel::Specification { 
+            filename = "ifs/square.ifs"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        emissive = Texture::Specification { 
+                            encoding = Texture::Encoding { 
+                                readMultiplyFirst = Color4(
+                                    Color3(0.5 ), 
+                                    1 ); 
+                                
+                            }; 
+                            
+                            filename = "background.png"; 
+                        }; 
+                        
+                        lambertian = Color4(
+                            Color3(0 ), 
+                            1 ); 
+                        
+                    } ) }; 
+            
+            scale = 200; 
+        }; 
+        
+        tree = ArticulatedModel::Specification { 
+            filename = "model/lowpolytree.obj"; 
+            scale = 0.5; 
+        }; 
+        
+    }; 
+    
+    name = "EC3"; 
+} 

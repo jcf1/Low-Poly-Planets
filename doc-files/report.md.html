@@ -1,0 +1,411 @@
+﻿<meta charset="utf-8"><!-- -*- markdown -*- -->     
+   
+        **Procedurally Generated, Low-Poly Planets**
+        **John Freeman (jcf1@williams.edu), Jose Rivas (jdr3@williams.edu),** 
+        **Julia Goldman (jdg2@williams.edu),**
+        **and Matheus de Carvalho Souza (mc13@williams.edu)** 
+
+
+    ![A unique, procedually generated, low-poly planet.](teaser.png border=1)
+
+Introduction
+============================================================================================
+
+Our project was to procedurally generate low-poly planets using triangle meshes and noise functions.  Through the use of different noise functions, textures, object placements, destruction and bevelling algorithms, and height ratios, we can generate an infinite number of low-poly planets that are structurally diverse and awe-inspiring, despite their lack of realism. In fact, it is their lack of realism that makes low-poly planets so aesthetically pleasing. By applying different styles to them, especially cartoon-like shading and coloring, we can create planets that look like they come straight out of medieval fantasy. 
+
+In this lab, we created procedurally generated our planets through the use of three different spherical heightfields placed on top of each other. Each heightfield had a different noise applied to it, which added features such as rippling water, the appearance and disappearance of land masses, and mountains. By adding further parameters, we can further improve our results. For example, texture mapping, the decimation of triangles through edge collapsing, and bevelling all allow for improved shading and planet contours. The addition of different entities, such as trees, birds, and clouds, and the addition of animation further gives each planet more diversity and brings them to life before the user's eyes. All of this comes together to give the user limitless capabilities to create stunning and diverse universes.
+
+Specification
+============================================================================================
+
+1. Generate a procedurally generated, tesselated planet by implementing the following:
+	1. Generate a low-poly planet with the following heightfields:
+		1. Sea
+		2. Low-Level Terrain
+		3. Mountains
+	2. Use a noise function to generate these heightfields based on the planet's radius
+	3. Use an edge-collapse algorithm to reduce the number of triangles
+	4. Bevel the edges of the heightfields' triangles for smoother transitions
+	5. Get all parameters based on constants from a file.
+	6. Add low-poly objects on the planet:
+		1. Fir Trees
+		2. Birds
+        3. Clouds
+	7. Make the planet rotate on its axis
+	8. Make the clouds and birds orbit our planet arbitrary
+	9. Use a gradient background for better aesthetic.
+    10. Map textures onto the planet.
+
+2. Provide the capability to change the planet's following paramenters:
+	1. Water heightfield's minimum and maximum height
+	2. Low-level terrain heightfield's maximum height
+	3. Mountain heightfield's maximum height
+    4. Noise Functions seeds
+    5. Lambertian and Glossy Color
+    6. Number of Edges to Collapse
+		
+3. Save the following images to prove correctness:
+	1. Show individual low-poly terrain mesh using a simple noise algorithm to bump the vertices.
+    3. Show example of beveling.
+    4. Show example of edge collapsing
+    5. Show individual heightfields and full planet at varying recursion depths
+
+4. Quality Results:
+	1. A scene of a planet with some models and an interesting background
+	2. A scene of a planet with a moon rotating around it
+	3. A unique scene emphasizing our planets' beauty
+  
+5. Additional Features
+	1. Have multiple planets in the same scene
+    2. Have one planet orbit another
+    3. Have a dragon model that can orbit a planet
+  
+Topic Overview
+=====================================================================================
+
+Heightfields
+-----------------------------------------------------------
+The planets are represented through a combination of layered, spherical heightfields. From top to bottom, these spheres represent the mountains, land, and water planes of our planet. We generate these spheres using the icosagon tesselation algorithm [#Larsen] and apply the algorithm recursively for some number of times to generate more detailed spheres.  We then apply appply noise mapping, decimation, and bevelling algorithms to each sphere to create the base of our planet.
+
+![Example of a sphere after 5 recursions](5-sphere.png width=400px) ![Wireframe of a sphere 5 recursions](5-sphere-wire.png width=400px)
+
+![Example of a simple planet](planet-layers-together.png height=90px width=160px) ![Water plane of the planet](water-layer.png height=90px width=160px) ![Land plane of the planet](land-layer.png height=90px width=160px) ![Mountain plane of the planet](mountain-layer.png height=90px width=160px)
+
+Noise
+-----------------------------------------------------------
+We use Perlin noise [#Perlin] to generate a series of 2-dimensional images that are used to generate the heights of our three heightfields and place object on and around our planet. Each field has it's own noise image that is used to gererate it's heights by mapping the image to the sphere and raising the vertex based on the pixel value of the image it cooresponds to. The water and land heightfields are based on one noise function applied to their respective images, but the mountain plane is a composite image based on three seperate noise functions being applied to the same image, which results in more interesting and complex mountain ranges for our planets.
+
+![Example of noise used for planet water](noiseExampleOcean.png width=200px) ![Example of noise used for planet land](noiseExampleLand.png width=200px) ![Example of noise used for planet mountains](noiseExampleMount.png width=200px)
+
+Meshes
+----------------------------------------------------------
+The heightfields are stored as meshes.  A decimation algorithm is used to simplify the mesh. Then Beveling adds rectangles between mesh triangles to smooth out corners. Our mesh has functions that allow us to easily generate object files or articulated models from our meshes with appropriate normals and texture coordinates for texture mapping.
+
+Decimation Algorithms
+----------------------------------------------------------
+Decimation algorithms are used to simplify meshes by reducing the number of faces while still keeping its underlying shape and topology. 
+
+The decimation algorithm we chose is edge collapsing as outlined by [#Stanford_Graphics] and [#Shertler], which consists of taking the $n$ least important edges away from the mesh, which effectifely removes its adjacent faces. For our purposes we chose the least important edge to be the edge whose angle between its adjacent face normals is closest to 180 degrees, weighted by the edge length.
+
+The main purpose of edge collapsing in our project, however, was not to merely simplify the mesh, but to make the low polyness aesthetic of our planets more evident by making the polygon subdivision less uniform. 
+
+An edge collapsed sphere: 
+![Original Sphere](2016-12-07_065_starter_r2849_g3d_r981__original_sphere.jpg width=150px) ![2000 edges collapsed](2016-12-07_066_starter_r2849_g3d_r981__2000_edges_collapsed.jpg width=150px) ![4000 edges collapsed](2016-12-07_067_starter_r2849_g3d_r981__4000_edges_collapsed.jpg width=150px) ![8000 edges collapsed](2016-12-07_068_starter_r2849_g3d_r981__8000_edges_collapsed.jpg width=150px)
+
+Bevelling
+-----------------------------------------------------------
+In order to create a smooth transition between triangles, we used a bevelling function. This functions shrinks each triangle face by a specified amount, moving the vertices of each triangles towards the triangle's center, causing each face to become disconnected from one another. It then fills in the missing spaces with rectangles, reconnecting the triangles to keep the mesh air tight. The normal of each vertex is artificially set to the normal of the face it is part of to make the bevelling more apparent.
+
+![A planet with shrunken faces](beveling1.jpg width=300px)![A beveled surface](beveling.jpg width=300px)![Close-up shot](bevelingclose.jpg width=300px)
+
+The result is a more cartoon-like feel for the planet, because it gets rid of extremely sharp edges to allow for better shading.
+
+Animation
+------------------------------------------------------------
+The animation was done using G3D's entity tracking feature ([G3D::Entity::Track](http://g3d.cs.williams.edu/g3d/G3D10/build/manual/class_g3_d_1_1_entity_1_1_track.html#ae2e76f1d9cae33a68b4d6e1db947a364])), which allows for indirect manipulation of each entity. These tracks are created by expanding a BNF grammar that describes the various possible transformations for the entity's position. The expanded grammar creates a new 4D matrix for each frame that is applied to the entity's position. For example, the water field, as the bottom-most layer of the planet, has a simple track causing it to orbit around its own axis. On the other hand, the birds and dragon follow a much more complex track, which starts by applying a rotation matrix to each entity's position, applying a transformation to make it look towards its next position, applying another transformation to make it orbit the planet, and finally a final transformation to rotate the entity's orbit along the x axis. 
+
+Finally, the tracking feature allows an entity to depend on another entity to determine its position. As an example, the upper two layers of the planet depend on the water layer to determine their next position. This was especially useful when creating moon's and satellites, because only the water field needs to calculate the orbit, and the other two layers simply follow it.
+
+![Ice video](2016-12-07_056_starter_r2827_g3d_r981__Barbie_s_ice_planet_with_clouds_video.mp4 width = 550px)
+
+Design
+=====================================================================================
+
+The following is a description of our design.
+
+Flow
+-------------------------------------------------------------------------------------
+
+1. APP::makePlanetGUI()
+       1. Get Constants Button
+                1. App::unpackagePlanetSpecs()
+       2. Save Constants Button
+                1. App::packagePlanetSpecs
+       3. Generate Button
+                1. SolarSystem::containsPlanet()
+                2. App::packagePlanetSpecs()
+                3. Planet::generatePlanet()
+                    1. Planet::writeSphere()
+                        1. Planet::makeIcohedron()
+                        2. Planet::subdivideIcohedron()
+                    2. NoiseGen::generateLandImage()
+                    3. NoiseGen::generateWaterImage()
+                    4. NoiseGen::generateMountainImage()
+                    5. Mesh::collapseEdges()
+                        1. Mesh::computeAdjacency()
+                        2. Mesh::computeFaceNormals
+                        3.  Mesh::isCollapsable()
+                            1. isManifoldPreserved()
+                            2. normalsFlipped()
+                                1. computeCurNormal()
+                                2. computeNewNormal()
+                                3. isSignOpposite()
+                        4. isMoreCollapsable()
+                            1. cosAnge()
+                            2. squaredEdgeLength()
+                        5. collapseOneEdge()
+                            1. remapIndices()
+                            2. removeDegenerateFaces()
+                                1. isDegenerate()
+                    6. Mesh::bevelEdges()
+                        1. Mesh::computeAdjacency()
+                        2. Mesh::computeNormals()
+                    7. Mesh::toObj()
+                        1. Mesh::computeAdjacency()
+                        2. Mesh::computeNormals()
+                    8. NoiseGen::landMapImage()
+                    9. Planet::findTreePositions()
+                4. SolarSystem::addPlanet()
+                    1. Planet::getPlanetOrbit()
+                    2. SolarSystem::addPlanetToScene()
+                        1. Planet::createWaterAnyFile()
+                        2. Planet::createLandAnyFile()
+                        3. Planet::createMountainAnyFile()
+                        4. Planet::addCloudToPlanet()
+                        5. Planet::getTreePositions()
+                        6. SolarSystem::MakeSceneTable()
+                5. SolarSystem::printSolarSystemToScene()
+
+
+Class Descriptions
+-----------------------------------------------------------------------------------------------------------------------------
+
+|[Angled Vertex](class_angled_vertex.html): | |
+|------------|---|
+|[operator<](class_angled_vertex.html#af8dea9a741ccba035b79f5015adc7572) | Used for sorting vertices by angle |
+|[operator>](class_angled_vertex.html#ae6d68c335a0bf593ac5b9d9e85c1407a) | Used for sorting vertices by angle |
+
+|[App](class_app.html): | |
+|------------|---|
+|[addPlanetToScene](class_app.html#aa16db878375c7fa7a16108e7b9edb898) | Adds an articulated model of a mesh to the current scene |
+|[makePlanetGUI](class_app.html#a9bc72b237ac25e5c1e793c9104221320) | Provides the ability to generate a planet on command |
+
+
+
+|[Mesh](class_mesh.html): | |
+|------------|---|
+|[bevelEdges](class_mesh.html#adc7558052d2c7fb4ee0697805ef7cd72) | Creates new vertex and index arrays in which the original triangles are separated and shrunk andvthe gaps between them are filled in with more triangles |
+|[collapseEdges](class_mesh.html#a015dfb6334430099b0061bbdc24a7289) | As outlined by Stanford Graphics http://graphics.stanford.edu/courses/cs468-10-fall/LectureSlides/08_Simplification.pdf Calls computeAdjacency(), computeFaceNormals(), and isCollapsable() for each i in numEdges collapsing as many edges as possible from 0 to numEdges. |
+|[computeAdjacency](class_mesh.html#a8b7b39f416aee6d204de79cb65226d05) | Fills buffers with information about the mesh's topology |
+|[computeFaceNormals](class_mesh.html#ad2d3073f94942602441016a2ae5c7191) | Calculates normals for each face |
+|[computeNormals](class_mesh.html#a80fe9c1e1a35dc5aa5cd088dbe0d08d6) | vertexNormalArray and faceNormalArray filled with appropriate normal values |
+|[toArticulatedModel](class_mesh.html#aa25e2fa35851d7660871190eaeab737b) | Returns an articulated model of the mesh |
+|[toObj](class_mesh.html#aa6aa873a3f810e2c0bfdb9e08aaf3908) | Writes an object file of the mesh |
+|[create](class_mesh.html#acf65d30a393e0e492fa08878472b4847) | Returns a shared pointer to a mesh |
+|[isCollapsable](class_mesh.html#a927969b67bb759490deab1acd701354f) | Called by collapseEdges(). Checks if an edge can be safely collapsed. True if not a boundary edge, if collapsing it preserves the manifold and doesn't flip adjacent face normals. |
+
+|[NoiseGen](class_noise_gen.html): | |
+|------------|---|
+|[generateMountainImage](class_noise_gen.html#abe0d06b9a698ff77c84a5303ba6e4043) | Generates noise bump map for mountains |
+|[generateLandImage](class_noise_gen.html#a14748234d3591d3a0afcf0988357ecdc) | Generates noise bump map for land |
+|[generateSeaImage](class_noise_gen.html#a20abb147de7b00dc7d7f9c7683e09a4e) | Generates noise bump map for ocean |
+|[colorMountainImage](class_noise_gen.html#abe0d06b9a698ff77c84a5303ba6e4043) | Generates an image that can be used to color mountains based on hieght|
+|[landMapImage](class_noise_gen.html#ae8024bfc5872a8fc3adff69c30ba009f) | Generates an image that is only the land plane |
+
+|[Planet](class_planet.html): | |
+|------------|---|
+|[applyNoiseLand](class_planet.html#acef025087d323d0d14c68ed8e808f784) | Generates and maps noise for land |
+|[applyNoiseMountain](class_planet.html#a61f483ef01185744916f3d5c880a6737) | Generates and maps noise for mountains |
+|[applyNoiseWater](class_planet.html#aae1f673f08375154a869ca9df9547718) | Generates and maps noise for ocean |
+|[writeSphere](class_planet.html#a4e6161f7106c7800e162213210cc23bb) | Constructs a sphere of a given recursion depth |
+|[getMiddle](class_planet.html#a9264b1a5ed9484f6de3a802b674ccd3e) | Finds the middle between two points |
+|[makeIcohedron](class_planet.html#a73f0047f85c0d7138283e9006cc5b729) | Makes an icohedron |
+|[subdivideIcoHedron](class_planet.html#a8da7fb007fbfb344c150382ab774629a) | Does one tesselation of the current icohedron mesh |
+|[addAirElementToPlanet](class_planet.html#ae947830bd5cb7d1251acb70cee7495c1) | Adds an entity to orbit the planet |
+|[addCloudEntityToPlanet](class_planet.html#a23cf56bc77e2500e5a8b22bede18f012) | Adds a cloud entity to orbit the planet |
+|[addLandEntityToPlanet](class_planet.html#a624dd989a61669d86be4073425d2cbe9) | Adds an entity to the land plane of the planet |
+|[createLandAnyFile](class_planet.html#a4c3ef3a0febd7598780d8037ddd3a141) | Creates model and entity Any table for land field |
+|[createWaterAnyFile](class_planet.html#ac83d0ff9a042d5036ca51bfb812a5d0f) | Creates model and entity Any table for water field |
+|[createMountainAnyFile](class_planet.html#aa464225900c48221093ba744d4547f47) | Creates model and entity Any table for Mountain field |
+|[findAirPositions](class_planet.html#aa464225900c48221093ba744d4547f47) | Generates a list of positions to place orbiting entities |  
+|[generatePlanet](class_planet.html#a39b9bfe9ab935da483e3ad867578450c) | Adds a planet to the solar system scene with given parameters |   
+|[getBirdPositions](class_planet.html#a7bbc69cbe55ef86d1fe3611c70796fb8) | Returns positions where bird entities should be placed |
+|[getCloudPositions](class_planet.html#a3d6de3d163c554504d4deb1cd0811a6f) | Returns positions where cloud entities should be placed | 
+|[getDragonPosition](class_planet.html#af6ec78155a1aa22b8784dffd7e40e052) | Returns position where dragon entity should be placed |   
+|[getLandPositions](class_planet.html#aaa8b834613893e8555d1727c87619222) | Generates a list of positions to place entities to land plane |   
+|[getName](class_planet.html#a94d87c025a8de03a572f0b1eb0f0a4aa) | Returns planet's name |   
+|[getPlanetOrbit](class_planet.html#ad168a654dfe4ade4fbdf3833f21ca9dd) | Returns the planet's orbital trajectory | 
+|[getScale](class_planet.html#a77ac11f7df6e717f88d8a5de39aa05c1) | Returns plant's scale | 
+|[hasBirds](class_planet.html#ac989404907a51988071caede6ae568d0) | Returns if there should be bird entities |   
+|[hasClouds](class_planet.html#af2191123df35d8797e473d18f1779611) | Returns if there should be cloud entities |
+|[hasDragon](class_planet.html#a60244e947878446ac40f961396d52a32) | Return if a planet should have an orbiting dragon |   
+|[hasTrees](class_planet.html#a8c3fb71b9f90f0a0c618629ab1fe33e8) | Returns if there should be tree entities |
+|[toAny](class_planet.html#a8e9379d13de79745efffb4c4f45a00c0) | Returns the plant's specification in Any format | 
+|[useParticleClouds](class_planet.html#ab95bb0f862a0e4479eda4cf248ad5c11) | Returns if we should use particle clouds instead of poly cloud model |   
+|[readSpec](class_planet.html#aa3ff7b71b662ee6a9c6a19c8663f58b8) | Reads the planet's specification and saves state |   
+
+|[SolarSystem](class_solar_system.html): | |
+|------------|---|
+|[initializeEntityTable](class_solar_system.html#adb86a73d324a1cfe13a6abc87d1b841e) | Sets up and writes the entity portion of the scene |
+|[initializeModelsTable](class_solar_system.html#af18477b46f91a08f1774fe7ee5ea634e) | Sets up and writes the models portion of the scene |
+|[initializeSceneTable](class_solar_system.html#a0edb5083b2b969742aae96984fa0ae00) | Sets up and writes the scene's lightning environment |
+|[makeSceneTable](class_solar_system.html#a46cc6fe215f824fe6e3d7e764b7360c2) | Adds entities and models initialized by their own methods to the scene |
+|[printSolarSystemToScene](class_solar_system.html#a4f7850f6a605f9fca766c09b0944b94a) | Outputs the Solar system to a scene file |
+|[addPlanet](class_solar_system.html#a802f69a37f00a29be495abf30157bd1c) | Adds planet to scene |
+|[containsPlanet](class_solar_system.html#ad84bb105d55748dbd2d4216b6ae8e6e1) | Returns true if input planet is in the solar system |
+|[removePlanet](class_solar_system.html#a3a190f11cba5adda14c0a21d5898583e) | Removes planet from scene |
+|[onInit](class_solar_system.html#a72e98827175f7e21af527c09876b2a06) | Initializes member variables and invokes initialize methods |
+
+
+Justification
+------------------------------------------------------------------------------------------------------------------------------
+
+[Planet](class_planet.html) is responsible for building the spheres that make up our different heightfields, map noise onto the sphere, and allows for the mapping of entities onto or over the planet. While each individual planet does not have control of the scene, it helps the SolarSystem class create the any files for the models and entities relative to the planet. This allows us to isolate the information and entities that make up one planet from the others that may be in the SolarSystem scene file.
+
+[NoiseGen](class_noise_gen.html) Applies different Perlin noise functions to 2-dimensional images that are used to map to heightfields and decide where to place objects on and around the planet.  We abstracted this code from our Plaet class, even though it is the only class to call it, since the NoiseGen functions are independent of any single planet nad is shared by all. We designed the Planet class to only contain information required for one planet in our Solar System Scene.
+
+[Mesh](class_mesh.html) defines methods to compute adjacency and normal information of the input Mesh, and methods to edit the Mesh. It is used by Planet, which passes in the vertex array and the tri array of faces of the original heightfields into Mesh. Planet then invokes the methods defined in Mesh to collapse mesh edges, to bevel the mesh, and to output it to [G3D::ArticulatedModel](http://g3d.cs.williams.edu/g3d/G3D10/build/manual/class_g3_d_1_1_articulated_model.html) or to OBJ files to be used in our scenes. Collapsing edges simplifies the mesh and makes the faces look less uniform which makes the low polyness more interesting. Bevelling smoothes the edges between faces and gives more of a polygon effect to the mesh. This design choice abstracts mesh editting from mesh creation and allowed us to to work on introducing low polyness separately from generating nice planets.
+    
+[SolarSystem](class_solar_system.html) abstracts generating the Scene.Any file that includes our planet meshes. It defines separate methods to set up the lighting environment, write entities, write models, add and remove planet meshes from the scene. Defining this class was fundamental in cleaning up our code, since before SolarSystem we generated our whole Scene.Any in App. This abstraction allowed us to more easily and intuitively add features and polish our results. 
+
+Correctness Results
+=====================================================================================
+
+Procedural Sphere generation
+---------------------------------------------------------------------------------------
+
+![Icosahedron 1 recursion level](2016-12-07_051_starter_r2819_g3d_r981__1_recursion_level.jpg height=144px width=256px) ![Icosahedron 8 recursion levels](2016-12-07_052_starter_r2819_g3d_r981__8_recursion_levels.jpg height=144px width=256px) ![Icosahedron 8 recursion levels wireframe](2016-12-07_053_starter_r2819_g3d_r981__8_recursion_levels_wireframe_close-up.jpg height=144px width=256px) 
+
+Texture Mapping
+---------------------------------------------------------------------------------------
+![Texture Mapped to a Sphere](correctMap.jpg width=200px) ![Texture Mapped to a Heightfield](correctMap2.jpg width=200px)
+
+Edge Collapsing
+---------------------------------------------------------------------------------------
+![Mountain - before collapsing wireframe](2016-12-07_037_starter_r2803_g3d_r981__Mountain_-_before_collapsing_wireframe.jpg width=200px) ![Land - before collapsing wireframe](2016-12-07_036_starter_r2803_g3d_r981__Land_-_before_collapsing_wireframe.jpg width=200px)
+
+![Mountain - wireframe after 2200 edges collapsed](2016-12-07_034_starter_r2803_g3d_r981__Mountain_-_wireframe_after_collapsing.jpg width=200px) ![Land - wireframe after 8600 edges collapsed](2016-12-07_032_starter_r2803_g3d_r981__Land_-_wireframe_after_collapsing.jpg width=200px)
+
+
+Bevelling
+---------------------------------------------------------------------------------------
+![Mountains - wireframe before](2016-12-07_046_starter_r2803_g3d_r981__Mountains_-_before.jpg width = 200px) ![Land - wireframe before](2016-12-07_045_starter_r2803_g3d_r981__Land_-_wireframe_before.jpg width = 200px) ![Ocean - wireframe before](2016-12-07_044_starter_r2803_g3d_r981__Ocean_-_wireframe_before.jpg width = 200px)
+
+
+![Mountain - wireframe after](2016-12-07_042_starter_r2803_g3d_r981__Mountain_-_wireframe_after.jpg width = 200px) ![Land - wireframe after](2016-12-07_041_starter_r2803_g3d_r981__Land_-_wireframe_after.jpg width = 200px) ![Ocean wireframe after](2016-12-07_039_starter_r2803_g3d_r981__Ocean_wireframe_after.jpg width = 200px)
+
+
+Making a Planet
+---------------------------------------------------------------------------------------
+![Land collapsed and bevelled](2016-12-07_047_starter_r2803_g3d_r981__Land_collapsed_and_bevelled.jpg width = 300px) ![Mountain collapsed and bevelled](2016-12-07_048_starter_r2803_g3d_r981__Mountain_collapsed_and_bevelled.jpg width = 300px)
+
+![Planet put together](2016-12-07_049_starter_r2803_g3d_r981__Planet_put_together.jpg width = 300px) ![Planet 360](2016-12-07_050_starter_r2803_g3d_r981__Planet_360.mp4 width = 300px)
+
+        ![Land - recursion depth 3](landDepth3.jpg width=200px) ![Land - recursion depth 5](landDepth5.jpg width=200px) ![Land - recursion depth 7](landDepth7.jpg width=200px)
+        ![Mountain - recursion depth 3](mountainDepth3.jpg width=200px) ![Mountain - recursion depth 5](mountainDepth5.jpg width=200px) ![Mountain - recursion depth 7](mountainDepth7.jpg width=200px)
+        ![Planet - recursion depth 3](depth3.jpg width=200px) ![Planet - recursion depth 5](depth5.jpg width=200px) ![Planet - recursion depth 3](depth7.jpg width=200px)
+
+
+Quality Results
+=====================================================================================
+
+Examples of different planets our program generated: 
+
+![Planet 1](2016-12-07_006_starter_r2797_g3d_r981__P1_after_collapsing.jpg width = 200px) ![Planet 2](2016-12-07_012_starter_r2797_g3d_r981__P2_after_collapsing.jpg width = 200px) ![Planet 3](2016-12-07_016_starter_r2797_g3d_r981__P3_after_collapsing.jpg width = 200px) 
+    
+![Planet 4](teaser2.png width = 200px) ![Planet 5](2016-12-07_029_starter_r2803_g3d_r981__P6_after_collapsing.jpg width = 200px) ![Planet 6](2016-12-07_054_starter_r2825_g3d_r981__barbie_ice_planet_edge_collapsed.jpg width = 200px) 
+    
+![Planet 7](2016-12-07_059_starter_r2827_g3d_r981__Danger_Zone.jpg width = 200px) ![Planet 8](lavaPlanet_planet.png width = 200px) ![Planet 9](johnTest_planet.png width = 200px)
+
+
+Evocative Results
+=====================================================================================
+
+![Swallow's flight](evocative.jpg width = 550px) 
+
+![Planetside Image](johnWork_closeUp.jpg)
+
+![Nicely Shaded Mountain](mountain_closeUp.jpg)
+
+![Dragon's flight](2016-12-07_DragonPlanet.jpg)
+
+![Danger Zone video](2016-12-07_060_starter_r2849_g3d_r981__Danger_Zone_video.mp4 width = 200px) ![Danger Zone bird's perspective video](2016-12-07_062_starter_r2849_g3d_r981__Danger_Zone_bird_s_perspective_video.mp4 width = 200px)
+
+![A planet and its moon.](moon.mp4)
+
+![Still from the video](evocativeDragon.jpg)
+
+![](dragon2.mp4)
+
+Schedule
+===================================================================
+
+|To Do| Date | Person|
+|-----|------|-------|
+|Sphere Creation Draft| 13 Nov. 2016 | John and Jose|
+|Mesh Class Draft| 13 Nov. 2016 | Julia and Matheus|
+|Report Draft | 14 Nov. 2016 | John and Jose|
+|Sphere Creation MVP| 17 Nov. 2016 | John and Jose|
+|Mesh Class MVP| 17 Nov. 2016 | Julia and Matheus|
+|Report MVP | 1 Dec. 2016 | All|
+|Sphere Creation Polish| 7 Dec. 2016 | John and Jose|
+|Mesh Class Polish| 7 Dec. 2016 | Julia and Matheus|
+|Report Polish | 7 Dec. 2016 | All|
+
+Change Log
+===================================================================
+1. Created initial plans. All 11/10/16.
+2. Created a seperate mesh class. Julia and Matheus 11/12/16.
+3. Created a sperate class for our sphere generator. John and Jose 11/13/16.
+4. Sphere generator renamed to Planet. John and Jose 11/14/16
+5. Created a noise class to create images with noise. Jose 11/16/16
+6. Added GUI to APP. Julia 11/17/16
+7. Moved noise class functions to planet class. Not using NoiseGen anymore. John 11/18/16
+8. Added solar system class to control Scene file. Jose 12/4
+
+Acknowledgements and Bibliography
+============================================
+
+<b>Icosphere Information:</b>
+
+[#Larsen]: Larsen, Ken.  "Subdivision of Icosahedrons". CoreDumping, 15 April 2012. Web. 13, Nov. 2016. http://blog.coredumping.com/subdivision-of-icosahedrons/
+
+
+<b>Noise Information:</b>
+
+[#Perlin]: Perlin, Ken.  "Improving Noise". July 2002. ACM Transactions on Graphics. 17, Nov. 2016. http://mrl.nyu.edu/~perlin/paper445.pdf
+
+
+<b>Edge Collapsing:</b>
+
+[#Shertler]: [Shertler, Nico](http://stackoverflow.com/users/1210053/nico-schertler) Answer to forum "Mesh Simplification: Edge Collapse Conditions" created by [jaykumarark](http://stackoverflow.com/users/500318/jaykumarark). Stack Overflow, 20 November 2014. Web 27, Nov. 2016. http://stackoverflow.com/questions/27049163/mesh-simplification-edge-collapse-conditions
+
+[#Stanford_Graphics]: "Simplification". Stanford Graphics - CS486, Fall 2010. Web. 14, Nov. 2016. http://graphics.stanford.edu/courses/cs468-10-fall/LectureSlides/08_Simplification.pdf
+
+
+<b>Textures:</b>
+    
+    - https://secure.static.tumblr.com/b8a76b636ec84b7a2dacc8cae300b183/j7ljv7f/Udsmyk31s/tumblr_static_rainbowchecker.png
+
+    - http://cdn.designinstruct.com/files/234-colored_vintage_paper_textures/colored_vintage_paper_texture_01_aqua.jpg
+
+    - http://www.nextlnk8.com/?tp=iw&cid=5697&v=27&gnum=6&clickid=00136393p043071489064&cachecode=QcpSxqmifoqo6paTGwt7Xw&preload=pre1&ctag=298611
+
+    - http://telias.free.fr/textures_tex/fire/fire_le.jpg
+    
+    - https://t0.rbxcdn.com/88a3dfcf5bf667ca89721a7f85c1e9ee
+    
+    - http://wallpoper.com/images/00/30/58/74/desert-textures_00305874.jpg
+    
+    - https://s-media-cache-ak0.pinimg.com/564x/c5/a9/a7/c5a9a7294bf985fc9622e3bd264ad3e6.jpg
+    
+    - http://www.texturex.com/albums/Fire-Textures/fire%20texture%20coals%20red%20hot%20orange%20glowing%20dark%20wallpaper.jpg
+    
+    - http://www.gbyzea.com/data/out/11/462642-sand-wallpapers.jpg
+
+
+<b>3D Models:</b>
+
+[#Clouds]: Morgan McGuire. <I>G3D Clouds and Particle Clouds.</I> G3D
+
+[#Bird]: Brian Butler. <I>Swallow.</I> TurboSquid, 29 Jan. 2012. Web. 7 Dec. 2016. http://www.turbosquid.com/3d-models/swallow-3d-model/651912
+
+[#Dragon]: RazzMattazz. <I>Dragoncell shaded.max.</I> TurboSquid, 27 May 2007. Web. 8 Dec. 2016. http://www.turbosquid.com/3d-models/3ds-max-cell-shaded-dragon/355183
+
+
+Special thanks to Morgan Mcguire for the backgound image of our planet Scenes.
+
+<!-- Markdeep: -->
+<style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace;}</style><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
+
+<script src="../common.js"></script>

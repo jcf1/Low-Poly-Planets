@@ -1,0 +1,191 @@
+{ 
+    entities = { 
+        Aplanet = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(0, 3.37343e-39, 0 ); 
+            model = "Aplanet"; 
+            track = combine(
+                orbit(0, 10 ), 
+                Point3(0, 3.37343e-39, 0 ) ); 
+            
+        }; 
+        
+        Aplanetland = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(0, 3.37343e-39, 0 ); 
+            model = "Aplanetland"; 
+            track = entity("Aplanet"); 
+        }; 
+        
+        Aplanetmountain = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(0, 3.37343e-39, 0 ); 
+            model = "Aplanetmountain"; 
+            track = entity("Aplanet"); 
+        }; 
+        
+        camera = Camera { 
+            filmSettings = FilmSettings { 
+                antialiasingEnabled = true; 
+                antialiasingFilterRadius = 0; 
+                antialiasingHighQuality = true; 
+                bloomRadiusFraction = 0.009; 
+                bloomStrength = 0.2; 
+                debugZoom = 1; 
+                gamma = 2.2; 
+                sensitivity = 1; 
+                toneCurve = "CELLULOID"; 
+                vignetteBottomStrength = 0.05; 
+                vignetteSizeFraction = 0.17; 
+                vignetteTopStrength = 0.5; 
+            }; 
+            
+            frame = CFrame::fromXYZYPRDegrees(0.90151, 1.8599, 63.627, -0.39264, -1.1459 ); 
+            projection = Projection { 
+                farPlaneZ = -inf; 
+                fovDegrees = 50; 
+                fovDirection = "VERTICAL"; 
+                nearPlaneZ = -0.1; 
+            }; 
+            
+        }; 
+        
+        gradient = VisibleEntity { 
+            canChange = false; 
+            castsShadows = false; 
+            frame = CFrame::fromXYZYPRDegrees(-4, 0, -50 ); 
+            model = "boardModel"; 
+        }; 
+        
+        skybox = Skybox { 
+            texture = "cubemap/hipshot_m9_sky/16_*.png"; 
+        }; 
+        
+        sun = Light { 
+            attenuation = Vector3(0, 0, 1 ); 
+            bulbPower = Color3(10000, 10000, 0 ); 
+            castsShadows = false; 
+            shadowMapSize = Vector2int16(2048, 2048 ); 
+            spotHalfAngleDegrees = 8; 
+            spotSquare = true; 
+            track = lookAt(
+                Point3(0, -50, 250 ), 
+                Point3(0, 0, 0 ) ); 
+            
+            type = "SPOT"; 
+        }; 
+        
+    }; 
+    
+    lightingEnvironment = LightingEnvironment { 
+        ambientOcclusionSettings = AmbientOcclusionSettings { 
+            bias = 0.12; 
+            blurRadius = 4; 
+            blurStepSize = 2; 
+            depthPeelSeparationHint = 0.2; 
+            edgeSharpness = 1; 
+            enabled = false; 
+            intensity = 3; 
+            monotonicallyDecreasingBilateralWeights = false; 
+            numSamples = 19; 
+            radius = 2; 
+            temporalFilterSettings = TemporalFilter::Settings { 
+                falloffEndDistance = 0.07; 
+                falloffStartDistance = 0.05; 
+                hysteresis = 0.9; 
+            }; 
+            
+            temporallyVarySamples = true; 
+            useDepthPeelBuffer = true; 
+            useNormalBuffer = true; 
+            useNormalsInBlur = true; 
+        }; 
+        
+        environmentMap = Texture::Specification { 
+            encoding = Texture::Encoding { 
+                readMultiplyFirst = 1.9; 
+            }; 
+            
+            filename = "cubemap/majestic/majestic512_*.jpg"; 
+        }; 
+        
+    }; 
+    
+    models = { 
+        Aplanet = ArticulatedModel::Specification { 
+            filename = "edgecollapse/ecWater1.obj"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        glossy = Color4(0.0972222, 0.0972222, 0.0972222, 0.875 ); 
+                        lambertian = Color3(1.75162e-43, 1, 1 ); 
+                    } ); 
+                transformGeometry(all(), Matrix4::scale(0.55254, 0.55254, 0.55254 ) ) }; 
+            
+        }; 
+        
+        Aplanetland = ArticulatedModel::Specification { 
+            filename = "edgecollapse/ecLand1.obj"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        glossy = Color4(0.111111, 0.111111, 0.111111, 0.638889 ); 
+                        lambertian = Texture::Specification { 
+                            encoding = Texture::Encoding { 
+                                readMultiplyFirst = Color3(0, 1, 0.111111 ); 
+                            }; 
+                            
+                            filename = "blue.jpg"; 
+                        }; 
+                        
+                    } ); 
+                transformGeometry(all(), Matrix4::scale(0.55254, 0.55254, 0.55254 ) ) }; 
+            
+        }; 
+        
+        Aplanetmountain = ArticulatedModel::Specification { 
+            filename = "edgecollapse/ecMountain1.obj"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        glossy = Color4(0.402778, 0.402778, 0.402778, 0.458333 ); 
+                        lambertian = Texture::Specification { 
+                            encoding = Texture::Encoding { 
+                                readMultiplyFirst = Color3(1, 1, 1 ); 
+                            }; 
+                            
+                            filename = "flame.jpg"; 
+                        }; 
+                        
+                    } ); 
+                transformGeometry(all(), Matrix4::scale(0.55254, 0.55254, 0.55254 ) ) }; 
+            
+        }; 
+        
+        boardModel = ArticulatedModel::Specification { 
+            filename = "ifs/square.ifs"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        emissive = Texture::Specification { 
+                            encoding = Texture::Encoding { 
+                                readMultiplyFirst = Color4(
+                                    Color3(0.5 ), 
+                                    1 ); 
+                                
+                            }; 
+                            
+                            filename = "background.png"; 
+                        }; 
+                        
+                        lambertian = Color4(
+                            Color3(0 ), 
+                            1 ); 
+                        
+                    } ) }; 
+            
+            scale = 200; 
+        }; 
+        
+        tree = ArticulatedModel::Specification { 
+            filename = "model/lowpolytree.obj"; 
+            scale = 0.27627; 
+        }; 
+        
+    }; 
+    
+    name = "EC1"; 
+} 

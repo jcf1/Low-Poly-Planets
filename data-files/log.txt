@@ -1,0 +1,1308 @@
+Application Log
+Start: Mon Dec 12 14:51:44 2016
+
+WARNING: AudioDevice is not enabled. Set G3DSpecification::audio = true before invoking initGLG3D() to enable audio.
+Initializing System::findDataFile took 0.004756s
+
+Entering GApp::GApp()
+cwd = C:\Users\cs371\7-final\data-files
+System::setAppDataDir("C:\Users\cs371\7-final\data-files")
+Initializing System::findDataFile took 0.000256s
+Setting video mode
+wglSwapIntervalEXT(1);
+Setting initial rendering state.
+Done setting initial state.
+104 ImageFormats:
+              Format  Readable    Writeable
+                  L8  Yes         Yes
+                 L16  Yes         Yes
+                L16F  Yes         Yes
+                L32F  Yes         Yes
+                  A8  Yes         Yes
+                 A16  Yes         Yes
+                A16F  Yes         Yes
+                A32F  Yes         Yes
+                 LA4  Yes         Yes
+                 LA8  Yes         Yes
+                LA16  Yes         Yes
+               LA16F  Yes         Yes
+               LA32F  Yes         Yes
+                RGB5  Yes         Yes
+              RGB5A1  Yes         Yes
+                RGB8  Yes         Yes
+               RGB10  Yes         Yes
+             RGB10A2  Yes         Yes
+               RGB16  Yes         Yes
+              RGB16F  Yes         Yes
+              RGB32F  Yes         Yes
+          R11G11B10F  Yes         Yes
+             RGB9E5F  Yes         No 
+               RGB8I  Yes         Yes
+              RGB8UI  Yes         Yes
+              RGBA8I  Yes         Yes
+             RGBA8UI  Yes         Yes
+          RGB8_SNORM  Yes         Yes
+         RGBA8_SNORM  Yes         Yes
+         RGB16_SNORM  Yes         Yes
+        RGBA16_SNORM  Yes         Yes
+                BGR8  Yes         Yes
+               BGRA8  Yes         Yes
+                  R8  Yes         Yes
+                 R8I  Yes         Yes
+                R8UI  Yes         Yes
+            R8_SNORM  Yes         Yes
+                 R16  Yes         Yes
+                R16I  Yes         Yes
+               R16UI  Yes         Yes
+           R16_SNORM  Yes         Yes
+                R16F  Yes         Yes
+                R32I  Yes         Yes
+               R32UI  Yes         Yes
+                 RG8  Yes         Yes
+                RG8I  Yes         Yes
+               RG8UI  Yes         Yes
+           RG8_SNORM  Yes         Yes
+                RG16  Yes         Yes
+               RG16I  Yes         Yes
+              RG16UI  Yes         Yes
+          RG16_SNORM  Yes         Yes
+               RG16F  Yes         Yes
+               RG32I  Yes         Yes
+              RG32UI  Yes         Yes
+                R32F  Yes         Yes
+               RG32F  Yes         Yes
+               RGBA8  Yes         Yes
+              RGBA16  Yes         Yes
+             RGBA16F  Yes         Yes
+             RGBA32F  Yes         Yes
+             RGBA16I  Yes         Yes
+            RGBA16UI  Yes         Yes
+              RGB32I  Yes         Yes
+             RGB32UI  Yes         Yes
+             RGBA32I  Yes         Yes
+            RGBA32UI  Yes         Yes
+               RGBA4  Yes         Yes
+               RGBA2  Yes         Yes
+       YUV420_PLANAR  No          No 
+              YUV422  No          No 
+              YUV444  No          No 
+            RGB_DXT1  Yes         No 
+           RGBA_DXT1  Yes         No 
+           RGBA_DXT3  Yes         No 
+           RGBA_DXT5  Yes         No 
+               SRGB8  Yes         Yes
+              SRGBA8  Yes         Yes
+                 SL8  Yes         Yes
+                SLA8  Yes         Yes
+           SRGB_DXT1  Yes         No 
+          SRGBA_DXT1  Yes         No 
+          SRGBA_DXT3  Yes         No 
+          SRGBA_DXT5  Yes         No 
+             DEPTH16  Yes         No 
+             DEPTH24  Yes         No 
+             DEPTH32  Yes         No 
+            DEPTH32F  Yes         No 
+            STENCIL1  No          No 
+            STENCIL4  No          No 
+            STENCIL8  Yes         No 
+           STENCIL16  No          No 
+    DEPTH24_STENCIL8  Yes         No 
+
+Capability    Minimum   Desired   Received  Ok?
+-------------------------------------------------
+* RENDER DEVICE 
+Depth         16 bits   24 bits   24 bits   ok
+Stencil        8 bits    8 bits    8 bits   ok
+Alpha                              8 bits   ok
+Red                                8 bits   ok
+Green                              8 bits   ok
+Blue                               8 bits   ok
+FSAA                       1     1    ok
+Width                 1280 pixels           ok
+Height                 720 pixels           ok
+Mode                   Windowed             ok
+
+This driver does support G3D 10:
+GLSL version 4.10                   yes - GLSL version on this driver is 4.50
+GPU Supports OpenGL 4.1 or later    yes - OpenGL version on this driver is 4.5
+            GL_ARB_sample_shading   yes - Optional
+
+
+Done initializing RenderDevice.
+Network StartupStarting WinSock networking.
+System = { 
+    App { 
+        Name = "C:\\Users\\cs371\\7-final\\x64\\Release\\starter.exe"
+        cwd = "C:\\Users\\cs371\\7-final\\data-files"
+    } 
+    
+    OS { 
+        Name = "Windows 6.2 build 9200 Platform 2 "
+    } 
+    
+    CPU { 
+        Vendor = "GenuineIntel"
+        Architecture = "4 - x64 Intel/AMD cores"
+        hasCPUID = Yes 
+        hasMMX = Yes 
+        hasSSE = Yes 
+        hasSSE2 = Yes 
+        hasSSE3 = Yes 
+        has3DNow = No 
+        hasRDTSC = Yes 
+        numCores = 4 
+    } 
+    
+    G3D { 
+        Link version = 100100 
+        Compile version = "G3D Innovation Engine 10.01, 64-bit"
+        G3DSpecification::deployMode = No 
+        G3D10DATA = "c:\\g3d\\G3D10\\data-files;c:\\g3d\\data10\\common;c:\\g3d\\data10\\game;c:\\g3d\\data10\\research;c:\\g3d\\G3D10\\build\\data"
+    } 
+    
+    GPU = { 
+        Chipset = "GeForce GTX 950/PCIe/SSE2;"
+        Vendor = "NVIDIA Corporation;"
+        Driver = "Unknown (Can't find driver);"
+        OpenGL version = "4.5.0 NVIDIA 372.70;"
+        Textures = 32 ;
+        Texture coordinates = 8 ;
+        Texture units = 4 ;
+        GL_MAX_TEXTURE_SIZE = 16384 ;
+        GL_MAX_CUBE_MAP_TEXTURE_SIZE = 16384 ;
+        GL_MAX_COLOR_ATTACHMENTS = 8 ;
+    } ; 
+    
+    Window = { 
+        API = "GLFW;"
+        Version = "3.1.0 Win32 WGL VisualC LoadLibrary(winmm);"
+        
+        In focus = true; 
+        Centered = true; 
+        Framed = true; 
+        Visible = true; 
+        Resizable = true; 
+        Full screen = false; 
+        Top = 0 ;
+        Left = 0 ;
+        Width = 1280 ;
+        Height = 720 ;
+        Refresh rate = 85 ;
+        
+        Alpha bits = 0 ;
+        Red bits = 8 ;
+        Green bits = 8 ;
+        Blue bits = 8 ;
+        Depth bits = 24 ;
+        Stencil bits = 8 ;
+        Asynchronous = false; 
+        Stereo = false; 
+        FSAA samples = 1 ;
+        GL extensions = [ GL_ARB_gl_spirv,
+             GL_NV_vertex_buffer_unified_memory,
+             GL_NV_conditional_render,
+             GL_ARB_shader_texture_image_samples,
+             GL_ARB_compute_shader,
+             GL_EXT_separate_shader_objects,
+             GL_NV_shader_atomic_counters,
+             GL_ARB_half_float_pixel,
+             GL_ARB_texture_buffer_object,
+             GL_ARB_framebuffer_object,
+             GL_EXT_gpu_program_parameters,
+             GL_ARB_texture_buffer_range,
+             GL_EXT_texture_compression_rgtc,
+             GL_ARB_depth_buffer_float,
+             GL_ARB_sparse_buffer,
+             GL_ARB_shader_objects,
+             GL_NV_framebuffer_multisample_coverage,
+             GL_EXT_abgr,
+             GL_ARB_shader_atomic_counters,
+             GL_ARB_transform_feedback3,
+             GL_ARB_vertex_shader,
+             GL_ARB_base_instance,
+             GL_ARB_point_parameters,
+             GL_S3_s3tc,
+             GL_ARB_map_buffer_alignment,
+             GL_NV_vertex_program3,
+             GL_EXT_texture_filter_minmax,
+             GL_ARB_sync,
+             GL_NV_register_combiners,
+             GL_EXT_packed_float,
+             GL_ARB_texture_mirror_clamp_to_edge,
+             GL_ARB_pixel_buffer_object,
+             GL_ARB_compressed_texture_pixel_storage,
+             GL_ARB_texture_env_crossbar,
+             GL_ARB_internalformat_query2,
+             GL_NV_vertex_program2,
+             GL_KHR_robustness,
+             GL_NV_explicit_multisample,
+             GL_ARB_vertex_buffer_object,
+             GL_ARB_vertex_attrib_64bit,
+             GL_ARB_blend_func_extended,
+             GL_AMD_vertex_shader_viewport_index,
+             GL_EXT_bindable_uniform,
+             GL_NV_internalformat_sample_query,
+             GL_KHR_robust_buffer_access_behavior,
+             GL_ARB_texture_query_levels,
+             GL_EXT_texture_storage,
+             GL_ARB_texture_compression_rgtc,
+             GL_NV_multisample_coverage,
+             GL_SGIX_depth_texture,
+             GL_EXT_blend_color,
+             GL_ARB_copy_buffer,
+             GL_ARB_vertex_array_bgra,
+             GL_ARB_fragment_program_shadow,
+             GL_ARB_draw_buffers_blend,
+             GL_ARB_multi_draw_indirect,
+             GL_IBM_texture_mirrored_repeat,
+             GL_NV_viewport_swizzle,
+             GL_EXT_texture_swizzle,
+             GL_NV_sample_mask_override_coverage,
+             GL_EXT_stencil_wrap,
+             GL_ARB_internalformat_query,
+             GL_ATI_draw_buffers,
+             GL_NV_gpu_program4_1,
+             GL_NV_copy_depth_to_color,
+             GL_ARB_texture_cube_map_array,
+             GL_ARB_instanced_arrays,
+             GL_ARB_texture_swizzle,
+             GL_ARB_texture_barrier,
+             GL_ARB_map_buffer_range,
+             GL_EXT_framebuffer_multisample_blit_scaled,
+             GL_ARB_draw_buffers,
+             GL_EXT_texture_edge_clamp,
+             GL_ARB_texture_compression_bptc,
+             GL_EXT_texture_cube_map,
+             GL_EXT_draw_instanced,
+             GL_AMD_multi_draw_indirect,
+             GL_EXT_shader_image_load_store,
+             GL_NV_shader_atomic_fp16_vector,
+             GL_NV_depth_clamp,
+             GL_EXT_bgra,
+             GL_ARB_texture_non_power_of_two,
+             GL_EXT_separate_specular_color,
+             GL_EXT_texture_integer,
+             GL_NV_path_rendering_shared_edge,
+             GL_NV_packed_depth_stencil,
+             GL_ARB_explicit_uniform_location,
+             GL_EXT_framebuffer_object,
+             GL_NV_shader_storage_buffer_object,
+             GL_AMD_vertex_shader_layer,
+             GL_EXT_post_depth_coverage,
+             GL_EXT_sparse_texture2,
+             GL_ARB_color_buffer_float,
+             GL_EXT_texture_sRGB,
+             GL_ARB_uniform_buffer_object,
+             GL_ARB_sample_locations,
+             GL_NV_multisample_filter_hint,
+             GL_ARB_shader_draw_parameters,
+             GL_ARB_texture_mirrored_repeat,
+             GL_EXT_depth_bounds_test,
+             GL_EXT_fog_coord,
+             GL_NV_gpu_program4,
+             GL_NVX_multigpu_info,
+             GL_NV_parameter_buffer_object2,
+             GL_ARB_multi_bind,
+             GL_ARB_vertex_attrib_binding,
+             GL_NV_texture_shader,
+             GL_ARB_post_depth_coverage,
+             GL_ARB_gpu_shader5,
+             GL_SGIX_shadow,
+             GL_ARB_framebuffer_sRGB,
+             GL_NV_texgen_reflection,
+             GL_EXT_timer_query,
+             GL_EXT_gpu_shader4,
+             GL_NV_sample_locations,
+             GL_ARB_texture_gather,
+             GL_ARB_clip_control,
+             GL_EXT_blend_func_separate,
+             GL_ARB_texture_stencil8,
+             GL_ARB_transform_feedback_instanced,
+             GL_ARB_texture_buffer_object_rgb32,
+             GL_NV_gpu_program5_mem_extended,
+             GL_EXT_vertex_array_bgra,
+             GL_ARB_texture_rg,
+             GL_ARB_texture_compression,
+             GL_EXT_import_sync_object,
+             GL_NV_compute_program5,
+             GL_EXT_texture_lod,
+             GL_ARB_gpu_shader_fp64,
+             GL_NV_occlusion_query,
+             GL_NV_texture_compression_vtc,
+             GL_ARB_seamless_cubemap_per_texture,
+             GL_ARB_draw_instanced,
+             GL_NV_blend_equation_advanced_coherent,
+             GL_ARB_debug_output,
+             GL_ARB_vertex_type_2_10_10_10_rev,
+             GL_EXT_draw_range_elements,
+             GL_EXT_texture_env_dot3,
+             GL_ARB_imaging,
+             GL_NV_blend_equation_advanced,
+             GL_KHR_blend_equation_advanced,
+             GL_ARB_stencil_texturing,
+             GL_NV_point_sprite,
+             GL_EXT_compiled_vertex_array,
+             GL_EXT_texture_env_add,
+             GL_EXT_shadow_funcs,
+             GL_ARB_query_buffer_object,
+             GL_ARB_program_interface_query,
+             GL_ARB_texture_rectangle,
+             GL_EXT_texture_lod_bias,
+             GL_IBM_rasterpos_clip,
+             GL_ARB_gpu_shader_int64,
+             GL_KHR_debug,
+             GL_NV_fill_rectangle,
+             GL_NV_depth_buffer_float,
+             GL_EXT_stencil_two_side,
+             GL_EXT_blend_minmax,
+             GL_NV_fragment_program2,
+             GL_ARB_vertex_program,
+             GL_EXT_texture_mirror_clamp,
+             GL_NV_conservative_raster,
+             GL_ARB_geometry_shader4,
+             GL_ARB_texture_filter_minmax,
+             GL_ARB_shader_atomic_counter_ops,
+             GL_ARB_multisample,
+             GL_NVX_conditional_render,
+             GL_NV_texture_env_combine4,
+             GL_NV_shader_buffer_load,
+             GL_ARB_shading_language_include,
+             GL_ARB_shader_subroutine,
+             GL_ARB_occlusion_query,
+             GL_ARB_texture_rgb10_a2ui,
+             GL_ARB_ES3_compatibility,
+             GL_ARB_pipeline_statistics_query,
+             GL_ARB_arrays_of_arrays,
+             GL_NV_vertex_program2_option,
+             GL_NV_bindless_multi_draw_indirect_count,
+             GL_NV_geometry_shader_passthrough,
+             GL_ARB_explicit_attrib_location,
+             GL_EXT_texture_array,
+             GL_NV_copy_image,
+             GL_ARB_texture_env_dot3,
+             GL_NV_light_max_exponent,
+             GL_ARB_point_sprite,
+             GL_ARB_multitexture,
+             GL_KTX_buffer_region,
+             GL_ARB_shader_viewport_layer_array,
+             GL_NV_pixel_data_range,
+             GL_EXT_shader_integer_mix,
+             GL_NV_fragment_program_option,
+             GL_NV_fog_distance,
+             GL_ARB_shading_language_packing,
+             GL_ARB_texture_env_combine,
+             GL_EXT_texture_shared_exponent,
+             GL_ARB_shader_image_size,
+             GL_EXT_texture_compression_s3tc,
+             GL_ARB_derivative_control,
+             GL_ARB_sparse_texture,
+             GL_EXT_Cg_shader,
+             GL_EXT_texture_filter_anisotropic,
+             GL_NVX_gpu_memory_info,
+             GL_ARB_sparse_texture2,
+             GL_ARB_tessellation_shader,
+             GL_NV_vertex_program,
+             GL_SGIS_texture_lod,
+             GL_ARB_direct_state_access,
+             GL_ARB_shading_language_420pack,
+             GL_NV_fence,
+             GL_ARB_ES2_compatibility,
+             GL_ARB_shader_precision,
+             GL_ARB_clear_buffer_object,
+             GL_ARB_copy_image,
+             GL_NV_primitive_restart,
+             GL_KHR_blend_equation_advanced_coherent,
+             GL_ARB_vertex_type_10f_11f_11f_rev,
+             GL_ARB_shader_image_load_store,
+             GL_EXTX_framebuffer_mixed_formats,
+             GL_NV_gpu_program5,
+             GL_ARB_fragment_program,
+             GL_NV_gpu_program_fp64,
+             GL_EXT_texture_buffer_object,
+             GL_ARB_transform_feedback2,
+             GL_ARB_provoking_vertex,
+             GL_ARB_window_pos,
+             GL_ARB_depth_clamp,
+             GL_NV_command_list,
+             GL_EXT_packed_depth_stencil,
+             GL_SUN_slice_accum,
+             GL_ARB_shader_texture_lod,
+             GL_ARB_ES3_1_compatibility,
+             GL_ARB_compatibility,
+             GL_ARB_occlusion_query2,
+             GL_EXT_texture_compression_dxt1,
+             GL_EXT_draw_buffers2,
+             GL_ARB_clear_texture,
+             GL_ARB_compute_variable_group_size,
+             GL_EXT_blend_subtract,
+             GL_ARB_fragment_shader_interlock,
+             GL_ARB_seamless_cube_map,
+             GL_EXT_transform_feedback2,
+             GL_ARB_depth_texture,
+             GL_NV_texture_shader2,
+             GL_ARB_enhanced_layouts,
+             GL_KHR_context_flush_control,
+             GL_ARB_transpose_matrix,
+             GL_EXT_framebuffer_multisample,
+             GL_EXT_multi_draw_arrays,
+             GL_SGIS_generate_mipmap,
+             GL_EXT_rescale_normal,
+             GL_NV_shader_atomic_int64,
+             GL_EXT_texture3D,
+             GL_NV_vertex_attrib_integer_64bit,
+             GL_NV_vertex_program1_1,
+             GL_NV_register_combiners2,
+             GL_ARB_sparse_texture_clamp,
+             GL_EXT_vertex_array,
+             GL_ARB_conservative_depth,
+             GL_EXT_pixel_buffer_object,
+             GL_NV_texture_barrier,
+             GL_NV_float_buffer,
+             GL_ARB_shader_clock,
+             GL_ARB_texture_storage,
+             GL_EXT_polygon_offset_clamp,
+             GL_NV_bindless_texture,
+             GL_NV_ES1_1_compatibility,
+             GL_AMD_seamless_cubemap_per_texture,
+             GL_ARB_fragment_coord_conventions,
+             GL_ARB_viewport_array,
+             GL_ARB_draw_elements_base_vertex,
+             GL_NV_ES3_1_compatibility,
+             GL_EXT_geometry_shader4,
+             GL_ARB_robustness,
+             GL_NVX_nvenc_interop,
+             GL_NV_blend_square,
+             GL_ARB_conditional_render_inverted,
+             GL_EXT_framebuffer_blit,
+             GL_ARB_invalidate_subdata,
+             GL_ATI_texture_float,
+             GL_EXT_texture_compression_latc,
+             GL_EXT_provoking_vertex,
+             GL_ARB_fragment_shader,
+             GL_EXT_blend_equation_separate,
+             GL_ARB_parallel_shader_compile,
+             GL_EXT_shader_image_load_formatted,
+             GL_EXT_vertex_attrib_64bit,
+             GL_NV_draw_vulkan_image,
+             GL_ARB_get_program_binary,
+             GL_ARB_vertex_array_object,
+             GL_ARB_texture_float,
+             GL_ARB_texture_env_add,
+             GL_ARB_sample_shading,
+             GL_ARB_shading_language_100,
+             GL_ARB_shader_ballot,
+             GL_EXT_direct_state_access,
+             GL_EXT_point_parameters,
+             GL_ARB_fragment_layer_viewport,
+             GL_ARB_timer_query,
+             GL_NV_fragment_coverage_to_color,
+             GL_NV_bindless_multi_draw_indirect,
+             GL_NV_path_rendering,
+             GL_NV_shader_thread_shuffle,
+             WGL_EXT_swap_control,
+             GL_EXT_raster_multisample,
+             GL_NV_transform_feedback,
+             GL_NV_shader_atomic_float,
+             GL_ARB_shader_storage_buffer_object,
+             GL_NV_half_float,
+             GL_ARB_framebuffer_no_attachments,
+             GL_EXT_window_rectangles,
+             GL_ARB_texture_cube_map,
+             GL_ARB_get_texture_sub_image,
+             GL_NV_vertex_array_range,
+             GL_ARB_indirect_parameters,
+             GL_ARB_texture_multisample,
+             GL_ARB_half_float_vertex,
+             GL_NV_gpu_shader5,
+             GL_NV_texture_rectangle,
+             GL_NV_alpha_to_coverage_dither_control,
+             GL_ARB_texture_query_lod,
+             GL_NV_geometry_shader4,
+             GL_EXT_texture_object,
+             GL_KHR_no_error,
+             GL_ARB_texture_storage_multisample,
+             GL_ARB_texture_view,
+             GL_EXT_secondary_color,
+             GL_NV_draw_texture,
+             GL_ARB_robust_buffer_access_behavior,
+             GL_EXT_framebuffer_sRGB,
+             GL_ARB_separate_shader_objects,
+             GL_ARB_cull_distance,
+             GL_ARB_draw_indirect,
+             GL_ARB_shader_bit_encoding,
+             GL_ARB_sampler_objects,
+             GL_EXT_texture_env_combine,
+             GL_ARB_ES3_2_compatibility,
+             GL_ATI_texture_mirror_once,
+             GL_ARB_transform_feedback_overflow_query,
+             GL_NV_parameter_buffer_object,
+             GL_ARB_shader_group_vote,
+             GL_ARB_buffer_storage,
+             GL_WIN_swap_hint,
+             GL_EXT_texture_sRGB_decode,
+             GL_NV_framebuffer_mixed_samples,
+             GL_NV_texture_shader3,
+             GL_EXT_packed_pixels,
+             GL_NV_shader_thread_group,
+             GL_ARB_shadow,
+             GL_NV_transform_feedback2,
+             GL_NV_fragment_program,
+             GL_NV_texture_multisample,
+             GL_NV_fragment_shader_interlock,
+             GL_NV_viewport_array2,
+             GL_ARB_texture_border_clamp,
+             GL_NV_conservative_raster_dilate,
+             GL_NV_vertex_array_range2,
+             GL_ARB_bindless_texture,
+             GL_NV_uniform_buffer_unified_memory ]; 
+    }; 
+    
+    Network = { 
+        Adapter0 ={ 
+            hostname = "WIN-5BJJHQOB4HK;"
+            name = ";"
+            ip = "137.165. 28.205"; 
+            subnet = "  0.  0.255.255"; 
+            broadcast = "255.255.255.255"; 
+            mac = "00:00:00:00:00:00"; 
+        }; 
+    }; 
+    
+    
+    }; 
+
+Entering GApp::loadFont("console-small.fnt")
+Found "console-small.fnt" at "c:\g3d\G3D10\data-files/font/console-small.fnt"
+Done GApp::loadFont(...)
+Done GApp::GApp()
+
+Found scenes:
+  "EC1" (./EdgeCollapsed1.Scene.Any)
+  "EC2" (./EdgeCollapsed2.Scene.Any)
+  "EC3" (./EdgeCollapsed3.Scene.Any)
+  "EC4" (./EdgeCollapsed4.Scene.Any)
+  "Planet" (./Planet.Scene.Any)
+  "PlanetandCloud" (./PlanetWithCloud.Scene.Any)
+  "Planet2" (./scene/BadPlanet.Scene.Any)
+  "Bunny" (./scene/Bunny.Scene.Any)
+  "Ground" (./scene/ground.Scene.Any)
+  "Heightfield" (./scene/Heightfield.Scene.Any)
+  "Little Heightfield" (./scene/LittleHeightfield.Scene.Any)
+  "Pentagon" (./scene/Pentagon.Scene.Any)
+  "Solar System" (./Solar System.Scene.Any)
+  "SolarSystem" (./SolarSystem.Scene.Any)
+  "G3D Cornell Box (Empty CO)" (c:\g3d\data10\common/scene/CornellBox-empty-cyan-orange.Scene.Any)
+  "G3D Cornell Box (Glossy)" (c:\g3d\data10\common/scene/CornellBox-glossy.Scene.Any)
+  "G3D Cornell Box (Mirror)" (c:\g3d\data10\common/scene/CornellBox-mirror.Scene.Any)
+  "G3D Cornell Box (Spheres)" (c:\g3d\data10\common/scene/CornellBox-spheres.Scene.Any)
+  "G3D Cornell Box (Water)" (c:\g3d\data10\common/scene/CornellBox-water.Scene.Any)
+  "G3D Cornell Box" (c:\g3d\data10\common/scene/CornellBox.Scene.Any)
+  "G3D Feature Test" (c:\g3d\data10\common/scene/featureTest.Scene.Any)
+  "G3D Holodeck" (c:\g3d\data10\common/scene/holodeck.Scene.Any)
+  "G3D Sponza" (c:\g3d\data10\common/scene/sponza.Scene.Any)
+  "G3D Sponza (White)" (c:\g3d\data10\common/scene/sponzaWhite.Scene.Any)
+  "G3D Whiteroom" (c:\g3d\data10\common/scene/whiteroom.Scene.Any)
+  "G3D atcs" (c:\g3d\data10\game/scene/atcs.Scene.Any)
+  "G3D Beta Squadron" (c:\g3d\data10\game/scene/beta.Scene.Any)
+  "G3D Cloud" (c:\g3d\data10\research/scene/cloud.Scene.Any)
+  "G3D Cubemap" (c:\g3d\data10\research/scene/cubemap.Scene.Any)
+  "G3D Heightfield" (c:\g3d\data10\research/scene/heightfield.Scene.Any)
+  "G3D Minecraft" (c:\g3d\data10\research/scene/minecraft.Scene.Any)
+  "G3D Motion" (c:\g3d\data10\research/scene/motion.Scene.Any)
+  "G3D Opening Door" (c:\g3d\data10\research/scene/openingDoor.Scene.Any)
+  "G3D Particle Test" (c:\g3d\data10\research/scene/particleTest.Scene.Any)
+  "G3D San Miguel" (c:\g3d\data10\research/scene/sanMiguel.Scene.Any)
+  "G3D Seymour" (c:\g3d\data10\research/scene/seymour.Scene.Any)
+  "G3D Sibenik" (c:\g3d\data10\research/scene/sibenik.Scene.Any)
+  "G3D Sponza (Foggy)" (c:\g3d\data10\research/scene/sponzaFoggy.Scene.Any)
+  "G3D Sponza (Statue)" (c:\g3d\data10\research/scene/sponzaStatue.Scene.Any)
+  "G3D Sports Car" (c:\g3d\data10\research/scene/sportsCar.Scene.Any)
+  "G3D Sports Car (White)" (c:\g3d\data10\research/scene/sportsCarWhite.Scene.Any)
+  "G3D Transparency Test" (c:\g3d\data10\research/scene/transparencyTest.Scene.Any)
+  "G3D Triangle" (c:\g3d\data10\research/scene/triangle.Scene.Any)
+
+1‹
+ÀÌ½
+
+
+C
+C
+C
+
+sP;
+    *Ë¸} 
+
+
+C
+C
+Vertex info
+-----------
+1(42) : warning C7050: "tex0" might be used before being initialized
+
+Vertex info
+-----------
+1(42) : warning C7050: "tex0" might be used before being initialized
+
+
+C
+
+
+
+C
+
+1‹
+
+?d
+
+
+
+
+en-US
+
+
+C
+Could not find 'ocean.obj'.
+
+  cwd                    = 'C:\Users\cs371\7-final\data-files'
+  G3D10DATA               = 'c:\g3d\G3D10\data-files;c:\g3d\data10\common;c:\g3d\data10\game;c:\g3d\data10\research;c:\g3d\G3D10\build\data'
+  GApp::Settings.dataDir = 'C:\Users\cs371\7-final\data-files'
+
+Filenames tested:
+'C:\Users\cs371\7-final\data-files/ocean.obj'
+'C:\Users\cs371\7-final\data-files/model/ocean.obj'
+'C:\Users\cs371\7-final\data-files/scene/ocean.obj'
+'C:\Users\cs371\7-final\data-files/ocean.obj'
+'C:\Users\cs371\7-final\data-files/model/ocean.obj'
+'C:\Users\cs371\7-final\data-files/scene/ocean.obj'
+'c:\g3d\G3D10\data-files/ocean.obj'
+'c:\g3d\G3D10\data-files/font/ocean.obj'
+'c:\g3d\G3D10\data-files/gui/ocean.obj'
+'c:\g3d\G3D10\data-files/shader/ocean.obj'
+'c:\g3d\G3D10\data-files/icon/ocean.obj'
+'c:\g3d\data10\common/ocean.obj'
+'c:\g3d\data10\common/font/ocean.obj'
+'c:\g3d\data10\common/model/ocean.obj'
+'c:\g3d\data10\common/cubemap/ocean.obj'
+'c:\g3d\data10\common/icon/ocean.obj'
+'c:\g3d\data10\common/material/ocean.obj'
+'c:\g3d\data10\common/image/ocean.obj'
+'c:\g3d\data10\common/ifs/ocean.obj'
+'c:\g3d\data10\common/scene/ocean.obj'
+'c:\g3d\data10\game/ocean.obj'
+'c:\g3d\data10\game/model/ocean.obj'
+'c:\g3d\data10\game/cubemap/ocean.obj'
+'c:\g3d\data10\game/md2/ocean.obj'
+'c:\g3d\data10\game/md3/ocean.obj'
+'c:\g3d\data10\game/music/ocean.obj'
+'c:\g3d\data10\game/sound/ocean.obj'
+'c:\g3d\data10\game/scene/ocean.obj'
+'c:\g3d\data10\research/ocean.obj'
+'c:\g3d\data10\research/model/ocean.obj'
+'c:\g3d\data10\research/cubemap/ocean.obj'
+'c:\g3d\data10\research/material/ocean.obj'
+'c:\g3d\data10\research/image/ocean.obj'
+'c:\g3d\data10\research/scene/ocean.obj'
+'c:\g3d\G3D10\build\data/ocean.obj'
+'c:\g3d\G3D10\build\data/font/ocean.obj'
+'c:\g3d\G3D10\build\data/gui/ocean.obj'
+'c:\g3d\G3D10\build\data/shader/ocean.obj'
+'c:\g3d\G3D10\build\data/model/ocean.obj'
+'c:\g3d\G3D10\build\data/cubemap/ocean.obj'
+'c:\g3d\G3D10\build\data/icon/ocean.obj'
+'c:\g3d\G3D10\build\data/material/ocean.obj'
+'c:\g3d\G3D10\build\data/image/ocean.obj'
+'c:\g3d\G3D10\build\data/md2/ocean.obj'
+'c:\g3d\G3D10\build\data/md3/ocean.obj'
+'c:\g3d\G3D10\build\data/ifs/ocean.obj'
+'c:\g3d\G3D10\build\data/music/ocean.obj'
+'c:\g3d\G3D10\build\data/sound/ocean.obj'
+'c:\g3d\G3D10\build\data/scene/ocean.obj'
+
+C:\Users\cs371\7-final\data-files/./scene/BadPlanet.Scene.Any:-1(-1): Could not find 'ocean.obj'.
+
+  cwd                    = 'C:\Users\cs371\7-final\data-files'
+  G3D10DATA               = 'c:\g3d\G3D10\data-files;c:\g3d\data10\common;c:\g3d\data10\game;c:\g3d\data10\research;c:\g3d\G3D10\build\data'
+  GApp::Settings.dataDir = 'C:\Users\cs371\7-final\data-files'
+
+Filenames tested:
+'C:\Users\cs371\7-final\data-files/ocean.obj'
+'C:\Users\cs371\7-final\data-files/model/ocean.obj'
+'C:\Users\cs371\7-final\data-files/scene/ocean.obj'
+'C:\Users\cs371\7-final\data-files/ocean.obj'
+'C:\Users\cs371\7-final\data-files/model/ocean.obj'
+'C:\Users\cs371\7-final\data-files/scene/ocean.obj'
+'c:\g3d\G3D10\data-files/ocean.obj'
+'c:\g3d\G3D10\data-files/font/ocean.obj'
+'c:\g3d\G3D10\data-files/gui/ocean.obj'
+'c:\g3d\G3D10\data-files/shader/ocean.obj'
+'c:\g3d\G3D10\data-files/icon/ocean.obj'
+'c:\g3d\data10\common/ocean.obj'
+'c:\g3d\data10\common/font/ocean.obj'
+'c:\g3d\data10\common/model/ocean.obj'
+'c:\g3d\data10\common/cubemap/ocean.obj'
+'c:\g3d\data10\common/icon/ocean.obj'
+'c:\g3d\data10\common/material/ocean.obj'
+'c:\g3d\data10\common/image/ocean.obj'
+'c:\g3d\data10\common/ifs/ocean.obj'
+'c:\g3d\data10\common/scene/ocean.obj'
+'c:\g3d\data10\game/ocean.obj'
+'c:\g3d\data10\game/model/ocean.obj'
+'c:\g3d\data10\game/cubemap/ocean.obj'
+'c:\g3d\data10\game/md2/ocean.obj'
+'c:\g3d\data10\game/md3/ocean.obj'
+'c:\g3d\data10\game/music/ocean.obj'
+'c:\g3d\data10\game/sound/ocean.obj'
+'c:\g3d\data10\game/scene/ocean.obj'
+'c:\g3d\data10\research/ocean.obj'
+'c:\g3d\data10\research/model/ocean.obj'
+'c:\g3d\data10\research/cubemap/ocean.obj'
+'c:\g3d\data10\research/material/ocean.obj'
+'c:\g3d\data10\research/image/ocean.obj'
+'c:\g3d\data10\research/scene/ocean.obj'
+'c:\g3d\G3D10\build\data/ocean.obj'
+'c:\g3d\G3D10\build\data/font/ocean.obj'
+'c:\g3d\G3D10\build\data/gui/ocean.obj'
+'c:\g3d\G3D10\build\data/shader/ocean.obj'
+'c:\g3d\G3D10\build\data/model/ocean.obj'
+'c:\g3d\G3D10\build\data/cubemap/ocean.obj'
+'c:\g3d\G3D10\build\data/icon/ocean.obj'
+'c:\g3d\G3D10\build\data/material/ocean.obj'
+'c:\g3d\G3D10\build\data/image/ocean.obj'
+'c:\g3d\G3D10\build\data/md2/ocean.obj'
+'c:\g3d\G3D10\build\data/md3/ocean.obj'
+'c:\g3d\G3D10\build\data/ifs/ocean.obj'
+'c:\g3d\G3D10\build\data/music/ocean.obj'
+'c:\g3d\G3D10\build\data/sound/ocean.obj'
+'c:\g3d\G3D10\build\data/scene/ocean.obj'
+
+ÓKRÄTø¸î>{P
+1‹
+C
+C
+Could not find 'ThisPlanetland.obj'.
+
+  cwd                    = 'C:\Users\cs371\7-final\data-files'
+  G3D10DATA               = 'c:\g3d\G3D10\data-files;c:\g3d\data10\common;c:\g3d\data10\game;c:\g3d\data10\research;c:\g3d\G3D10\build\data'
+  GApp::Settings.dataDir = 'C:\Users\cs371\7-final\data-files'
+
+Filenames tested:
+'C:\Users\cs371\7-final\data-files/ThisPlanetland.obj'
+'C:\Users\cs371\7-final\data-files/model/ThisPlanetland.obj'
+'C:\Users\cs371\7-final\data-files/scene/ThisPlanetland.obj'
+'C:\Users\cs371\7-final\data-files/ThisPlanetland.obj'
+'C:\Users\cs371\7-final\data-files/model/ThisPlanetland.obj'
+'C:\Users\cs371\7-final\data-files/scene/ThisPlanetland.obj'
+'c:\g3d\G3D10\data-files/ThisPlanetland.obj'
+'c:\g3d\G3D10\data-files/font/ThisPlanetland.obj'
+'c:\g3d\G3D10\data-files/gui/ThisPlanetland.obj'
+'c:\g3d\G3D10\data-files/shader/ThisPlanetland.obj'
+'c:\g3d\G3D10\data-files/icon/ThisPlanetland.obj'
+'c:\g3d\data10\common/ThisPlanetland.obj'
+'c:\g3d\data10\common/font/ThisPlanetland.obj'
+'c:\g3d\data10\common/model/ThisPlanetland.obj'
+'c:\g3d\data10\common/cubemap/ThisPlanetland.obj'
+'c:\g3d\data10\common/icon/ThisPlanetland.obj'
+'c:\g3d\data10\common/material/ThisPlanetland.obj'
+'c:\g3d\data10\common/image/ThisPlanetland.obj'
+'c:\g3d\data10\common/ifs/ThisPlanetland.obj'
+'c:\g3d\data10\common/scene/ThisPlanetland.obj'
+'c:\g3d\data10\game/ThisPlanetland.obj'
+'c:\g3d\data10\game/model/ThisPlanetland.obj'
+'c:\g3d\data10\game/cubemap/ThisPlanetland.obj'
+'c:\g3d\data10\game/md2/ThisPlanetland.obj'
+'c:\g3d\data10\game/md3/ThisPlanetland.obj'
+'c:\g3d\data10\game/music/ThisPlanetland.obj'
+'c:\g3d\data10\game/sound/ThisPlanetland.obj'
+'c:\g3d\data10\game/scene/ThisPlanetland.obj'
+'c:\g3d\data10\research/ThisPlanetland.obj'
+'c:\g3d\data10\research/model/ThisPlanetland.obj'
+'c:\g3d\data10\research/cubemap/ThisPlanetland.obj'
+'c:\g3d\data10\research/material/ThisPlanetland.obj'
+'c:\g3d\data10\research/image/ThisPlanetland.obj'
+'c:\g3d\data10\research/scene/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/font/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/gui/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/shader/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/model/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/cubemap/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/icon/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/material/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/image/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/md2/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/md3/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/ifs/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/music/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/sound/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/scene/ThisPlanetland.obj'
+
+C:\Users\cs371\7-final\data-files/./PlanetWithCloud.Scene.Any:-1(-1): Could not find 'ThisPlanetland.obj'.
+
+  cwd                    = 'C:\Users\cs371\7-final\data-files'
+  G3D10DATA               = 'c:\g3d\G3D10\data-files;c:\g3d\data10\common;c:\g3d\data10\game;c:\g3d\data10\research;c:\g3d\G3D10\build\data'
+  GApp::Settings.dataDir = 'C:\Users\cs371\7-final\data-files'
+
+Filenames tested:
+'C:\Users\cs371\7-final\data-files/ThisPlanetland.obj'
+'C:\Users\cs371\7-final\data-files/model/ThisPlanetland.obj'
+'C:\Users\cs371\7-final\data-files/scene/ThisPlanetland.obj'
+'C:\Users\cs371\7-final\data-files/ThisPlanetland.obj'
+'C:\Users\cs371\7-final\data-files/model/ThisPlanetland.obj'
+'C:\Users\cs371\7-final\data-files/scene/ThisPlanetland.obj'
+'c:\g3d\G3D10\data-files/ThisPlanetland.obj'
+'c:\g3d\G3D10\data-files/font/ThisPlanetland.obj'
+'c:\g3d\G3D10\data-files/gui/ThisPlanetland.obj'
+'c:\g3d\G3D10\data-files/shader/ThisPlanetland.obj'
+'c:\g3d\G3D10\data-files/icon/ThisPlanetland.obj'
+'c:\g3d\data10\common/ThisPlanetland.obj'
+'c:\g3d\data10\common/font/ThisPlanetland.obj'
+'c:\g3d\data10\common/model/ThisPlanetland.obj'
+'c:\g3d\data10\common/cubemap/ThisPlanetland.obj'
+'c:\g3d\data10\common/icon/ThisPlanetland.obj'
+'c:\g3d\data10\common/material/ThisPlanetland.obj'
+'c:\g3d\data10\common/image/ThisPlanetland.obj'
+'c:\g3d\data10\common/ifs/ThisPlanetland.obj'
+'c:\g3d\data10\common/scene/ThisPlanetland.obj'
+'c:\g3d\data10\game/ThisPlanetland.obj'
+'c:\g3d\data10\game/model/ThisPlanetland.obj'
+'c:\g3d\data10\game/cubemap/ThisPlanetland.obj'
+'c:\g3d\data10\game/md2/ThisPlanetland.obj'
+'c:\g3d\data10\game/md3/ThisPlanetland.obj'
+'c:\g3d\data10\game/music/ThisPlanetland.obj'
+'c:\g3d\data10\game/sound/ThisPlanetland.obj'
+'c:\g3d\data10\game/scene/ThisPlanetland.obj'
+'c:\g3d\data10\research/ThisPlanetland.obj'
+'c:\g3d\data10\research/model/ThisPlanetland.obj'
+'c:\g3d\data10\research/cubemap/ThisPlanetland.obj'
+'c:\g3d\data10\research/material/ThisPlanetland.obj'
+'c:\g3d\data10\research/image/ThisPlanetland.obj'
+'c:\g3d\data10\research/scene/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/font/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/gui/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/shader/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/model/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/cubemap/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/icon/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/material/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/image/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/md2/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/md3/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/ifs/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/music/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/sound/ThisPlanetland.obj'
+'c:\g3d\G3D10\build\data/scene/ThisPlanetland.obj'
+Could not find 'edgecollapse/ecWater1.obj'.
+
+  cwd                    = 'C:\Users\cs371\7-final\data-files'
+  G3D10DATA               = 'c:\g3d\G3D10\data-files;c:\g3d\data10\common;c:\g3d\data10\game;c:\g3d\data10\research;c:\g3d\G3D10\build\data'
+  GApp::Settings.dataDir = 'C:\Users\cs371\7-final\data-files'
+
+Filenames tested:
+'C:\Users\cs371\7-final\data-files/edgecollapse/ecWater1.obj'
+'C:\Users\cs371\7-final\data-files/model/edgecollapse/ecWater1.obj'
+'C:\Users\cs371\7-final\data-files/scene/edgecollapse/ecWater1.obj'
+'C:\Users\cs371\7-final\data-files/edgecollapse/ecWater1.obj'
+'C:\Users\cs371\7-final\data-files/model/edgecollapse/ecWater1.obj'
+'C:\Users\cs371\7-final\data-files/scene/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\data-files/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\data-files/font/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\data-files/gui/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\data-files/shader/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\data-files/icon/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\common/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\common/font/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\common/model/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\common/cubemap/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\common/icon/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\common/material/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\common/image/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\common/ifs/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\common/scene/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\game/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\game/model/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\game/cubemap/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\game/md2/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\game/md3/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\game/music/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\game/sound/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\game/scene/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\research/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\research/model/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\research/cubemap/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\research/material/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\research/image/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\research/scene/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/font/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/gui/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/shader/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/model/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/cubemap/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/icon/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/material/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/image/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/md2/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/md3/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/ifs/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/music/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/sound/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/scene/edgecollapse/ecWater1.obj'
+
+C:\Users\cs371\7-final\data-files/./EdgeCollapsed1.Scene.Any:-1(-1): Could not find 'edgecollapse/ecWater1.obj'.
+
+  cwd                    = 'C:\Users\cs371\7-final\data-files'
+  G3D10DATA               = 'c:\g3d\G3D10\data-files;c:\g3d\data10\common;c:\g3d\data10\game;c:\g3d\data10\research;c:\g3d\G3D10\build\data'
+  GApp::Settings.dataDir = 'C:\Users\cs371\7-final\data-files'
+
+Filenames tested:
+'C:\Users\cs371\7-final\data-files/edgecollapse/ecWater1.obj'
+'C:\Users\cs371\7-final\data-files/model/edgecollapse/ecWater1.obj'
+'C:\Users\cs371\7-final\data-files/scene/edgecollapse/ecWater1.obj'
+'C:\Users\cs371\7-final\data-files/edgecollapse/ecWater1.obj'
+'C:\Users\cs371\7-final\data-files/model/edgecollapse/ecWater1.obj'
+'C:\Users\cs371\7-final\data-files/scene/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\data-files/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\data-files/font/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\data-files/gui/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\data-files/shader/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\data-files/icon/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\common/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\common/font/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\common/model/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\common/cubemap/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\common/icon/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\common/material/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\common/image/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\common/ifs/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\common/scene/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\game/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\game/model/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\game/cubemap/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\game/md2/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\game/md3/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\game/music/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\game/sound/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\game/scene/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\research/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\research/model/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\research/cubemap/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\research/material/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\research/image/edgecollapse/ecWater1.obj'
+'c:\g3d\data10\research/scene/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/font/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/gui/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/shader/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/model/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/cubemap/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/icon/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/material/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/image/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/md2/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/md3/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/ifs/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/music/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/sound/edgecollapse/ecWater1.obj'
+'c:\g3d\G3D10\build\data/scene/edgecollapse/ecWater1.obj'
+Hm@
+_____________________________________________________
+
+    ###    Files Used    ###
+
+C:/Users/Win2Go/.dnx
+C:/Users/cs371/7-final/data-files/.
+C:/Users/cs371/7-final/data-files/..
+C:/Users/cs371/7-final/data-files/../journal/journal.md.html
+C:/Users/cs371/7-final/data-files/./Aplanetland.obj
+C:/Users/cs371/7-final/data-files/./Aplanetmountain.obj
+C:/Users/cs371/7-final/data-files/./Aplanetwater.obj
+C:/Users/cs371/7-final/data-files/./EdgeCollapsed1.Scene.Any
+C:/Users/cs371/7-final/data-files/./EdgeCollapsed2.Scene.Any
+C:/Users/cs371/7-final/data-files/./EdgeCollapsed3.Scene.Any
+C:/Users/cs371/7-final/data-files/./EdgeCollapsed4.Scene.Any
+C:/Users/cs371/7-final/data-files/./Planet.Scene.Any
+C:/Users/cs371/7-final/data-files/./PlanetWithCloud.Scene.Any
+C:/Users/cs371/7-final/data-files/./Solar System.Scene.Any
+C:/Users/cs371/7-final/data-files/./SolarSystem.Scene.Any
+C:/Users/cs371/7-final/data-files/./background.png
+C:/Users/cs371/7-final/data-files/./blue.jpg
+C:/Users/cs371/7-final/data-files/./flame.jpg
+C:/Users/cs371/7-final/data-files/./g3d_planetland.obj
+C:/Users/cs371/7-final/data-files/./g3d_planetmountain.obj
+C:/Users/cs371/7-final/data-files/./g3d_planetwater.obj
+C:/Users/cs371/7-final/data-files/./model/cloud/cloud.zip
+C:/Users/cs371/7-final/data-files/./model/dragon.zip
+C:/Users/cs371/7-final/data-files/./model/dragon.zip
+C:/Users/cs371/7-final/data-files/./model/dragon.zip/dragon.obj
+C:/Users/cs371/7-final/data-files/./model/lowpolytree.mtl
+C:/Users/cs371/7-final/data-files/./model/lowpolytree.obj
+C:/Users/cs371/7-final/data-files/./model/swallow.obj
+C:/Users/cs371/7-final/data-files/./planetland.obj
+C:/Users/cs371/7-final/data-files/./planetmountain.obj
+C:/Users/cs371/7-final/data-files/./planetwater.obj
+C:/Users/cs371/7-final/data-files/./scene/BadPlanet.Scene.Any
+C:/Users/cs371/7-final/data-files/./scene/Bunny.Scene.Any
+C:/Users/cs371/7-final/data-files/./scene/Heightfield.Scene.Any
+C:/Users/cs371/7-final/data-files/./scene/LittleHeightfield.Scene.Any
+C:/Users/cs371/7-final/data-files/./scene/Pentagon.Scene.Any
+C:/Users/cs371/7-final/data-files/./scene/Planet.Scene.Any
+C:/Users/cs371/7-final/data-files/./scene/ground.Scene.Any
+C:/Users/cs371/7-final/data-files/Aplanetland.obj
+C:/Users/cs371/7-final/data-files/Aplanetmountain.obj
+C:/Users/cs371/7-final/data-files/Aplanetwater.obj
+C:/Users/cs371/7-final/data-files/SolarSystem.Scene.Any
+C:/Users/cs371/7-final/data-files/blue.jpg
+C:/Users/cs371/7-final/data-files/flame.jpg
+C:/Users/cs371/7-final/data-files/g3d_planetland.obj
+C:/Users/cs371/7-final/data-files/g3d_planetmountain.obj
+C:/Users/cs371/7-final/data-files/g3d_planetwater.obj
+C:/Users/cs371/7-final/data-files/johnWork
+C:/Users/cs371/7-final/data-files/log.txt
+C:/Users/cs371/7-final/data-files/model/cloud/cloud.zip
+C:/Users/cs371/7-final/data-files/model/model/cloud/cloud.zip
+C:/Users/cs371/7-final/data-files/scene/model/cloud/cloud.zip
+c:/g3d/G3D10/build/data/scene/CornellBox-empty-cyan-orange.Scene.Any
+c:/g3d/G3D10/build/data/scene/CornellBox-glossy.Scene.Any
+c:/g3d/G3D10/build/data/scene/CornellBox-mirror.Scene.Any
+c:/g3d/G3D10/build/data/scene/CornellBox-spheres.Scene.Any
+c:/g3d/G3D10/build/data/scene/CornellBox-water.Scene.Any
+c:/g3d/G3D10/build/data/scene/CornellBox.Scene.Any
+c:/g3d/G3D10/build/data/scene/atcs.Scene.Any
+c:/g3d/G3D10/build/data/scene/beta.Scene.Any
+c:/g3d/G3D10/build/data/scene/cloud.Scene.Any
+c:/g3d/G3D10/build/data/scene/cubemap.Scene.Any
+c:/g3d/G3D10/build/data/scene/featureTest.Scene.Any
+c:/g3d/G3D10/build/data/scene/heightfield.Scene.Any
+c:/g3d/G3D10/build/data/scene/holodeck.Scene.Any
+c:/g3d/G3D10/build/data/scene/minecraft.Scene.Any
+c:/g3d/G3D10/build/data/scene/motion.Scene.Any
+c:/g3d/G3D10/build/data/scene/openingDoor.Scene.Any
+c:/g3d/G3D10/build/data/scene/particleTest.Scene.Any
+c:/g3d/G3D10/build/data/scene/sanMiguel.Scene.Any
+c:/g3d/G3D10/build/data/scene/seymour.Scene.Any
+c:/g3d/G3D10/build/data/scene/sibenik.Scene.Any
+c:/g3d/G3D10/build/data/scene/sponza.Scene.Any
+c:/g3d/G3D10/build/data/scene/sponzaFoggy.Scene.Any
+c:/g3d/G3D10/build/data/scene/sponzaStatue.Scene.Any
+c:/g3d/G3D10/build/data/scene/sponzaWhite.Scene.Any
+c:/g3d/G3D10/build/data/scene/sportsCar.Scene.Any
+c:/g3d/G3D10/build/data/scene/sportsCarWhite.Scene.Any
+c:/g3d/G3D10/build/data/scene/transparencyTest.Scene.Any
+c:/g3d/G3D10/build/data/scene/triangle.Scene.Any
+c:/g3d/G3D10/build/data/scene/whiteroom.Scene.Any
+c:/g3d/G3D10/data-files/font/arial.fnt
+c:/g3d/G3D10/data-files/font/console-small.fnt
+c:/g3d/G3D10/data-files/font/greek.fnt
+c:/g3d/G3D10/data-files/font/icon.fnt
+c:/g3d/G3D10/data-files/font/model/cloud/cloud.zip
+c:/g3d/G3D10/data-files/gui/model/cloud/cloud.zip
+c:/g3d/G3D10/data-files/gui/osx-10.7.gtm
+c:/g3d/G3D10/data-files/icon/G3D-64.png
+c:/g3d/G3D10/data-files/icon/model/cloud/cloud.zip
+c:/g3d/G3D10/data-files/icon/tango.icn
+c:/g3d/G3D10/data-files/model/cloud/cloud.zip
+c:/g3d/G3D10/data-files/shader/AlphaFilter.glsl
+c:/g3d/G3D10/data-files/shader/AlphaFilter.glsl
+c:/g3d/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_AO.pix
+c:/g3d/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_AO.pix
+c:/g3d/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_AO.vrt
+c:/g3d/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_AO.vrt
+c:/g3d/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_blur.pix
+c:/g3d/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_blur.pix
+c:/g3d/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_blur.vrt
+c:/g3d/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_blur.vrt
+c:/g3d/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_constants.glsl
+c:/g3d/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_constants.glsl
+c:/g3d/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_minify.pix
+c:/g3d/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_minify.pix
+c:/g3d/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_minify.vrt
+c:/g3d/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_minify.vrt
+c:/g3d/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_packBilateralKey.glsl
+c:/g3d/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_packBilateralKey.glsl
+c:/g3d/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_reconstructCSZ.pix
+c:/g3d/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_reconstructCSZ.pix
+c:/g3d/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_reconstructCSZ.vrt
+c:/g3d/G3D10/data-files/shader/AmbientOcclusion/AmbientOcclusion_reconstructCSZ.vrt
+c:/g3d/G3D10/data-files/shader/BumpMap/BumpMap.glsl
+c:/g3d/G3D10/data-files/shader/BumpMap/BumpMap.glsl
+c:/g3d/G3D10/data-files/shader/Camera/Camera.glsl
+c:/g3d/G3D10/data-files/shader/Camera/Camera.glsl
+c:/g3d/G3D10/data-files/shader/DefaultRenderer/DefaultRenderer_OIT_writePixel.glsl
+c:/g3d/G3D10/data-files/shader/DefaultRenderer/DefaultRenderer_OIT_writePixel.glsl
+c:/g3d/G3D10/data-files/shader/DefaultRenderer/DefaultRenderer_deferredShade.pix
+c:/g3d/G3D10/data-files/shader/DefaultRenderer/DefaultRenderer_deferredShade.pix
+c:/g3d/G3D10/data-files/shader/Film/Film_FXAA_310.pix
+c:/g3d/G3D10/data-files/shader/Film/Film_FXAA_310.pix
+c:/g3d/G3D10/data-files/shader/Film/Film_bloomExpose.pix
+c:/g3d/G3D10/data-files/shader/Film/Film_bloomExpose.pix
+c:/g3d/G3D10/data-files/shader/Film/Film_composite.pix
+c:/g3d/G3D10/data-files/shader/Film/Film_composite.pix
+c:/g3d/G3D10/data-files/shader/Film/Film_toneMap.glsl
+c:/g3d/G3D10/data-files/shader/Film/Film_toneMap.glsl
+c:/g3d/G3D10/data-files/shader/GBuffer/GBuffer.glsl
+c:/g3d/G3D10/data-files/shader/GBuffer/GBuffer.glsl
+c:/g3d/G3D10/data-files/shader/GFont/GFont_render.pix
+c:/g3d/G3D10/data-files/shader/GFont/GFont_render.pix
+c:/g3d/G3D10/data-files/shader/GFont/GFont_render.vrt
+c:/g3d/G3D10/data-files/shader/GFont/GFont_render.vrt
+c:/g3d/G3D10/data-files/shader/GaussianBlur/GaussianBlur_apply.pix
+c:/g3d/G3D10/data-files/shader/GaussianBlur/GaussianBlur_apply.pix
+c:/g3d/G3D10/data-files/shader/GuiTextureBox/GuiTextureBox_2D.pix
+c:/g3d/G3D10/data-files/shader/GuiTextureBox/GuiTextureBox_2D.pix
+c:/g3d/G3D10/data-files/shader/GuiTheme/GuiTheme_render.pix
+c:/g3d/G3D10/data-files/shader/GuiTheme/GuiTheme_render.pix
+c:/g3d/G3D10/data-files/shader/GuiTheme/GuiTheme_render.vrt
+c:/g3d/G3D10/data-files/shader/GuiTheme/GuiTheme_render.vrt
+c:/g3d/G3D10/data-files/shader/Light/Light.glsl
+c:/g3d/G3D10/data-files/shader/Light/Light.glsl
+c:/g3d/G3D10/data-files/shader/Light/Light_convertToVSM.pix
+c:/g3d/G3D10/data-files/shader/Light/Light_convertToVSM.pix
+c:/g3d/G3D10/data-files/shader/Light/Light_vsmFilter.pix
+c:/g3d/G3D10/data-files/shader/Light/Light_vsmFilter.pix
+c:/g3d/G3D10/data-files/shader/LightingEnvironment/LightingEnvironment_LightUniforms.glsl
+c:/g3d/G3D10/data-files/shader/LightingEnvironment/LightingEnvironment_LightUniforms.glsl
+c:/g3d/G3D10/data-files/shader/LightingEnvironment/LightingEnvironment_environmentMapUniforms.glsl
+c:/g3d/G3D10/data-files/shader/LightingEnvironment/LightingEnvironment_environmentMapUniforms.glsl
+c:/g3d/G3D10/data-files/shader/LightingEnvironment/LightingEnvironment_uniforms.glsl
+c:/g3d/G3D10/data-files/shader/LightingEnvironment/LightingEnvironment_uniforms.glsl
+c:/g3d/G3D10/data-files/shader/ParticleSurface/ParticleSurface_helpers.glsl
+c:/g3d/G3D10/data-files/shader/ParticleSurface/ParticleSurface_helpers.glsl
+c:/g3d/G3D10/data-files/shader/ParticleSurface/ParticleSurface_render.geo
+c:/g3d/G3D10/data-files/shader/ParticleSurface/ParticleSurface_render.geo
+c:/g3d/G3D10/data-files/shader/ParticleSurface/ParticleSurface_render.pix
+c:/g3d/G3D10/data-files/shader/ParticleSurface/ParticleSurface_render.pix
+c:/g3d/G3D10/data-files/shader/ParticleSurface/ParticleSurface_render.vrt
+c:/g3d/G3D10/data-files/shader/ParticleSurface/ParticleSurface_render.vrt
+c:/g3d/G3D10/data-files/shader/ParticleSurface/ParticleSurface_stochasticDepthOnly.geo
+c:/g3d/G3D10/data-files/shader/ParticleSurface/ParticleSurface_stochasticDepthOnly.geo
+c:/g3d/G3D10/data-files/shader/ParticleSurface/ParticleSurface_stochasticDepthOnly.pix
+c:/g3d/G3D10/data-files/shader/ParticleSurface/ParticleSurface_stochasticDepthOnly.pix
+c:/g3d/G3D10/data-files/shader/ParticleSurface/ParticleSurface_stochasticDepthOnly.vrt
+c:/g3d/G3D10/data-files/shader/ParticleSurface/ParticleSurface_stochasticDepthOnly.vrt
+c:/g3d/G3D10/data-files/shader/SkyboxSurface/SkyboxSurface_gbuffer.pix
+c:/g3d/G3D10/data-files/shader/SkyboxSurface/SkyboxSurface_gbuffer.pix
+c:/g3d/G3D10/data-files/shader/SkyboxSurface/SkyboxSurface_gbuffer.vrt
+c:/g3d/G3D10/data-files/shader/SkyboxSurface/SkyboxSurface_gbuffer.vrt
+c:/g3d/G3D10/data-files/shader/SkyboxSurface/SkyboxSurface_render.pix
+c:/g3d/G3D10/data-files/shader/SkyboxSurface/SkyboxSurface_render.pix
+c:/g3d/G3D10/data-files/shader/SkyboxSurface/SkyboxSurface_render.vrt
+c:/g3d/G3D10/data-files/shader/SkyboxSurface/SkyboxSurface_render.vrt
+c:/g3d/G3D10/data-files/shader/Texture/Texture.glsl
+c:/g3d/G3D10/data-files/shader/Texture/Texture.glsl
+c:/g3d/G3D10/data-files/shader/Texture/Texture_copy.pix
+c:/g3d/G3D10/data-files/shader/Texture/Texture_copy.pix
+c:/g3d/G3D10/data-files/shader/UniversalMaterial/UniversalMaterial.glsl
+c:/g3d/G3D10/data-files/shader/UniversalMaterial/UniversalMaterial.glsl
+c:/g3d/G3D10/data-files/shader/UniversalMaterial/UniversalMaterial_sample.glsl
+c:/g3d/G3D10/data-files/shader/UniversalMaterial/UniversalMaterial_sample.glsl
+c:/g3d/G3D10/data-files/shader/UniversalSurface/UniversalSurface_depthOnly.vrt
+c:/g3d/G3D10/data-files/shader/UniversalSurface/UniversalSurface_depthOnly.vrt
+c:/g3d/G3D10/data-files/shader/UniversalSurface/UniversalSurface_depthOnlyNonOpaque.pix
+c:/g3d/G3D10/data-files/shader/UniversalSurface/UniversalSurface_depthOnlyNonOpaque.pix
+c:/g3d/G3D10/data-files/shader/UniversalSurface/UniversalSurface_depthPeel.pix
+c:/g3d/G3D10/data-files/shader/UniversalSurface/UniversalSurface_depthPeel.pix
+c:/g3d/G3D10/data-files/shader/UniversalSurface/UniversalSurface_gbuffer.pix
+c:/g3d/G3D10/data-files/shader/UniversalSurface/UniversalSurface_gbuffer.pix
+c:/g3d/G3D10/data-files/shader/UniversalSurface/UniversalSurface_gbuffer.vrt
+c:/g3d/G3D10/data-files/shader/UniversalSurface/UniversalSurface_gbuffer.vrt
+c:/g3d/G3D10/data-files/shader/UniversalSurface/UniversalSurface_vertex.glsl
+c:/g3d/G3D10/data-files/shader/UniversalSurface/UniversalSurface_vertex.glsl
+c:/g3d/G3D10/data-files/shader/UniversalSurface/UniversalSurface_vertexHelpers.glsl
+c:/g3d/G3D10/data-files/shader/UniversalSurface/UniversalSurface_vertexHelpers.glsl
+c:/g3d/G3D10/data-files/shader/compatibility.glsl
+c:/g3d/G3D10/data-files/shader/compatibility.glsl
+c:/g3d/G3D10/data-files/shader/default.vrt
+c:/g3d/G3D10/data-files/shader/default.vrt
+c:/g3d/G3D10/data-files/shader/deferredHelpers.glsl
+c:/g3d/G3D10/data-files/shader/deferredHelpers.glsl
+c:/g3d/G3D10/data-files/shader/depthPeel.glsl
+c:/g3d/G3D10/data-files/shader/depthPeel.glsl
+c:/g3d/G3D10/data-files/shader/g3dmath.glsl
+c:/g3d/G3D10/data-files/shader/g3dmath.glsl
+c:/g3d/G3D10/data-files/shader/lightMap.glsl
+c:/g3d/G3D10/data-files/shader/lightMap.glsl
+c:/g3d/G3D10/data-files/shader/model/cloud/cloud.zip
+c:/g3d/G3D10/data-files/shader/octahedral.glsl
+c:/g3d/G3D10/data-files/shader/octahedral.glsl
+c:/g3d/G3D10/data-files/shader/reconstructFromDepth.glsl
+c:/g3d/G3D10/data-files/shader/reconstructFromDepth.glsl
+c:/g3d/G3D10/data-files/shader/unlit.pix
+c:/g3d/G3D10/data-files/shader/unlit.pix
+c:/g3d/G3D10/data-files/shader/unlit.vrt
+c:/g3d/G3D10/data-files/shader/unlit.vrt
+c:/g3d/data10/common/cubemap/hipshot_m9_sky/16_bk.png
+c:/g3d/data10/common/cubemap/hipshot_m9_sky/16_dn.png
+c:/g3d/data10/common/cubemap/hipshot_m9_sky/16_ft.png
+c:/g3d/data10/common/cubemap/hipshot_m9_sky/16_lf.png
+c:/g3d/data10/common/cubemap/hipshot_m9_sky/16_rt.png
+c:/g3d/data10/common/cubemap/hipshot_m9_sky/16_up.png
+c:/g3d/data10/common/cubemap/model/cloud/cloud.zip
+c:/g3d/data10/common/font/model/cloud/cloud.zip
+c:/g3d/data10/common/icon/model/cloud/cloud.zip
+c:/g3d/data10/common/ifs/model/cloud/cloud.zip
+c:/g3d/data10/common/ifs/square.ifs
+c:/g3d/data10/common/image/model/cloud/cloud.zip
+c:/g3d/data10/common/material/blackrubber/blackrubber.UniversalMaterial.Any
+c:/g3d/data10/common/material/chrome/chrome.UniversalMaterial.Any
+c:/g3d/data10/common/material/metalcrate/metalcrate.UniversalMaterial.Any
+c:/g3d/data10/common/material/model/cloud/cloud.zip
+c:/g3d/data10/common/material/oldgirder/oldgirder.UniversalMaterial.Any
+c:/g3d/data10/common/material/rustymetal/rustymetal.UniversalMaterial.Any
+c:/g3d/data10/common/material/sand/sand.UniversalMaterial.Any
+c:/g3d/data10/common/material/smoke/smoke.png
+c:/g3d/data10/common/model/cloud/cloud.zip
+c:/g3d/data10/common/model/holodeck/holodeck.ArticulatedModel.Any
+c:/g3d/data10/common/model/model/cloud/cloud.zip
+c:/g3d/data10/common/model/truckwheel/truckwheel.ArticulatedModel.Any
+c:/g3d/data10/common/scene/CornellBox-empty-cyan-orange.Scene.Any
+c:/g3d/data10/common/scene/CornellBox-glossy.Scene.Any
+c:/g3d/data10/common/scene/CornellBox-mirror.Scene.Any
+c:/g3d/data10/common/scene/CornellBox-spheres.Scene.Any
+c:/g3d/data10/common/scene/CornellBox-water.Scene.Any
+c:/g3d/data10/common/scene/CornellBox.Scene.Any
+c:/g3d/data10/common/scene/featureTest.Scene.Any
+c:/g3d/data10/common/scene/holodeck.Scene.Any
+c:/g3d/data10/common/scene/model/cloud/cloud.zip
+c:/g3d/data10/common/scene/sponza.Scene.Any
+c:/g3d/data10/common/scene/sponzaWhite.Scene.Any
+c:/g3d/data10/common/scene/whiteroom.Scene.Any
+c:/g3d/data10/game/cubemap/majestic/majestic512_bk.jpg
+c:/g3d/data10/game/cubemap/majestic/majestic512_dn.jpg
+c:/g3d/data10/game/cubemap/majestic/majestic512_ft.jpg
+c:/g3d/data10/game/cubemap/majestic/majestic512_lf.jpg
+c:/g3d/data10/game/cubemap/majestic/majestic512_rt.jpg
+c:/g3d/data10/game/cubemap/majestic/majestic512_up.jpg
+c:/g3d/data10/game/cubemap/model/cloud/cloud.zip
+c:/g3d/data10/game/md2/model/cloud/cloud.zip
+c:/g3d/data10/game/md3/model/cloud/cloud.zip
+c:/g3d/data10/game/model/cloud/cloud.zip
+c:/g3d/data10/game/model/model/cloud/cloud.zip
+c:/g3d/data10/game/model/viper/viper.ArticulatedModel.Any
+c:/g3d/data10/game/music/model/cloud/cloud.zip
+c:/g3d/data10/game/scene/atcs.Scene.Any
+c:/g3d/data10/game/scene/beta.Scene.Any
+c:/g3d/data10/game/scene/model/cloud/cloud.zip
+c:/g3d/data10/game/sound/model/cloud/cloud.zip
+c:/g3d/data10/research/model/cloud/cloud.zip
+c:/g3d/data10/research/model/cloud/cloud.zip
+c:/g3d/data10/research/model/cloud/cloud.zip/cumulus00.obj
+c:/g3d/data10/research/model/cloud/cloud.zip/cumulus02.obj
+c:/g3d/data10/research/model/sportsCar/sportsCar.ArticulatedModel.Any
+c:/g3d/data10/research/scene/cloud.Scene.Any
+c:/g3d/data10/research/scene/cubemap.Scene.Any
+c:/g3d/data10/research/scene/heightfield.Scene.Any
+c:/g3d/data10/research/scene/minecraft.Scene.Any
+c:/g3d/data10/research/scene/motion.Scene.Any
+c:/g3d/data10/research/scene/openingDoor.Scene.Any
+c:/g3d/data10/research/scene/particleTest.Scene.Any
+c:/g3d/data10/research/scene/sanMiguel.Scene.Any
+c:/g3d/data10/research/scene/seymour.Scene.Any
+c:/g3d/data10/research/scene/sibenik.Scene.Any
+c:/g3d/data10/research/scene/sponzaFoggy.Scene.Any
+c:/g3d/data10/research/scene/sponzaStatue.Scene.Any
+c:/g3d/data10/research/scene/sportsCar.Scene.Any
+c:/g3d/data10/research/scene/sportsCarWhite.Scene.Any
+c:/g3d/data10/research/scene/transparencyTest.Scene.Any
+c:/g3d/data10/research/scene/triangle.Scene.Any
+

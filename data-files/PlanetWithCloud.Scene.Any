@@ -1,0 +1,170 @@
+{ 
+    entities = { 
+        camera = Camera { 
+            frame = CFrame::fromXYZYPRDegrees(50, 50, 50 ); 
+            projection = Projection { 
+                farPlaneZ = -inf; 
+                fovDegrees = 50; 
+                fovDirection = "VERTICAL"; 
+                nearPlaneZ = -0.1; 
+            }; 
+            filmSettings = FilmSettings { 
+                antialiasingEnabled = true; 
+                antialiasingFilterRadius = 0; 
+                antialiasingHighQuality = true;
+                bloomRadiusFraction = 0.009; 
+                bloomStrength = 0.2; 
+                debugZoom = 1; 
+                gamma = 2.2; 
+                sensitivity = 1; 
+                toneCurve = "CELLULOID";
+                
+                vignetteBottomStrength = 0.05; 
+                vignetteSizeFraction = 0.17; 
+                vignetteTopStrength = 0.5; 
+            }; 
+            
+        }; 
+        
+        skybox = Skybox { 
+            texture = 0.05; 
+        }; 
+        ThisPlanet = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(0, 2.35099e-38, 0 ); 
+            model = "ThisPlanet"; 
+            track = combine(
+                orbit(0, 20 ), 
+                Point3(0, 0, 0 ) ); 
+            
+        }; 
+        
+        ThisPlanetland = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(0, 2.35099e-38, 0 ); 
+            model = "ThisPlanetland"; 
+            track = entity("ThisPlanet"); 
+        }; 
+        
+        ThisPlanetmountain = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(0, 2.35099e-38, 0 ); 
+            model = "ThisPlanetmountain"; 
+            track = entity("ThisPlanet"); 
+        }; 
+        
+        cloud1 = VisibleEntity { 
+            model = "cloud"; 
+            track = transform(orbit(18, 10), combine(Matrix4::pitchDegrees(90), entity("jssr"))); 
+        }; 
+
+        cloud2 = VisibleEntity { 
+            model = "cloud"; 
+            track = transform(Matrix4::rollDegrees(25), transform(orbit(15, 23), combine(Matrix4::pitchDegrees(90), entity("jssr")))); 
+        }; 
+
+        sun = Light { 
+            attenuation = Vector3(0, 0, 1 ); 
+            bulbPower = Color3(3e+05); 
+            enabled = true;
+            castsShadows = true; 
+            shadowMapBias = 0.05; 
+            shadowMapSize = Vector2int16(2048, 2048 ); 
+            spotHalfAngleDegrees = 8; 
+            spotSquare = true; 
+            track = lookAt(
+                Point3(-15, 200, 40 ), 
+                Point3(0, 0, 0 ) ); 
+            
+            type = "SPOT"; 
+        }; 
+        
+    }; 
+    
+    lightingEnvironment = LightingEnvironment { 
+        ambientOcclusionSettings = AmbientOcclusionSettings { 
+            bias = 0.12; 
+            blurRadius = 4; 
+            blurStepSize = 2; 
+            depthPeelSeparationHint = 0.2; 
+            edgeSharpness = 1; 
+            enabled = true; 
+            intensity = 3; 
+            monotonicallyDecreasingBilateralWeights = false; 
+            numSamples = 19; 
+            radius = 2; 
+            temporalFilterSettings = TemporalFilter::Settings { 
+                falloffEndDistance = 0.07; 
+                falloffStartDistance = 0.05; 
+                hysteresis = 0.9; 
+            }; 
+            
+            temporallyVarySamples = true; 
+            useDepthPeelBuffer = true; 
+            useNormalBuffer = true; 
+            useNormalsInBlur = true; 
+        }; 
+        
+        environmentMap = Texture::Specification { 
+            encoding = Texture::Encoding { 
+                readMultiplyFirst = 1.9; 
+            }; 
+            
+            filename = "cubemap/majestic/majestic512_*.jpg"; 
+        }; 
+        
+    }; 
+    
+    models = { 
+        ThisPlanet = ArticulatedModel::Specification { 
+            filename = "ThisPlanet.obj"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                       glossy = Color4(Color3(0.4), 0.7 ); 
+                        lambertian = Color3(0, 0, 0.833333 ); 
+                    } ); 
+                transformGeometry(all(), Matrix4::scale(0.5, 0.5, 0.5 ) ) }; 
+            
+        }; 
+        
+        ThisPlanetland = ArticulatedModel::Specification { 
+            filename = "ThisPlanetland.obj"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        glossy = Color4(0.236111, 0.236111, 0.236111, 0.347222 ); 
+                        lambertian = Texture::Specification{ 
+                            filename = "Wool.jpg"; 
+                            encoding = Texture::Encoding { 
+                                readMultiplyFirst = Color3(0.208333, 0.791667, 0);  
+                            };  
+                        };
+                }); 
+                transformGeometry(all(), Matrix4::scale(0.5, 0.5, 0.5 ) ) }; 
+            
+        }; 
+        
+        ThisPlanetmountain = ArticulatedModel::Specification { 
+            filename = "ThisPlanetmountain.obj"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        glossy = Color4(0.236111, 0.236111, 0.236111, 0.347222 ); 
+                        lambertian = Color3(0.413793, 0.165517, 0 ); 
+                    } ); 
+                transformGeometry(all(), Matrix4::scale(0.5, 0.5, 0.5 ) ) }; 
+            
+        }; 
+
+        cloud = ArticulatedModel::Specification { 
+            filename = "model/cloud/cloud.zip/altostratus00.obj"; 
+scale = 0.05;
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        lambertian = Color4(0.8,0.8,0.8,  1.0); 
+                         emissive = Color3(0.1);
+                    } ); }; 
+            
+        }; 
+
+       
+        
+    }; 
+    
+    name = "PlanetandCloud"; 
+} 

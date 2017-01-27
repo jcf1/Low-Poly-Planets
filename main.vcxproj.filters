@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="source\App.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\NoiseGen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\SimpleMesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Planet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\SolarSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\PathTracer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\App.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\NoiseGen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Planet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\SimpleMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\SolarSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\PathTracer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resources.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="mainpage.dox" />
+    <None Include="Doxyfile" />
+    <None Include="journal\journal.md.html" />
+    <None Include="doc-files\report.md.html" />
+    <None Include="data-files\Scene\ground.Scene.Any">
+      <Filter>Scene Files</Filter>
+    </None>
+    <None Include="data-files\Scene\Pentagon.Scene.Any">
+      <Filter>Scene Files</Filter>
+    </None>
+    <None Include="data-files\Scene\Bunny.Scene.Any">
+      <Filter>Scene Files</Filter>
+    </None>
+    <None Include="data-files\Scene\LittleHeightfield.Scene.Any">
+      <Filter>Scene Files</Filter>
+    </None>
+    <None Include="data-files\Planet.Scene.Any">
+      <Filter>Scene Files</Filter>
+    </None>
+    <None Include="data-files\Scene\BadPlanet.Scene.Any" />
+    <None Include="data-files\SolarSystem.Scene.Any" />
+    <None Include="data-files\Texture.Scene.Any" />
+    <None Include="data-files\EdgeCollapsed1.Scene.Any">
+      <Filter>Scene Files</Filter>
+    </None>
+    <None Include="data-files\EdgeCollapsed2.Scene.Any">
+      <Filter>Scene Files</Filter>
+    </None>
+    <None Include="data-files\EdgeCollapsed3.Scene.Any">
+      <Filter>Scene Files</Filter>
+    </None>
+    <None Include="data-files\EdgeCollapsed4.Scene.Any">
+      <Filter>Scene Files</Filter>
+    </None>
+    <None Include="data-files\EdgeCollapsed5.Scene.Any">
+      <Filter>Scene Files</Filter>
+    </None>
+    <None Include="data-files\EdgeCollapsed6.Scene.Any">
+      <Filter>Scene Files</Filter>
+    </None>
+    <None Include="data-files\EdgeCollapsedBarbie.Scene.Any">
+      <Filter>Scene Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{e022396f-0616-4d65-bb46-4497a9a24891}</UniqueIdentifier>
+      <Extensions>*.cpp</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{7808eb57-c0e1-4947-8248-1127238ea26e}</UniqueIdentifier>
+      <Extensions>*.h</Extensions>
+    </Filter>
+    <Filter Include="Shader Files">
+      <UniqueIdentifier>{562523b7-dfa2-4cfa-acae-1ad7ade219dd}</UniqueIdentifier>
+      <Extensions>*.vrt;*.geo;*.pix</Extensions>
+    </Filter>
+    <Filter Include="Scene Files">
+      <UniqueIdentifier>{f7819c7b-69f2-4778-bec8-4dbee2bfa711}</UniqueIdentifier>
+      <Extensions>*.any</Extensions>
+    </Filter>
+  </ItemGroup>
+</Project>

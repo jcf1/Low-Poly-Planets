@@ -1,0 +1,29 @@
+// -*- c++ -*-
+{
+    name = "Pentagon";
+    
+    models = {
+    pentagon = ArticulatedModel::Specification {
+            filename = "pentagon.obj";
+            preprocess = {
+                setMaterial(all(), Color3(0.1f, 0.3f, 0.7f));
+                transformGeometry(all(), Matrix4::scale(1, 1, 1));
+            };
+       };
+    };
+    
+    entities = {
+       skybox = Skybox {
+            texture = "cubemap/whiteroom/whiteroom-*.png";
+       };
+
+        Pentagon = VisibleEntity {
+            model = "pentagon";
+            frame = CFrame::fromXYZYPRDegrees(0, 0, -2, 45, 0, 0);
+        };
+
+        camera = Camera {
+            frame = CFrame::fromXYZYPRDegrees(34.516, 2.508, 6.3544, 68.755, 6.8756, 0);
+        };
+    };
+};

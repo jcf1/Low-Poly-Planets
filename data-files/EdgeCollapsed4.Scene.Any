@@ -1,0 +1,186 @@
+{ 
+    entities = { 
+        camera = Camera { 
+            filmSettings = FilmSettings { 
+                antialiasingEnabled = true; 
+                antialiasingFilterRadius = 0; 
+                antialiasingHighQuality = true; 
+                bloomRadiusFraction = 0.009; 
+                bloomStrength = 0.2; 
+                debugZoom = 1; 
+                gamma = 2.2; 
+                sensitivity = 1; 
+                toneCurve = "CELLULOID"; 
+                vignetteBottomStrength = 0.05; 
+                vignetteSizeFraction = 0.17; 
+                vignetteTopStrength = 0.5; 
+            }; 
+            
+            frame = CFrame::fromXYZYPRDegrees(0.90151, 1.8599, 63.627, -0.39264, -1.1459 ); 
+            projection = Projection { 
+                farPlaneZ = -inf; 
+                fovDegrees = 50; 
+                fovDirection = "VERTICAL"; 
+                nearPlaneZ = -0.1; 
+            }; 
+            
+        }; 
+        
+        gradient = VisibleEntity { 
+            canChange = false; 
+            castsShadows = false; 
+            frame = CFrame::fromXYZYPRDegrees(-4, 0, -50 ); 
+            model = "boardModel"; 
+        }; 
+        
+        planet = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(0, 4.83165e-39, 0 ); 
+            model = "planet"; 
+            track = combine(
+                orbit(0, 10 ), 
+                Point3(0, 4.83165e-39, 0 ) ); 
+            
+        }; 
+        
+        planetland = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(0, 4.83165e-39, 0 ); 
+            model = "planetland"; 
+            track = entity("planet"); 
+        }; 
+        
+        planetmountain = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(0, 4.83165e-39, 0 ); 
+            model = "planetmountain"; 
+            track = entity("planet"); 
+        }; 
+        
+        skybox = Skybox { 
+            texture = "cubemap/hipshot_m9_sky/16_*.png"; 
+        }; 
+        
+        sun = Light { 
+            attenuation = Vector3(0, 0, 1 ); 
+            bulbPower = Color3(10000, 10000, 0 ); 
+            castsShadows = false; 
+            shadowMapSize = Vector2int16(2048, 2048 ); 
+            spotHalfAngleDegrees = 8; 
+            spotSquare = true; 
+            track = lookAt(
+                Point3(0, -50, 250 ), 
+                Point3(0, 0, 0 ) ); 
+            
+            type = "SPOT"; 
+        }; 
+        
+        tree0 = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(-15.8147, 19.8332, 4.10141, 81.014, -37.0638, 14.7015 ); 
+            model = "tree"; 
+            track = transform(
+                entity("planetmountain"), 
+                CFrame::fromXYZYPRDegrees(-11.259, 14.12, 2.9199, 81.014, -37.064, 14.702 ) ); 
+            
+        }; 
+        
+    }; 
+    
+    lightingEnvironment = LightingEnvironment { 
+        ambientOcclusionSettings = AmbientOcclusionSettings { 
+            bias = 0.12; 
+            blurRadius = 4; 
+            blurStepSize = 2; 
+            depthPeelSeparationHint = 0.2; 
+            edgeSharpness = 1; 
+            enabled = false; 
+            intensity = 3; 
+            monotonicallyDecreasingBilateralWeights = false; 
+            numSamples = 19; 
+            radius = 2; 
+            temporalFilterSettings = TemporalFilter::Settings { 
+                falloffEndDistance = 0.07; 
+                falloffStartDistance = 0.05; 
+                hysteresis = 0.9; 
+            }; 
+            
+            temporallyVarySamples = true; 
+            useDepthPeelBuffer = true; 
+            useNormalBuffer = true; 
+            useNormalsInBlur = true; 
+        }; 
+        
+        environmentMap = Texture::Specification { 
+            encoding = Texture::Encoding { 
+                readMultiplyFirst = 1.9; 
+            }; 
+            
+            filename = "cubemap/majestic/majestic512_*.jpg"; 
+        }; 
+        
+    }; 
+    
+    models = { 
+        boardModel = ArticulatedModel::Specification { 
+            filename = "ifs/square.ifs"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        emissive = Texture::Specification { 
+                            encoding = Texture::Encoding { 
+                                readMultiplyFirst = Color4(
+                                    Color3(0.5 ), 
+                                    1 ); 
+                                
+                            }; 
+                            
+                            filename = "background.png"; 
+                        }; 
+                        
+                        lambertian = Color4(
+                            Color3(0 ), 
+                            1 ); 
+                        
+                    } ) }; 
+            
+            scale = 200; 
+        }; 
+        
+        planet = ArticulatedModel::Specification { 
+            filename = "edgecollapse/ecWater4.obj"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        glossy = Color4(0, 0, 0, 4.59065e-41 ); 
+                        lambertian = Color3(4.59065e-41, 1, 1 ); 
+                    } ); 
+                transformGeometry(all(), Matrix4::scale(0.691739, 0.691739, 0.691739 ) ) }; 
+            
+        }; 
+        
+        planetland = ArticulatedModel::Specification { 
+            filename = "edgecollapse/ecLand4.obj"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        glossy = Color4(3.30704e-39, 3.30704e-39, 3.30704e-39, 0 ); 
+                        lambertian = Color3(0.222222, 1, 0.0416667 ); 
+                    } ); 
+                transformGeometry(all(), Matrix4::scale(0.691739, 0.691739, 0.691739 ) ) }; 
+            
+        }; 
+        
+        planetmountain = ArticulatedModel::Specification { 
+            filename = "edgecollapse/ecMountain4.obj"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        glossy = Color4(3.31523e-39, 3.31523e-39, 3.31523e-39, 0 ); 
+                        lambertian = Color3(0.358621, 0.413793, 0.489655 ); 
+                    } ); 
+                transformGeometry(all(), Matrix4::scale(0.691739, 0.691739, 0.691739 ) ) }; 
+            
+        }; 
+        
+        tree = ArticulatedModel::Specification { 
+            filename = "model/lowpolytree.obj"; 
+            scale = 0.345869; 
+        }; 
+        
+    }; 
+    
+    name = "EC4"; 
+} 

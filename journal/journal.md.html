@@ -1,0 +1,1684 @@
+﻿                  <meta charset="utf-8">
+                 **Development Journal**
+            **Procedurally Generated Low-Poly Planet**
+        **Jose Rivas (jdr3@williams.edu),**
+        **John Freeman (jcf1@williams.edu),**
+        **Julia Goldman (jdg2@williams.edu),**
+        **and Matheus de Carvalho Souza (mc13@williams.edu)**
+
+Evaluation
+=============================================================
+We would give ourselves an A on this project. We met our specification, which was pretty clear on what we needed to do to create interesting low-poly planets. We were also able to reach some of our extra goals. Our team programming was better this time around as compared to our midterm project. We were able to split the work in a way that allowed us to actually work independently from each other before it was time to put our codes together, which came out pretty nicely. There is still room for improvement, however. More could be done to improve code clarity, especially in the early stages of development. We learned the value of well chosen variable and function names, as well as clarifying comments. Our code was good in terms of structure and abstraction, which allowed us to work separately in generating planets, manipulating meshes, and setting up scenes. Our report reflects well our goals, explains clearly how we attained them.
+
+2016-12-08: THEBEST
+=============================================================
+
+![](2016-12-08_011_starter_r2876_g3d_r983__.jpg)
+
+
+
+2016-12-08: BEST
+=============================================================
+
+![](2016-12-08_010_starter_r2876_g3d_r983__.mp4)
+
+
+2016-12-08: Dragon!!
+=============================================================
+
+![](2016-12-08_009_starter_r2876_g3d_r983__.mp4)
+
+
+
+2016-12-08: ???
+=============================================================
+
+![](2016-12-08_008_starter_r2876_g3d_r983__.mp4)
+
+
+
+2016-12-08: Dragon
+=============================================================
+
+![](2016-12-08_007_starter_r2876_g3d_r983__.mp4)
+
+
+
+2016-12-07: Names Old Quality and Evocative Results
+=============================================================
+
+2016-12-08: Moon
+=============================================================
+
+![](2016-12-08_006_starter_r2876_g3d_r983__.mp4)
+
+
+
+2016-12-08: moon
+=============================================================
+
+![](2016-12-08_005_starter_r2876_g3d_r983__.mp4)
+
+
+
+2016-12-08: Moon
+=============================================================
+
+![](2016-12-08_004_starter_r2876_g3d_r983__.mp4)
+
+
+
+2016-12-08: ???
+=============================================================
+
+![](2016-12-08_003_starter_r2876_g3d_r983__.mp4)
+
+
+
+2016-12-08: ???
+=============================================================
+
+![](2016-12-08_002_starter_r2876_g3d_r983__.mp4)
+
+
+
+2016-12-08: ???
+=============================================================
+
+![](2016-12-08_001_starter_r2876_g3d_r983__.mp4)
+
+
+
+2016-12-08: ???
+=============================================================
+
+![](2016-12-08_000_starter_r2876_g3d_r983__.mp4)
+
+
+
+Names of:
+![](low-poly.jpg)
+![](quality2.jpg)
+![](1.jpg)
+
+![](video.mp4)
+
+![](qualityTex.jpg)
+![](qualityTex2.jpg)
+![](lava.jpg)
+![](lava2.jpg)
+
+2016-12-07: Old Code from Bevel Edges
+=============================================================
+From back when we used to push the faces out in the direction of the face normal.
+
+    for (int i = 0; i < m_indexArray.size(); i += 3) {
+        Vector3 normal(faceNormalArray[i / 3]);
+        Vector3 v1(m_vertexPositions[m_indexArray[i]] + bump*normal);
+        Vector3 v2(m_vertexPositions[m_indexArray[i + 1]] + bump*normal);
+        Vector3 v3(m_vertexPositions[m_indexArray[i + 2]] + bump*normal);
+        newVertices.append(v1, v2, v3);
+        newIndices.append(i, i + 1, i + 2);
+
+        //Save vertex mapping
+        indexMap[m_indexArray[i]].append(i);
+        indexMap[m_indexArray[i + 1]].append(i + 1);
+        indexMap[m_indexArray[i + 2]].append(i + 2);
+
+        //Face index is i%3
+        //debugPrintf(STR(Mapping face %d at original vertex %d to neww vertex %d\n), i / 3, m_indexArray[i], i);
+        faceIndexMap[i / 3].set(m_indexArray[i], i);
+        //debugPrintf(STR(Mapping face %d at original vertex %d to neww vertex %d\n), i / 3, m_indexArray[i + 1], i + 1);
+        faceIndexMap[i / 3].set(m_indexArray[i + 1], i + 1);
+        //debugPrintf(STR(Mapping face %d at original vertex %d to neww vertex %d\n), i / 3, m_indexArray[i + 2], i + 2);
+        faceIndexMap[i / 3].set(m_indexArray[i + 2], i + 2);
+    }
+
+2016-12-07: Birds
+=============================================================
+
+![](2016-12-07_062_starter_r2841_g3d_r983__.mp4)
+
+
+
+2016-12-07: Woops bad rotation of the birds
+2016-12-07: Edge Collapse examples
+=============================================================
+
+![8000 edges collapsed](2016-12-07_068_starter_r2849_g3d_r981__8000_edges_collapsed.jpg)
+
+![4000 edges collapsed](2016-12-07_067_starter_r2849_g3d_r981__4000_edges_collapsed.jpg)
+
+![2000 edges collapsed](2016-12-07_066_starter_r2849_g3d_r981__2000_edges_collapsed.jpg)
+
+![original sphere](2016-12-07_065_starter_r2849_g3d_r981__original_sphere.jpg)
+
+
+2016-12-07: Woops bad rotation of the birds
+2016-12-07: Planet
+=============================================================
+![](2016-12-07_052_starter_r2821_g3d_r983__.mp4)
+
+
+
+2016-12-07: Planets
+=============================================================
+
+![Dry Land](2016-12-07_058_starter_r2827_g3d_r981__Dry_Land.jpg)
+
+![Danger Zone](2016-12-07_059_starter_r2827_g3d_r981__Danger_Zone.jpg)
+
+![Danger Zone video](2016-12-07_060_starter_r2849_g3d_r981__Danger_Zone_video.mp4)
+
+![Danger Zone bird's perspective video](2016-12-07_062_starter_r2849_g3d_r981__Danger_Zone_bird_s_perspective_video.mp4)
+
+
+
+2016-12-07: Quality images
+=============================================================
+
+![Dry Land](2016-12-07_057_starter_r2827_g3d_r981__Dry_Land.jpg)
+
+
+2016-12-07: Barbie's ice planet
+=============================================================
+
+![Barbie's ice planet with clouds](2016-12-07_055_starter_r2827_g3d_r981__Barbie_s_ice_planet_with_clouds.jpg)
+
+![Barbie's ice planet with clouds video](2016-12-07_056_starter_r2827_g3d_r981__Barbie_s_ice_planet_with_clouds_video.mp4)
+
+
+
+2016-12-07: Barbie ice planet
+=============================================================
+
+![barbie ice planet edge collapsed](2016-12-07_054_starter_r2825_g3d_r981__barbie_ice_planet_edge_collapsed.jpg)
+
+
+
+2016-12-07: Evocative Image
+=============================================================
+
+![](2016-12-07_051_starter_r2819_g3d_r986__.jpg)
+
+
+
+2016-12-07: Evocative Image
+=============================================================
+
+![](evocative.jpg)
+
+
+
+2016-12-07: Reflections...
+=============================================================
+![](2016-12-07_031_starter_r2811_g3d_r986__.jpg)
+
+Still reflecting a creepy beach that doesn't exist....
+
+
+2016-12-07: Planet demonstration for report
+=============================================================
+
+![Land collapsed and bevelled](2016-12-07_047_starter_r2803_g3d_r981__Land_collapsed_and_bevelled.jpg width = 300px) ![Mountain collapsed and bevelled](2016-12-07_048_starter_r2803_g3d_r981__Mountain_collapsed_and_bevelled.jpg width = 300px)
+
+![Planet put together](2016-12-07_049_starter_r2803_g3d_r981__Planet_put_together.jpg width = 300px) ![Planet 360](2016-12-07_050_starter_r2803_g3d_r981__Planet_360.mp4 width = 300px)
+
+
+2016-12-07: Bevel demosntration for report
+=============================================================
+
+
+![Mountains - wireframe before](2016-12-07_046_starter_r2803_g3d_r981__Mountains_-_before.jpg width = 200px) ![Land - wireframe before](2016-12-07_045_starter_r2803_g3d_r981__Land_-_wireframe_before.jpg width = 200px) ![Ocean - wireframe before](2016-12-07_044_starter_r2803_g3d_r981__Ocean_-_wireframe_before.jpg width = 200px)
+
+
+![Mountain - wireframe after](2016-12-07_042_starter_r2803_g3d_r981__Mountain_-_wireframe_after.jpg width = 200px) ![Land - wireframe after](2016-12-07_041_starter_r2803_g3d_r981__Land_-_wireframe_after.jpg width = 200px) ![Ocean wireframe after](2016-12-07_039_starter_r2803_g3d_r981__Ocean_wireframe_after.jpg width = 200px)
+
+
+2016-12-07: EC demonstration for report
+=============================================================
+![Mountain - before collapsing](2016-12-07_038_starter_r2803_g3d_r981__Mountain_-_before_collapsing.jpg width=200px) ![Land - before collapsing](2016-12-07_035_starter_r2803_g3d_r981__Land_-_before_collapsing.jpg width=200px)
+
+![Mountain - after 2200 edges collapsed](2016-12-07_033_starter_r2803_g3d_r981__Mountain_-_after_collapsing.jpg width=200px) ![Land - after 8600 edges collapsed](2016-12-07_030_starter_r2803_g3d_r981__Land_-_After_Collapsing.jpg width=200px)
+
+
+![Mountain - before collapsing wireframe](2016-12-07_037_starter_r2803_g3d_r981__Mountain_-_before_collapsing_wireframe.jpg width=200px) ![Land - before collapsing wireframe](2016-12-07_036_starter_r2803_g3d_r981__Land_-_before_collapsing_wireframe.jpg width=200px)
+
+![Mountain - wireframe after 2200 edges collapsed](2016-12-07_034_starter_r2803_g3d_r981__Mountain_-_wireframe_after_collapsing.jpg width=200px)![Land - wireframe after 8600 edges collapsed](2016-12-07_032_starter_r2803_g3d_r981__Land_-_wireframe_after_collapsing.jpg width=200px)
+
+
+2016-12-07: Desert Planet
+=============================================================
+
+![Desert Planet with oasis](2016-12-07_021_starter_r2797_g3d_r981__Desert_Planet_with_oasis.jpg)
+
+
+2016-12-07: Edge Collapsed planets
+=============================================================
+
+![P6 before collapsing - wireframe](2016-12-07_027_starter_r2803_g3d_r981__P6_before_collapsing_-_wireframe.jpg)
+
+![P6 before collapsing](2016-12-07_026_starter_r2803_g3d_r981__P6_before_collapsing.jpg)
+
+![P6 after collapsing](2016-12-07_029_starter_r2803_g3d_r981__P6_after_collapsing.jpg)
+
+![P6 after collapsing - wireframe](2016-12-07_028_starter_r2803_g3d_r981__P6_after_collapsing_-_wireframe.jpg)
+
+Saved in EdgeCollapsed6.Scene.Any
+
+
+![P5 before collapsing - wireframe](2016-12-07_023_starter_r2803_g3d_r981__P5_before_collapsing_-_wireframe.jpg)
+
+![P5 before collapsing](2016-12-07_022_starter_r2803_g3d_r981__P5_before_collapsing.jpg)
+
+![P5 after collapsing](2016-12-07_025_starter_r2803_g3d_r981__P5_after_collapsing.jpg)
+
+![P5 after collapsing - wireframe](2016-12-07_024_starter_r2803_g3d_r981__P5_after_collapsing_-_wireframe.jpg)
+
+Saved in EdgeCollapsed5.Scene.Any
+
+
+![P4 before collapsing - wireframe](2016-12-07_018_starter_r2797_g3d_r981__P4_before_collapsing_-_wireframe.jpg)
+
+![P4 before collapsing](2016-12-07_017_starter_r2797_g3d_r981__P4_before_collapsing.jpg)
+
+![P4 after collapsing](2016-12-07_020_starter_r2797_g3d_r981__P4_after_collapsing.jpg)
+
+![P4 after collapsing - wireframe](2016-12-07_019_starter_r2797_g3d_r981__P4_after_collapsing_-_wireframe.jpg)
+
+Saved in EdgeCollapsed4.Scene.Any
+
+
+![P3 before collapsing - wireframe](2016-12-07_014_starter_r2797_g3d_r981__P3_before_collapsing_-_wireframe.jpg)
+
+![P3 before collapsing](2016-12-07_013_starter_r2797_g3d_r981__P3_before_collapsing.jpg)
+
+![P3 after collapsing](2016-12-07_016_starter_r2797_g3d_r981__P3_after_collapsing.jpg)
+
+![P3 after collapsing - wireframe](2016-12-07_015_starter_r2797_g3d_r981__P3_after_collapsing_-_wireframe.jpg)
+
+Saved in EdgeCollapsed3.Scene.Any
+
+
+
+![P2 before collapsing - wireframe](2016-12-07_008_starter_r2797_g3d_r981__P2_before_collapsing_-_wireframe.jpg)
+
+![P2 before collapsing](2016-12-07_007_starter_r2797_g3d_r981__P2_before_collapsing.jpg)
+
+![P2 after collapsing](2016-12-07_012_starter_r2797_g3d_r981__P2_after_collapsing.jpg)
+
+![P2 after collapsing - wireframe](2016-12-07_011_starter_r2797_g3d_r981__P2_after_collapsing_-_wireframe.jpg)
+
+Saved in EdgeCollapsed2.Scene.Any
+
+
+![P1 Before collapsing](2016-12-07_003_starter_r2797_g3d_r981__Before_collapsing.jpg)
+
+![P1 Before Collapsing - wireframe](2016-12-07_004_starter_r2797_g3d_r981__Before_Collapsing_-_wireframe.jpg)
+
+![P1 after collapsing - wireframe](2016-12-07_005_starter_r2797_g3d_r981__P1_after_collapsing_-_wireframe.jpg)
+
+![P1 after collapsing](2016-12-07_006_starter_r2797_g3d_r981__P1_after_collapsing.jpg)
+
+Saved in EdgeCollapsed1.Scene.Any
+
+
+
+
+2016-12-07: The Tree-angle and lights
+=============================================================
+
+![](2016-12-07_002_starter_r2773_g3d_r983__.jpg)
+
+
+
+2016-12-07: The Tree-angle
+=============================================================
+
+![](2016-12-07_001_starter_r2773_g3d_r983__.jpg)
+
+
+
+2016-12-07: This is what sloppy code does
+=============================================================
+
+![](2016-12-07_000_starter_r2773_g3d_r983__.jpg)
+
+
+
+2016-12-06: Reflections...
+=============================================================
+
+![](2016-12-06_001_starter_r2758_g3d_r986__.jpg)
+
+Our sky map is not spacy...
+
+
+
+2016-12-06: No randomness
+=============================================================
+
+![8000 edges collapsed, no randomness](2016-12-06_000_starter_r2710_g3d_r981__8000_edges_collapsed__no_randomness.jpg)
+
+I fixed some int to float conversions, and the weighing of the angles worked
+towards making collapsing more uniform. I still kinda like the randomness with
+the inconsistencies better in terms of look though...
+
+
+
+2016-12-06: Planet with Edge Collapsing
+=============================================================
+
+![](2016-12-06_000_starter_r2710_g3d_r977__.jpg)
+
+Planet with edge collapsing in both Land and Mountain planes.  Takes a long time
+to run.
+
+
+
+2016-12-05: Edge Collapsing for flowchart
+=============================================================
+This is only an outline of the functions used in the order they are called. Specifics of how the alforithm works are described in an earlier entry.
+
+**Please note** the algorithm makes heavy use of static functions defined in Mesh.cpp only, which are therefore not member variables of the Mesh class. Such static functions do not have the Mesh:: prefix below. I don't know if we want to include them in the flow chart.
+
+1. Mesh::collapseEdges();
+2. Mesh::computeAdjacency();
+3. (inline) Mesh::computeFaceNormals();
+4. (inline) Mesh::isCollapsable(): 
+    1. isManifoldPreserved(); 
+    2. normalsFlipped():
+        1. computeCurNormal(); 
+        2. computeNewNormal();
+        3. (inline) isSignOpposite().
+5. isMoreCollapsable():
+    1. (inline) cosAngle(); 
+    2. (inline) squaredEdgeLength().
+6. collapseOneEdge(): 
+    1. remapIndices(); 
+    2. removeDegenerateFaces():
+        1. (inline) isDegenerate().
+
+2016-12-05: Planet + Edge Collapsing
+=============================================================
+
+![Before](2016-12-05_006_starter_r2691_g3d_r981__Before.jpg)
+
+![Before -  wireframe](2016-12-05_007_starter_r2691_g3d_r981__Before_-__wireframe.jpg)
+
+![After (4000 land edges collapsed)](2016-12-05_008_starter_r2691_g3d_r981__After__4000_land_edges_collapsed_.jpg)
+
+![After collapsing - wireframe](2016-12-05_009_starter_r2691_g3d_r981__After_collapsing_-_wireframe.jpg)
+
+![8600 land edges collapsed](2016-12-05_013_starter_r2691_g3d_r981__8600_land_edges_collapsed.jpg)
+
+![8600 land edges collapsed - wireframe](2016-12-05_014_starter_r2691_g3d_r981__8600_land_edges_collapsed_-_wireframe.jpg)
+
+![mountains and land before collapsing](2016-12-05_015_starter_r2708_g3d_r981__mountains_and_land_before_collapsing.jpg)
+
+![mountains and land before collapsing](2016-12-05_016_starter_r2708_g3d_r981__mountains_and_land_before_collapsing.jpg)
+
+![8000 land and 1500 mountain edges collapsed](2016-12-05_017_starter_r2708_g3d_r981__8000_land_and_1500_mountain_edges_collapsed.jpg)
+
+![8000 land and 1500 mountain edges collapsed](2016-12-05_018_starter_r2708_g3d_r981__8000_land_and_1500_mountain_edges_collapsed.jpg)
+
+Edge Collapsing makes the polyness less uniform, which looks good. If you generate cool planets, save their constants to an Any, commit, and let me know so I can run the collapsing and save the images to here or to our report. The collapsing takes a while though, so it should be a one time thing where we generate the images we want and save them. 
+
+I can be in charge of generating the edge collapsed planets and images from a set of Any files of planets you think look cool, as I work on refactoring the code and editing the report which don't really rely on the renderer being available. 
+
+If you'd like to collapse the edges yourself, for planets at 5 recursion levels I reccomend 4000-8000 land edge collapses, 2000-3000 mountain edge collapses.
+
+
+2016-12-05: Texture Mapping
+=============================================================
+
+![](2016-12-05_002_starter_r2685_g3d_r977__.jpg)
+
+Texture mapping works for land and mountains. If the color is (1,1,1) and the
+glossy's 0, it looks like the picture, but we can also alter the color to mix
+with it (as done with the land), and apply gloss to it.
+
+
+
+2016-12-05: moons
+=============================================================
+
+![](2016-12-05_001_starter_r2666_g3d_r983__.mp4)
+
+
+
+2016-12-05: They orbit now
+=============================================================
+
+![](2016-12-05_000_starter_r2666_g3d_r983__.mp4)
+
+2016-12-05: Code Refactoring
+=============================================================
+I refactored the code a lot in order to make it more legible and to have better control flow. App now creates generates a planet each time the "generate" button is pressed, but the planet is then passed on to the SolarSystem class, which handles all of the scene editting. The SolarSystem class has a table of all of the planets created, making it easy to look up a past planet if necessary. Honestly, The SolarSystem class really is just for storing the tables of the scene, however. I'm also positive there are some optimizations that could be made. 
+
+If we can find a way to make the list of planets available, though, it would make editting scenes really easy with our gui. We could even delete planets from the scene. Clouds are now going around, as long as we don't use particle clouds. Just have to change the distance that they are orbit from the planet. It has to do with scaling the distance proportional to the size of the planet.
+
+Planet now has a bit more functionality. Before we were just having it create a sphere and return a layer. Now it stores all of its own personal information for how it was created and creates each layer at the same time. This makes app that much more legible, and it also is more intuitive, since when you call on the planet, you expect it to be able to create itself given the right parameters. When adding a planet to the Solar System class, it will automatically add it to the scene tables, but you need to print it out using the printSolarSystemToScene method before you can see it. The code is already doing that in App.cpp. 
+
+Oh, I also added the ability for planets to orbit each other. It's really cool, and it has worked out well so far!
+
+One final thing: If you don't like the refactored code, I saved a version of Planet and App that is not refactored in source and it's committed, so you're safe.
+
+2016-12-04: Clouds, Glossyness, Lights, Visuals
+=============================================================
+
+![](2016-12-04_009_starter_r2661_g3d_r983__.jpg)
+The particle clouds are coming along, but they are not moving. Will have to ask Morgan why. Regular clouds move perfectly fine, so I can switch the code to do those in the meantime.
+
+![](2016-12-04_008_starter_r2661_g3d_r983__.jpg)
+
+Morgan helped John and I (Jose) get a better looking planet by teaching us what the ligting envinronment can do if we just tweek the variables we give it. Changing the bias, for example, helped get rid of certain blur lines that appeared on the planet from the ambient light. On the other hand, changing the intensity and radius or blurRadius helped make mountains produce better shadows around them. 
+On top of that Morgan also helped us with making the planet look a lot better. His recommendations:
+    1. work with glossiness of each level to make it unique. Water should most likely be the glossiest.
+    2. make the water smoother, don't give it as much noise.
+    3. use particle clouds
+    4. Use a board in the background that some light in order to give the planet a sort of gradient background.
+
+2016-12-04: It's all coming together
+=============================================================
+
+![](2016-12-04_007_starter_r2655_g3d_r983__.jpg)
+
+Gloss, Color, everything all coming together
+
+
+
+2016-12-04: Shimmer
+=============================================================
+
+![](2016-12-04_006_starter_r2643_g3d_r977__.jpg)
+
+
+
+2016-12-04: Jewell Planet
+=============================================================
+
+![](2016-12-04_005_starter_r2643_g3d_r977__.jpg)
+
+
+
+2016-12-04: Mirror Mountains
+=============================================================
+
+![](2016-12-04_004_starter_r2643_g3d_r977__.jpg)
+
+
+
+2016-12-04: Sparkly Planet
+=============================================================
+
+![](2016-12-04_003_starter_r2643_g3d_r977__.jpg)
+
+Added glossiness to GUI
+
+
+
+2016-12-04: Gloss
+=============================================================
+
+![](2016-12-04_002_starter_r2643_g3d_r977__.jpg)
+
+Attempting to add glossiness
+
+
+
+2016-12-04: Colors
+=============================================================
+
+![](2016-12-04_001_starter_r2643_g3d_r977__.jpg)
+
+Can now save and load colors when loading and saving.
+
+
+
+2016-12-04: Added color to GUI
+=============================================================
+
+![](2016-12-04_000_starter_r2643_g3d_r977__.jpg)
+
+
+
+2016-12-03: Edge Collapsing with Random first edge selection
+=============================================================
+
+![4000 edges collapsed](2016-12-03_000_starter_r2642_g3d_r981__4000_edges_collapsed.jpg)
+
+If we choose the first edge at random before we compare edges, we get a nice
+uniform collapsing. However, the randomness adds ~12s to the runtime of the
+algorithm.
+
+2016-12-03: Edge Collapsing speed issue
+=============================================================
+Edge collapsing takes around 1min 5s to collapse 4000 edges on the ocean sphere. 
+
+This is still slow, but it's quite an improvement over what we had initially. Before it would take around 2.5min to collapse 800 edges on the same sphere. Now it takes 16s for the same 800 edges. 
+
+I don't see much room for improvement on the speed of edge collapsing, but I'll keep reviewing and improving the code if I come up with new hacks. If everyone could take a look at the code and tell me if you spot anything that is unecessarily taking too much time, let me know please. The code is commented out and outlined here in the journal.
+
+Nonetheless, there's still a lot we can do to cut time form other sections of the planet generation.
+
+
+
+2016-12-02: Edge Collapsing FINALLY works with bevelling
+=============================================================
+
+![2000 edge collapses](2016-12-02_000_starter_r2639_g3d_r981__2000_edge_collapses.jpg)
+
+![2000 edge collapses](2016-12-02_001_starter_r2639_g3d_r981__2000_edge_collapses.jpg)
+
+![4000 edges collapsed](2016-12-02_003_starter_r2639_g3d_r981__4000_edges_collapsed.jpg)
+
+![4000 - edges collapsed](2016-12-02_002_starter_r2639_g3d_r981__4000_-_edges_collapsed.jpg)
+
+
+2016-12-01: Edge Collapsing - so close...
+=============================================================
+How it works now: 
+1. collapseEdges(numEdges) is invoked; 
+2. For each x in numEdges: 
+    1. Compute adjacency info; 
+    2. Compute face normals;
+    3. Select the edge to collapse:
+        1. Determine if it is collapsable: 
+            1. is the edge not a boundary edge?
+            2. Does collapsing it not generate a manifold?
+            3. will the normals of the adjacent faces not flip if the edge is collapsed?
+        2. Select the collapsable edge whose angle between adjacent face normals weighted by edge length is the greatest.
+    4. Collapse the edge: 
+        1. Remap Indices so index of vertex 0 of edge is replaced by index of vertex 1 of the edge in the index array, and remove vertex 0 from the vertex array.
+        2. remove degenerate faces.
+3. Done
+
+Functions used: 
+- computeAdjacency; 
+- computeFaceNormals; 
+- isCollapsable: 
+    - isManifold;
+    - normalsFlip:
+        - isSignOpposite;
+        - computeCurNormal; 
+        - computeNewNormal:
+            - isDegenerate.
+- collapseOneEdge: 
+    - remapIndices; 
+    - removeDegenerateFaces: 
+        - isDegenerate. 
+
+This approach, although generating considerably better results than previously, still doesn't guarantee water tightness... I think this is due to some inconsistency on the way I determine whether or not the face normals will flip, but I can't seem to find it. I wonder if it may also be a round off error in the normal flipping determination.
+
+![800 edges collapsed - inside sphere view](2016-12-01_003_starter_r2623_g3d_r981__800_edges_collapsed_-_inside_sphere_view.jpg)     
+
+![800 edges collapsed - outside sphere view](2016-12-01_005_starter_r2623_g3d_r981__800_edges_collapsed_-_outside_sphere_view.jpg) 
+
+![Weird overlapping ](2016-12-01_006_starter_r2623_g3d_r981__Weird_overlapping_.jpg)  
+
+2016-12-01: Added Interesting Coloring
+=============================================================
+
+![](2016-12-01_001_starter_r2606_g3d_r977__.jpg)
+
+Added coloring to mountain tops by figuring out where they should be the tallest
+based on the noise image we create for the mountains and coloring it white if it
+is above some threshhold and grey otherwise.  We also added coloring to the land
+by randomly colroing the pixels of the image that is used as its texture map.
+
+
+
+2016-12-01: Edge Collapsing outline and problems
+=============================================================
+Right now edge collapsing still doesn't conserve the mesh topology, but I'm not able to spot the problem. Conceptually it should work. 
+The algorithm works as follows: 
+
+- Finds MeshAlg::Edges, Faces and Vertices with computeAdjacency; 
+- Computes Face normals; 
+- Finds collapsable edges (not boundary, which don't generate a manifold or flip face normals after collapsed);
+- Sorts the collapsable edges by angle of adjacent face normals weighted by length;
+- For each collapsable edge, goes through index array and collapses the edge by replacing the index to vertex0 of the edge by the index of vertex1 of the edge; 
+- Sets vertexArray[index of vertex 0 of edge] = vertexArray[index of vertex 1 of edge]; 
+- Welds the mesh. 
+
+2016-12-01: Spinning
+=============================================================
+
+![](2016-12-01_004_starter_r2597_g3d_r977__.mp4)
+
+
+
+2016-12-01: Spinning
+=============================================================
+
+![](2016-12-01_003_starter_r2592_g3d_r977__.mp4)
+
+
+
+2016-12-01: Rotate
+=============================================================
+
+![](2016-12-01_001_starter_r2592_g3d_r977__.mp4)
+
+
+
+2016-12-01: YAY! IT SPINS!
+=============================================================
+
+![](2016-12-01_000_starter_r2592_g3d_r977__.mp4)
+
+
+
+2016-11-30: More Water
+=============================================================
+
+![](2016-11-30_001_starter_r2568_g3d_r977__.jpg)
+
+Just change the parameters for where there should and shouldn't be water
+
+
+
+2016-11-30: This is our planet. There are many like it, but this one is ours.
+=============================================================
+
+![](2016-11-30_000_starter_r2568_g3d_r977__.jpg)
+
+
+
+2016-11-30: Heightfield
+=============================================================
+
+![100 collapsed](2016-11-30_002_starter_r2569_g3d_r981__100_collapsed.jpg)
+
+![400 collapsed](2016-11-30_003_starter_r2569_g3d_r981__400_collapsed.jpg)
+
+![800 collapsed](2016-11-30_004_starter_r2569_g3d_r981__800_collapsed.jpg)
+
+
+2016-11-30: Edge Collapsing taking length into account
+=============================================================
+
+![Bunny - 40000 edges collapsed](2016-11-30_000_starter_r2569_g3d_r981__Bunny_-_40000_edges_collapsed.jpg)
+
+dividing angles by length. 
+
+![40000 edges collapsed](2016-11-30_001_starter_r2569_g3d_r981__40000_edges_collapsed.jpg)
+
+angle / (length)^1/3
+
+2016-11-28: Edge Collapse notes
+=============================================================
+Determining if normals are flipped: 
+1. Explicitly calculate before and after normals of triangles including the collapsed vertex. 
+2. Fail: if one of the normals flips sign. 
+
+Preserving the topology: 
+1. Making sure collocated vertices are welded.
+
+Making it look pretier: 
+1. Take edge length into account.
+
+
+2016-11-29: Lava Planet
+=============================================================
+
+![](2016-11-29_000_starter_r2537_g3d_r977__.jpg)
+
+(Experimenting with emissives...)
+
+
+
+2016-11-28: Interesting Behavior
+=============================================================
+
+![Single collapse of 20000 edges](2016-11-28_023_starter_r2534_g3d_r981__Single_collapse_of_20000_edges.jpg)
+
+![Single Collapse of 10000 edges](2016-11-28_024_starter_r2534_g3d_r981__Single_Collapse_of_10000_edges.jpg)
+
+![2 Collapses of 10000 edges each](2016-11-28_025_starter_r2534_g3d_r981__2_Collapses_of_10000_edges_each.jpg)
+
+It's important to note that the single 20000 edge collapse and the double 10000 edge collapse are not expected to look the same since the edges are resorted with each collapse. However, we can see that if we collapse once, no matter if 20000 or 10000 edges, we seem not to get "wholes" and weird artifacts in the mesh. Maybe compute adjacency between edge collapses can't be trusted? Maybe welding is not working properly? 
+
+
+2016-11-28: Fixing Winding order
+=============================================================
+Right now edgeCollapse does not collapse an edge if collapsing it creates a manifold. We still need to make sure the normals don't flip. 
+
+
+2016-11-28: Edge Collapsing
+=============================================================
+Fixing Winding order:
+Edge collapse doesn't necessarily preserve the winding order of the faces, thus creating holes in the mesh. A way to fix it may be outlined [here](http://stackoverflow.com/questions/27049163/mesh-simplification-edge-collapse-conditions).
+
+Using built in sort: 
+I changed the implementation to use the built in sort, however, for the bunny it turned out to be extremely slow, since it required me to copy assign the face normal array for each edge. I tried to solve it by having the faceNormal array of ComparableEdges be a shared_ptr, but that does not work since we shouldn't assign an already initialized faceNormal array to a shared_ptr, which is what we would need to do. I also tried making it a reference, but it also didn't wrok. If we want to use the built in sort for the edge collapsing I'll need to figure out how to better refactor the code. 
+
+
+2016-11-28: Mapping
+=============================================================
+
+![](2016-11-28_020_starter_r2509_g3d_r977__.jpg width=300px) ![](2016-11-28_022_starter_r2509_g3d_r977__.jpg width=300px) ![](2016-11-28_021_starter_r2509_g3d_r977__.jpg width=300px)
+
+Note that textures are currently mapped to a sphere, not the actual heightfield.
+Also, I added a version of addPlanetToScene that takes in a filename for the texture, so hopefully that will be simple to use.
+
+
+2016-11-28: More Space Planet
+=============================================================
+
+![](2016-11-28_018_starter_r2509_g3d_r977__.jpg)
+![](2016-11-28_019_starter_r2509_g3d_r977__.jpg)
+
+
+
+2016-11-28: Textures
+=============================================================
+
+![](2016-11-28_017_starter_r2509_g3d_r977__.jpg)
+
+A weird space planet. We should generate our own textures, probably when we make
+the noise.
+
+
+
+2016-11-28: Mapping
+=============================================================
+
+![](2016-11-28_016_starter_r2509_g3d_r977__.jpg)
+
+This works!
+
+
+
+2016-11-28: Progress
+=============================================================
+
+![](2016-11-28_015_starter_r2509_g3d_r977__.jpg)
+
+
+
+2016-11-28: Nice and independent from wireframe...
+=============================================================
+
+![](2016-11-28_014_starter_r2509_g3d_r977__.jpg)
+
+...which i don't know if we want....
+
+
+
+2016-11-28: Attempt at Mapping....
+=============================================================
+
+![](2016-11-28_013_starter_r2509_g3d_r977__.jpg)
+
+(Uses some code from planet.cpp nois emapping without really undertsnading
+it....)
+
+
+
+2016-11-28: Smiley Faces
+=============================================================
+
+![](2016-11-28_012_starter_r2509_g3d_r977__.jpg)
+
+I get texture mappng, ish, but what do we want to do?
+
+
+
+2016-11-28: More or less succesfully printed triangles, but not sure what else to do........
+=============================================================
+
+![](2016-11-28_011_starter_r2509_g3d_r977__.jpg)
+
+
+
+2016-11-28: What is this?
+=============================================================
+
+![](2016-11-28_010_starter_r2509_g3d_r977__.jpg)
+I think we need some sort of texture coordinate buffer, so we determine the texture coordinate when the mesh is beveled, maybe? So each triangle maps. Not sure how the bevels will work though.....
+
+
+
+2016-11-28: Well, that did something....
+=============================================================
+
+![](2016-11-28_009_starter_r2509_g3d_r977__.jpg)
+
+
+
+2016-11-28: Cool, but not right.
+=============================================================
+
+![](2016-11-28_008_starter_r2509_g3d_r977__.jpg)
+
+
+
+2016-11-28: More Stripes
+=============================================================
+
+![](2016-11-28_007_starter_r2509_g3d_r977__.jpg)
+
+
+
+2016-11-28: Stripey planet......
+=============================================================
+
+![](2016-11-28_006_starter_r2509_g3d_r977__.jpg)
+
+Attempting texture coordinates.
+
+
+
+2016-11-28: Materials
+=============================================================
+Made it so toArticulated Model takes in a string defining a material instead of a color, so we can have more complicated materials. There's still an overloaded to articulated model that takes in a color, formats it as a string, and call toArticulated model, so usage shouldn't chnage at all.
+
+2016-11-28: Bevel Comparison
+=============================================================
+
+![Without Beveling](2016-11-28_005_starter_r2509_g3d_r977__.jpg width = 400px) ![With Beveling](2016-11-28_004_starter_r2509_g3d_r977__.jpg width = 400px)
+
+
+
+2016-11-28: Water without beveled edges....
+=============================================================
+
+![](2016-11-28_003_starter_r2509_g3d_r977__.jpg)
+
+
+
+2016-11-28: Beveled Water
+=============================================================
+
+![](2016-11-28_002_starter_r2509_g3d_r977__.jpg)
+
+
+
+2016-11-28: With Fake Normals
+=============================================================
+
+![](2016-11-28_001_starter_r2509_g3d_r977__.jpg)
+
+
+
+2016-11-28: A Mountain Mesh
+=============================================================
+
+![](2016-11-28_000_starter_r2509_g3d_r977__.jpg)
+
+
+
+2016-11-27: Better Mountains
+=============================================================
+
+![](2016-11-27_013_starter_r2507_g3d_r977__.jpg)
+
+Fixed mountains by changing how we interpret the noise image.  We were
+increasing height if there was a white pixel when we should have been raising
+height if there was a black pixel.  To do this, I changed the initial value of
+bump to (1 - color.average) from just color.average.  Also added a new image
+that is getereated when we apply the land noise that acts as a test for at what
+points the land is above the ocean plane that is passed to the mountain noise
+function to make sure we don't make a mountain in the middle of the ocean.
+
+
+2016-11-27: Edge Collapse on heightfield
+=============================================================
+![After](2016-11-27_012_starter_r2506_g3d_r981__after.jpg)
+
+Around 300 edges collapsed
+
+![After - wireframe](2016-11-27_011_starter_r2506_g3d_r981__After_-_wireframe.jpg)
+
+around 300 edges collapsed
+
+![Before](2016-11-27_010_starter_r2506_g3d_r981__before.jpg)
+
+![Before - wireframe](2016-11-27_009_starter_r2506_g3d_r981__Before.jpg)
+
+
+2016-11-27: Edge Collapse works better and faster
+=============================================================
+Around 16000 edge collapses
+![top view](2016-11-27_007_starter_r2502_g3d_r981__top_view.jpg)
+
+![top - wireframe](2016-11-27_008_starter_r2502_g3d_r981__top_-_wireframe.jpg)
+
+Instead of recomputing the edge to collapse in each iteration, we now sort the edges in decreasing order by the angle between their face normals, and pick however many edges we want to collapse in decreasing order of that angle.
+
+We currently use another overload of mergeSort to sort the edges, I tried using the built in array sort, but couldn't get it to accept my lessThan function no matter what. We should ask Morgan about this, since we probably want to ultimately get rid of our mergeSorts. 
+
+There is some weirdness with the winding order since some faces "disappear", especially around the ears.
+
+2016-11-27: 6000 edges collapsed
+=============================================================
+
+![front](2016-11-27_003_starter_r2502_g3d_r981__6000_eges_collapsed.jpg)
+
+![wireframe - front](2016-11-27_004_starter_r2502_g3d_r981__wireframe_-_6000_edges_collapsed.jpg)
+
+![side](2016-11-27_005_starter_r2502_g3d_r981__side.jpg)
+
+![wireframe - side](2016-11-27_006_starter_r2502_g3d_r981__wireframe_-_side.jpg)
+
+2016-11-27: Edge Collapsed Bunny
+=============================================================
+
+![1000 edges collapsed from the bunny's chest fur](2016-11-27_001_starter_r2502_g3d_r981__1000_edges_collapsed_from_the_bunny_s_chest_fur.jpg)
+
+Needs radical optimization. It's still very slow.
+
+![Wireframe view](2016-11-27_002_starter_r2502_g3d_r981__Wireframe_view.jpg)
+
+I'm not sure how I feel about the fact that it looks like the edges now "meet"
+at a given region. Maybe that's how it's supposed to work? Need to check for
+potential bugs.
+
+2016-11-27: We have a bunny!
+=============================================================
+
+![Bunny](2016-11-27_000_starter_r2502_g3d_r981__Bunny.jpg)
+
+We can now load single mesh models using the ArticulatedModel API. Mesh takes in
+a String filename that is passed into ArticuladedModel::fromFile() to load the
+model, we then get the first ArticulatedModel::Geometry from
+ArticulatedModel::geometryArray() and the first ArticulatedModel::Mesh() from
+ArticulatedModel::meshArray(). We then use the Geometry and Mesh we got to set
+our m_vertexPositions and our m_indexArray, which are then converted into an OBJ
+file by toObj().
+
+Currently this only works well for single mesh models since we only extract the first mesh and first geometry from the articulated model. However this can be solved by defining a version of toObj that takes in a const Array<ArticulatedModel::Geometry*>& and a const Array< ArticulatedModel::Mesh*>& used to output an obj file for the whole model. 
+
+
+
+2016-11-21: Edge Collapsing by angle
+=============================================================
+
+![600 edges collapsed](2016-11-21_000_starter_r2490_g3d_r981__600_edges_collapsed.jpg)
+
+edges chosen by how big the angle between the adjacent face normals is.
+
+2016-11-21: New Bevel Edges Seems Functional
+=============================================================
+
+![](2016-11-21_002_starter_r2490_g3d_r977__.jpg)
+
+
+
+2016-11-21: Strategy actually seems to work.
+=============================================================
+
+![](2016-11-21_001_starter_r2490_g3d_r977__.jpg)
+
+Was previously bumping by more than the height fo the triangle, which was bad
+(will have to specify range for bump.)
+
+
+
+2016-11-21: Attempting to Shrink Triangles
+=============================================================
+
+![](2016-11-21_000_starter_r2490_g3d_r977__.jpg)
+
+Not quite right. Current strategy: For each vertex, take midpoint of other
+vertices, then subtract (normalized and multiplied by bump) from original
+vertex.
+
+
+
+2016-11-21: Beveling Edges
+=============================================================
+
+2016-11-21: The Problem with Beveling Edges
+=============================================================
+Edges are now beveled by shifting the faces in the direvtion of there faces. This works great in some cases:
+       _       _     ,-
+/\ -> / \  or |  -> |   
+
+But, in other cases:
+\/ -> X or |_ -> + 
+
+it does not work so well.
+
+Honestly, it might be necessary to change tack and shrink the triangles instead.
+
+
+2016-11-20: Planet with Mountains
+=============================================================
+
+![](2016-11-20_002_starter_r2484_g3d_r977__.jpg)
+
+Planet with mountain plane added.  Added bevel edges by 1 to mountains.  Didn't
+work well with land, might want to allow recursive calls for bevel edges.
+
+
+
+2016-11-20: New mesh constructor
+=============================================================
+Should take in a filename, construct an articulated model, and extract needed info from that. So far only constructs the articulated model.
+
+2016-11-20: Colors!
+=============================================================
+
+![](2016-11-20_001_starter_r2468_g3d_r977__.jpg)
+
+AddPlanetToScene now takes in the lambertian color for a planet.
+
+
+
+2016-11-20: Altering AddPlanetToScene
+=============================================================
+
+![](2016-11-20_000_starter_r2468_g3d_r977__.jpg)
+
+Now takes in a name and a position, so we can have multiple entities.
+
+
+
+2016-11-17: We Have a Planet with Water
+=============================================================
+
+![](2016-11-17_001_starter_r2454_g3d_r977__.jpg)
+
+Added two of our spheres layered on top of each other to create a basic planet
+with water.
+
+
+2016-11-17: Edge Collapsing algorithm works! But not how we want it to
+=============================================================
+
+![10 collapses on sphere](2016-11-17_000_starter_r2436_g3d_r977__10_collapses_on_sphere.jpg)
+
+We select edges to collapse based on edge length, but we should do curvature
+instead. The uniform sphere is a bad test case. We should edge collapse after
+distorting the uniform sphere.
+
+![Pentagon](2016-11-17_001_starter_r2436_g3d_r977__Pentagon.jpg)
+
+![Pentagon -1 edge](2016-11-17_003_starter_r2436_g3d_r977__Pentagon_-1_edge.jpg)
+
+![Pentagon -2 edges](2016-11-17_004_starter_r2436_g3d_r977__Pentagon_-2_edges.jpg)
+
+![Pentagon -3 edges](2016-11-17_005_starter_r2436_g3d_r977__Pentagon_-3_edges.jpg)
+
+![Pentagon -4 edges](2016-11-17_006_starter_r2436_g3d_r977__Pentagon_-4_edges.jpg)
+
+2016-11-17: Beveled Edges
+=============================================================
+
+![](2016-11-17_003_starter_r2454_g3d_r977__.jpg)
+
+Edge Beveling Works
+
+
+
+2016-11-17: Beveled Edged?
+=============================================================
+
+![](2016-11-17_002_starter_r2454_g3d_r977__.jpg)
+
+I think edge beveling is working? Will test to be sure.
+
+
+
+2016-11-17: GUI
+=============================================================
+
+![](2016-11-17_001_starter_r2454_g3d_r977__.jpg)
+
+GUI can be used to generate a planet.
+
+
+2016-11-17: addPlanetToScene
+=============================================================
+
+![](2016-11-17_000_starter_r2447_g3d_r977__.jpg)
+
+AddPlanetToScene currently only works if already visible entity named planet.
+
+
+
+2016-11-16: toArticulatedModel
+=============================================================
+![](2016-11-16_006_starter_r2435_g3d_r977__.jpg)
+
+Added toArticulatedModel to mesh and addPlanetToScene to App, which should be
+helpful w/ the GUI.
+
+
+
+2016-11-16: Edge Collapsed Mountains
+=============================================================
+
+![](2016-11-16_005_starter_r2429_g3d_r977__.jpg)
+
+Hmmmm....
+
+
+
+2016-11-16: Edge Collapse
+=============================================================
+
+![](2016-11-16_004_starter_r2429_g3d_r977__.jpg)
+
+Seems functional, but why rverting to sphere?
+
+
+
+2016-11-16: Wider Bevel
+=============================================================
+
+![](2016-11-16_003_starter_r2429_g3d_r977__.jpg)
+
+...which yes, make sthe holes at the vertices more apparent.
+
+
+
+2016-11-16: Beveled Planet
+=============================================================
+
+![](2016-11-16_002_starter_r2429_g3d_r977__.jpg)
+
+There are holes in the beveling, but still.
+
+
+
+2016-11-16: Beveling
+============================================================
+Still trying to get vertice caps. Advice from Morgan:
+
+I assume you also know the average normal (vertex normal), or could at the very least keep track of one face normal (...although that won't be as handy once you start displacing faces). In that case, you can reconstruct the polygon winding order because you know that it has to be a convex polygon that is facing up. There are probably several easy ways of doing this. The one that comes to mind first is:
+
+1. project them into the plane of the normal (i.e., generate an arbitrary coordinate from from the normal as the z axis; G3D has several routines for this; and then call cframe::pointToObjectSpace and only keep the xy coordinates or whatever the permutation is)
+2. use atan2 to compute the angle in that plane to each point
+3. sort the points by angle
+4. connect them all in that order! 
+
+You just have to keep the index tagging along in a parallel array when you do these coordinate transformations.
+
+I'm still quite confused, although I've been trying.
+
+2016-11-16: Edge Collapse
+=============================================================
+
+![Edge Collapse](2016-11-16_000_starter_r2420_g3d_r977__Edge_Collapse.jpg)
+
+10 by 10 sections of the index array. Choosing to collapse the first edge of
+each section. In an attempt to mesh simplify as defined in the lecture notes of [Stanford Graphics](http://graphics.stanford.edu/courses/cs468-10-fall/LectureSlides/08_Simplification.pdf)
+Weird "scally triangles introduced."
+
+
+![Edge Collapse from vertex perspective](2016-11-16_001_starter_r2420_g3d_r977__Edge_Collapse_from_vertex_perspective.jpg)
+
+Instead of changing the indexArray, we average out the two Vertices of an edge
+to a single position. Faster and looks better. There's still some scaling,
+however.
+
+
+
+2016-11-15: First Planet
+=============================================================
+
+![](2016-11-15_012_starter_r2417_g3d_r977__.jpg)
+
+Here is a planet with land and water
+
+
+
+2016-11-15: WE HAVE APPLE!
+=============================================================
+
+![](2016-11-15_011_starter_r2414_g3d_r977__.jpg)
+
+We finally got noise to work by mapping an image (of any size) to the sphere's
+vertices. This should allow us to generate random noise to a 2D image and map it
+to our sphere's, allowing for unique terrains. This should work for water, land,
+and mountains. We managed to do this by using a UV map algorithm.
+
+
+
+2016-11-15: Planet X has been found
+=============================================================
+
+![](2016-11-15_009_starter_r2414_g3d_r977__.jpg)
+
+Trying to use an image to cause noise. This was the apple logo... 
+
+
+
+2016-11-15: Attempt at Noise
+=============================================================
+
+![](2016-11-15_008_starter_r2413_g3d_r977__.jpg)
+
+This is a better attempt at noise on a moon like planet
+
+
+
+2016-11-15: Moon
+=============================================================
+
+![](2016-11-15_007_starter_r2413_g3d_r977__.jpg)
+
+
+
+2016-11-15: The Beauty without a frame
+=============================================================
+
+![](2016-11-15_006_starter_r2413_g3d_r977__.jpg)
+
+
+
+2016-11-15: It's a Beauty
+=============================================================
+
+![](2016-11-15_005_starter_r2413_g3d_r977__.jpg)
+
+
+
+2016-11-15: That's good, but...
+=============================================================
+
+![](2016-11-15_004_starter_r2389_g3d_r977__.jpg)
+
+Other triangles aren't going the right way. How to do this?
+
+
+
+2016-11-15: Counterclockwise?
+=============================================================
+
+![](2016-11-15_003_starter_r2389_g3d_r977__.jpg)
+
+All the triangles are there, but some are inside out.
+
+
+
+2016-11-15: Bevel!
+=============================================================
+
+![](2016-11-15_002_starter_r2389_g3d_r977__.jpg)
+
+
+
+2016-11-15: Bevel
+=============================================================
+
+![](2016-11-15_001_starter_r2389_g3d_r977__.jpg)
+
+Beveling works! (Mind, we still need to do the vertices.)
+
+
+
+2016-11-15: Beveling!
+=============================================================
+
+![](2016-11-15_000_starter_r2389_g3d_r977__.jpg)
+
+Still need to cap vertices, but otherwise good!
+
+
+
+2016-11-15: More bevel thoughts
+=============================================================
+
+2016-11-15: Still beveling...
+=============================================================
+Morgan's Advice:
+What you need is an extra data structure (which is just an array) that keeps track of the mapping from pre-exploded indices to post-exploded indices. With that data structure in hand, you can use the pre- adjacency information to ask the question of which adjacent post- indices should be connected. G3D::MeshAlg contains both the adjacency computation code.
+
+Then, you just need to consider the two kinds of cases separately: 
+
+- an edge in the original mesh becomes two triangles (be careful to only process each edge once, not for each triangle that contains it!)
+- a vertex in the original mesh becomes a set of triangles (almost always five for a sphere mesh, but occasionally four)
+
+Thoughts:
+Map indices. Actually, since we're keeping our old index array, and the number of faces hadn't changed, we shouldn't need a new data structure, since indices are stored in the same place. We called computeAdjacency already, so adjacency info is stored in the vertex objects, I think. Each vertex become multiple vertices, which makes this hard.
+
+Now iterate through the edges. We can get the vertex objects, and from there find out what their number is, but still not sure....
+We can also find the faces associated with the edges, but that doesn't help. 
+
+
+
+
+2016-11-15: I made the sun...
+=============================================================
+
+![](2016-11-15_000_starter_r2378_g3d_r977__.jpg)
+
+I tried to bump.... and I made the sun....
+2016-11-14: Connecting the wrong two triangles?
+=============================================================
+
+![](2016-11-14_008_starter_r2350_g3d_r977__.jpg)
+
+
+
+2016-11-14: Parts okay....
+=============================================================
+
+![](2016-11-14_007_starter_r2350_g3d_r977__.jpg)
+
+See, that triangle there's okay....
+
+
+
+2016-11-14: Not that either.....
+=============================================================
+
+![](2016-11-14_006_starter_r2350_g3d_r977__.jpg)
+
+
+
+2016-11-14: Beveling
+=============================================================
+
+![](2016-11-14_005_starter_r2350_g3d_r977__.jpg)
+
+Attempting beveling, but clearly not getting the right vertices.
+
+
+
+2016-11-14: Edge Collapsing
+=============================================================
+At first we thought we might need to sort the edges by length so we can pick an arbitrary n smallest edges to collapse. So we defined a merge sort procedure based on edge length. However, we realized we should probably take the new formed edges into account everytime we collapse an old edge. So we defined a simple linear time iterating procedure to find the min length edge for each collapsing round. 
+
+![Edge Collapsing](2016-11-14_006_starter_r2350_g3d_r977__Edge_Collapsing.jpg)
+
+The algorithm works, but it iterates through the edges each time to find the
+mininum lenght edge to be collapsed. Since most edges are the same length, it
+always ends up choosing roughly the same edge to collapse. We need a way to
+check every edge length in random access order
+
+![Sort of fixed](2016-11-14_007_starter_r2352_g3d_r977__Fixed_edge_collapsing.jpg)
+
+By setting the initial minEdge within findMinEdge to a random edge in the array
+
+![With more collapsing](2016-11-14_008_starter_r2352_g3d_r977__More_collapse_edges.jpg)
+
+Our first fix does not really work when we collapse more edges. There must be a
+way to iterate through edges randomly so we can fix that.
+
+
+![Random iteration](2016-11-14_010_starter_r2352_g3d_r977__Random_iteration.jpg)
+
+Accomplished by creating a list of all edge list indices, but in random order,
+then using that list to iterate through the edge list randomly. The results
+don't look that much better. Maybe the solution would just be ignoring vertices
+that were already used in an edge collapse.
+
+
+2016-11-14: Exploded Sphere
+=============================================================
+
+![](2016-11-14_004_starter_r2341_g3d_r977__.jpg)
+
+Sphere w/ triangles pushed out.
+
+
+
+2016-11-14: Explode
+=============================================================
+
+![](2016-11-14_003_starter_r2341_g3d_r977__.jpg)
+
+Blowing out shape with smaller bump.
+
+
+
+2016-11-14: Explode
+=============================================================
+
+![](2016-11-14_002_starter_r2341_g3d_r977__.jpg)
+
+I seem to be able to spread out the triangles. Good.
+
+
+
+2016-11-14: ComputeAdjacency
+=============================================================
+
+Compute Adjacency won't work, and I'm not sure why, since the arrays I'm giving it seems to be the correct size.
+
+Because of a thought about how index arrays work, Mesh class will take in faces indexed from 0, and then add 1 when converting to obj.
+
+It seems like compute adjacency needed the index array to be indexed from 0;
+
+2016-11-14:
+=============================================================
+
+![](2016-11-14_001_starter_r2341_g3d_r977__.jpg)
+
+Changed tooObj so it uses indexArray instead of triArray, so that alterations to
+indexArray will appear. We need to change tooObj so that it does normals too.
+
+
+
+2016-11-14:  Noise
+=============================================================
+
+![](2016-11-14_000_starter_r2338_g3d_r977__.jpg)
+
+An early attampt at adding actual noise to our spheres using sampleFloat.
+
+
+
+2016-11-14: Obj files working
+=============================================================
+Got .obj files to work.  Problem was that .off files start at index 0, but .obj files start at index 1.  The solution to this was to add 1 to each of our vertex indexes in our faces.
+
+
+2016-11-13: Obj file as an OFF file
+
+![](2016-11-13_014_starter_r2322_g3d_r977__.jpg)
+
+This is testing.obj which when made into an off file works perfectly fine
+
+=============================================================
+
+![](2016-11-13_013_starter_r2322_g3d_r977__.jpg)
+
+The Object Parsing seems to be incorrect. The syntax must be really wrong. This
+was simply editing the obj file to become and off file on a 2 recursive level
+sphere.
+
+
+
+2016-11-13: Left-Hand vs Right-Hand Rule...
+=============================================================
+
+![](2016-11-13_015_starter_r2326_g3d_r977__.jpg)
+
+Sooooo.... Object files use the opposite rule???
+
+
+
+2016-11-13: Attempting to combine mesh and planet
+=============================================================
+
+![](2016-11-13_012_starter_r2322_g3d_r977__.jpg)
+
+
+
+2016-11-13: BevelEdges
+=============================================================
+Plan:
+Split up triangles- blow out. (So add to vertices in direction of face normal? But make every vertex multiple vertices. So, for each triangle of ints, construct an actual triangle, change the ints, (make a new vertex array and index array when testing).) (Should probably get this working before anything else.)
+
+Then, fill in the gaps. So, need way to iterate. Iterate over the edges, and
+
+2016-11-13: Generate meshes
+=============================================================
+
+![MARS with Wireframe](2016-11-13_013_starter_r2322_g3d_r977__MARS_with_Wireframe.jpg)
+
+Can generate obj file from tri array and vertex array. (Currently, we don't specify the normals in the OBJ file, but we can easily edit our toObj code to include them.)
+
+Our mesh class now has most of the functions we think we'll need to begin with. Currently, the initial heightfield is being generated prior to being given to our mesh class, but it will probably happen within our mesh class eventually.
+
+We still are unsure as to how to get an articulated model froma mesh class.
+
+
+2016-11-13: Mesh
+=============================================================
+
+![MARS](2016-11-13_012_starter_r2322_g3d_r977__MARS.jpg)
+
+
+
+2016-11-13: We have texture
+=============================================================
+
+![](2016-11-13_011_starter_r2313_g3d_r977__.jpg)
+
+We got weld to work finally! The problem we fixed is that we were defining faces using the vertices we had before the weld insted of the new vertices we got back from weld. We now are able to actually bump the vertices with
+noise! Right now it's just random nums, but good enough.
+
+
+
+2016-11-13: First attempt at using weld
+=============================================================
+
+![](2016-11-13_010_starter_r2313_g3d_r977__.jpg)
+
+
+
+2016-11-13: Sphere with Wireframe and 8 recursion levels
+=============================================================
+
+![](2016-11-13_009_starter_r2313_g3d_r977__.jpg)
+
+
+
+2016-11-13: Attempt at noise function
+=============================================================
+
+![](2016-11-13_008_starter_r2313_g3d_r977__.jpg)
+
+Trying to add detail to the planet. Using a random function and adding the
+normal to each midpoint position.
+
+
+
+2016-11-13: IT IS DONE!
+=============================================================
+
+![](2016-11-13_007_starter_r2313_g3d_r977__.jpg)
+
+Turns out... Vector3.unit() does NOT manipulate the vector itself, but returns
+the manipulated Vector :(. So, when I used it originally, I wasn't getting it
+back.
+
+
+
+2016-11-13: Midpoint Works, Bumping them does not
+=============================================================
+
+![](2016-11-13_006_starter_r2313_g3d_r977__.jpg)
+
+Our midpoint formula is correct. We knew that really, but it is not bumping the
+midpoints correctly so we can get a sphere shape
+
+
+
+2016-11-13: The Big Bang
+=============================================================
+
+![](2016-11-13_005_starter_r2313_g3d_r977__.jpg)
+
+Still trying to debug and find the midpoints correctly.
+
+
+
+2016-11-13: Buggy Sphere with Wireframe
+=============================================================
+
+![](2016-11-13_004_starter_r2313_g3d_r977__.jpg)
+
+
+
+2016-11-13: Spherical... Sort of
+=============================================================
+
+![](2016-11-13_003_starter_r2313_g3d_r977__.jpg)
+
+Simple fix, I was doing i+=3 instead of ++i when iterating through the faces. It
+looks as though I need to bump the original vertices or something similar. Will
+work on it.
+
+
+
+2016-11-13: Continue to Debug
+=============================================================
+
+![](2016-11-13_002_starter_r2309_g3d_r977__.jpg)
+
+It looks as though the midpoint algorithm is wrong. The faces are fixed, but
+they seems to either not be following the right hand rule, or not be in the
+correct positions
+
+
+
+2016-11-13: Attempt at the IcoSphere Algorithm
+=============================================================
+
+![](2016-11-13_001_starter_r2309_g3d_r977__.jpg)
+
+I might need to change a few things.... Right now it seems as though I am not
+calculating the correct midpoints and editing the faces correctly
+
+
+
+2016-11-13: We have a sphere and backgound
+=============================================================
+
+![](2016-11-13_001_starter_r2301_g3d_r977__.jpg)
+
+We found a sphere obj file online which we think has enough vertices and faces
+that will allow us to have the detail we need.  We also added a space backgorund
+to our Planet scene and set the camera to default to this nice cinematic view.
+
+Link to sphere.obj: http://graphics.stanford.edu/hackliszt/meshes/sphere.obj
+Link to space background: http://www.technocrazed.com/wp-content/uploads/2015/12/HD-Space-Wallpaper-For-Background-6.jpg
+
+
+
+2016-11-13: We have a Icohedron
+=============================================================
+
+We have added a new class Planet, where we will do all of the icohedron transformations. This should help keep the code simple and organized. It also will help us create member variables.
+
+![](2016-11-13_000_starter_r2292_g3d_r977__.jpg)
+
+We wrote a method that writes an off file for a Icohedron.  We will then
+tessellate it to make a sphere and then map a texture to it to bump the radius
+at each point to create a planet.
+
+
+
+2016-11-12: Planning Our Mesh Class
+===================================================================
+We will use the static functions in the MeshAlg Class to build our own Mesh class. This class will hold the functions needed to create a mesh, and functions for manipulating and mutating the Mesh.
+We need to be able to create objs from our Mesh.
+
+As of right now, our design is as follows:
+
+Triangle Parsing:
+    - Take the TriTree of the scene containing a prespecified sphere OBJ Model;
+    - Parse the TriTree; 
+    - Add each triangle to a MeshBuilder; 
+    - Create a vertexArray and indexArray using MeshBuilder::commit(), and feed them into our Mesh class
+
+Mesh Class:
+    - Instantiated arrays for: vertex positions, vertex indices, MeshAlg::Faces, MeshAlg::Edges, MeshAlg::Vertex;
+    - methods to explicitly add to vertex position and vertex index arrays;
+    - computeAdjacency() method to set the  MeshAlg::Faces, MeshAlg::Edges, MeshAlg::Vertex arryas through MeshAlg::computeAdjacency;
+    - collapseEdges(), bevelEdges() to manipulate the mesh;
+    - outputOBJ() method to output the OBJ file;
+
+We wonder if there's a better way to output an OBJ file than to explicitly feed strings into TextOutput.
+
+<!-- Markdeep: -->
+<style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace;}</style><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>

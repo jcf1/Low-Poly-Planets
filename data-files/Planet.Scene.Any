@@ -1,0 +1,310 @@
+{ 
+    entities = { 
+
+        camera = Camera { 
+            filmSettings = FilmSettings { 
+                antialiasingEnabled = true; 
+                antialiasingFilterRadius = 0; 
+                antialiasingHighQuality = true; 
+                bloomRadiusFraction = 0.009; 
+                bloomStrength = 0.2; 
+                debugZoom = 1; 
+                gamma = 2.2; 
+                sensitivity = 1; 
+                toneCurve = "CELLULOID"; 
+                vignetteBottomStrength = 0.05; 
+                vignetteSizeFraction = 0.17; 
+                vignetteTopStrength = 0.5; 
+            }; 
+            
+            frame = CFrame::fromXYZYPRDegrees(0.90151, 1.8599, 63.627, -0.39264, -1.1459, 0); 
+            projection = Projection { 
+                farPlaneZ = -inf; 
+                fovDegrees = 50; 
+                fovDirection = "VERTICAL"; 
+                nearPlaneZ = -0.1; 
+            }; 
+            
+        }; 
+        
+        cloud0 = ParticleSystem { 
+            canChange = true; 
+            model = "cloud1"; 
+            particlesAreInWorldSpace = false; 
+            
+            track =  transform(Matrix4::rollDegrees(50), transform(orbit(17,2), combine(
+                        Matrix4::pitchDegrees(90 ), 
+                        entity("randmountain") )));/*transform(
+                Matrix4::rollDegrees(50 ), 
+                transform(
+                    orbit(17, 12 ), 
+                    combine(
+                        Matrix4::pitchDegrees(48 ), 
+                        entity("randmountain") ) ) ); */
+        }; 
+        /*
+        cloud1 = ParticleSystem { 
+            canChange = true; 
+            model = "cloud3"; 
+            particlesAreInWorldSpace = false; 
+            track = transform(
+                Matrix4::rollDegrees(90 ), 
+                transform(
+                    orbit(11, 3 ), 
+                    combine(
+                        Matrix4::pitchDegrees(-16 ), 
+                        entity("randmountain") ) ) ); 
+            
+        }; */
+        /*
+        cloud2 = ParticleSystem { 
+            canChange = false; 
+            model = "cloud2"; 
+            particlesAreInWorldSpace = true; 
+            track = transform(
+                Matrix4::rollDegrees(90 ), 
+                transform(
+                    orbit(10, 2 ), 
+                    combine(
+                        Matrix4::pitchDegrees(-14 ), 
+                        entity("randmountain") ) ) ); 
+            
+        }; 
+        
+        cloud3 = ParticleSystem { 
+            canChange = false; 
+            model = "cloud2"; 
+            particlesAreInWorldSpace = true; 
+            track = transform(
+                Matrix4::rollDegrees(90 ), 
+                transform(
+                    orbit(18, 2 ), 
+                    combine(
+                        Matrix4::pitchDegrees(-86 ), 
+                        entity("randmountain") ) ) ); 
+            
+        }; 
+        
+        cloud4 = ParticleSystem { 
+            canChange = false; 
+            model = "cloud1"; 
+            particlesAreInWorldSpace = true; 
+            track = transform(
+                Matrix4::rollDegrees(90 ), 
+                transform(
+                    orbit(20, 7 ), 
+                    combine(
+                        Matrix4::pitchDegrees(-9 ), 
+                        entity("randmountain") ) ) ); 
+            
+        }; */
+        
+        rand = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(0, 0, 0 ); 
+            model = "rand"; 
+            track = transform(
+                orbit(0, 20 ), 
+                Point3(0, 0, 0 ) ); 
+            
+        }; 
+        
+        randland = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(0, 0, 0 ); 
+            model = "randland"; 
+            track = entity("rand"); 
+        }; 
+        
+        randmountain = VisibleEntity { 
+            frame = CFrame::fromXYZYPRDegrees(0, 0, 0 ); 
+            model = "randmountain"; 
+            track = entity("rand"); 
+        }; 
+        
+        skybox = Skybox { 
+            texture = "cubemap/hipshot_m9_sky/16_*.png"; 
+        }; 
+
+        gradient = VisibleEntity {
+            model = "boardModel";
+            frame = CFrame::fromXYZYPRDegrees(0, 0, -50, 0, 0, 0);
+            castsShadows = false;
+            canChange = false;
+        };
+        
+        sun = Light { 
+            attenuation = Vector3(0, 0, 1 ); 
+            bulbPower = Color3(1e+06, 1e+06, 0 ); 
+            castsShadows = true; 
+            shadowMapBias = 0.05; 
+            shadowMapSize = Vector2int16(2048, 2048 ); 
+            spotHalfAngleDegrees = 8; 
+            spotSquare = true; 
+            track = lookAt(
+                Point3(0, 10, -350 ), 
+                Point3(0, 0, 0 ) ); 
+            
+            type = "SPOT"; 
+            varianceShadowSettings = VSMSettings {
+                enabled = true;
+                filterRadius = 11;
+                blurMultiplier = 5.0f;
+                downsampleFactor = 1;
+            };
+        }; 
+
+        fillLight = Light { 
+            attenuation = Vector3(0, 0, 1 ); 
+            bulbPower = Color3(0, 1e+05, 1e+05 ); 
+            castsShadows = false; 
+            spotHalfAngleDegrees = 8; 
+            spotSquare = true; 
+            track = lookAt(
+                Point3(0, -200, 200 ), 
+                Point3(0, 0, 0 ) ); 
+            
+            type = "SPOT"; 
+            varianceShadowSettings = VSMSettings {
+                enabled = true;
+                filterRadius = 11;
+                blurMultiplier = 5.0f;
+                downsampleFactor = 1;
+            };
+        }; 
+        
+    }; 
+    
+    lightingEnvironment = LightingEnvironment { 
+        ambientOcclusionSettings = AmbientOcclusionSettings { 
+            bias = 0.12; 
+            blurRadius = 4; 
+            blurStepSize = 2; 
+            depthPeelSeparationHint = 0.2; 
+            edgeSharpness = 1; 
+            enabled = false; 
+            intensity = 3; 
+            monotonicallyDecreasingBilateralWeights = false; 
+            numSamples = 19; 
+            radius = 2; 
+            temporalFilterSettings = TemporalFilter::Settings { 
+                falloffEndDistance = 0.07; 
+                falloffStartDistance = 0.05; 
+                hysteresis = 0.9; 
+            }; 
+            
+            temporallyVarySamples = true; 
+            useDepthPeelBuffer = true; 
+            useNormalBuffer = true; 
+            useNormalsInBlur = true; 
+        }; 
+        
+        environmentMap = Texture::Specification { 
+            encoding = Texture::Encoding { 
+                readMultiplyFirst = 1.9; 
+            }; 
+            
+            filename = "cubemap/majestic/majestic512_*.jpg"; 
+        }; 
+        
+    }; 
+    
+    models = { 
+        cloud1 = ParticleSystemModel::Emitter::Specification { 
+            angularVelocityMean = 0; 
+            angularVelocityVariance = 0; 
+            initialDensity = 80; 
+            material = "material/smoke/smoke.png"; 
+            noisePower = 0; 
+            radiusMean = 1.1; 
+            radiusVariance = 0.0; 
+            shape = ArticulatedModel::Specification { 
+                filename = "model/cloud/cloud.zip/cumulus02.obj"; 
+                scale = 0.05; 
+            }; 
+            //shape = Sphere(2);
+            location = VOLUME;
+            
+        }; 
+        
+        cloud2 = ParticleSystemModel::Emitter::Specification { 
+            angularVelocityMean = 0.5; 
+            angularVelocityVariance = 0.25; 
+            initialDensity = 8; 
+            material = "material/smoke/smoke.png"; 
+            noisePower = 0; 
+            radiusMean = 3; 
+            radiusVariance = 0.5; 
+            shape = ArticulatedModel::Specification { 
+                filename = "model/cloud/cloud.zip/cumulus01.obj"; 
+                scale = 0.05; 
+            }; 
+            
+        }; 
+        
+        cloud3 = ParticleSystemModel::Emitter::Specification { 
+            angularVelocityMean = 0.5; 
+            angularVelocityVariance = 0.25; 
+            initialDensity = 8; 
+            material = "material/smoke/smoke.png"; 
+            noisePower = 0; 
+            radiusMean = 3; 
+            radiusVariance = 0.5; 
+            shape = ArticulatedModel::Specification { 
+                filename = "model/cloud/cloud.zip/cumulus00.obj"; 
+                scale = 0.05; 
+            }; 
+            
+        }; 
+        
+        rand = ArticulatedModel::Specification { 
+            filename = "planetwater.obj"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        glossy = Color4(7.78067e-22, 7.78067e-22, 7.78067e-22, 5.57296e-42 ); 
+                        lambertian = Color3(1.92677e-39, 0, 1 ); 
+                    } ); 
+                transformGeometry(all(), Matrix4::scale(0.5, 0.5, 0.5 ) ) }; 
+            
+        }; 
+        
+        randland = ArticulatedModel::Specification { 
+            filename = "planetland.obj"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        glossy = Color4(7.78067e-22, 7.78067e-22, 7.78067e-22, 5.57296e-42 ); 
+                        lambertian = Color3(0, 1, 0 ); 
+                    } ); 
+                transformGeometry(all(), Matrix4::scale(0.5, 0.5, 0.5 ) ) }; 
+            
+        }; 
+        
+        randmountain = ArticulatedModel::Specification { 
+            filename = "planetmountain.obj"; 
+            preprocess = { 
+                setMaterial(all(), UniversalMaterial::Specification { 
+                        glossy = Color4(7.78067e-22, 7.78067e-22, 7.78067e-22, 5.57296e-42 ); 
+                        lambertian = Color3(0.482759, 0.496552, 0.496552 ); 
+                    } ); 
+                transformGeometry(all(), Matrix4::scale(0.5, 0.5, 0.5 ) ) }; 
+            
+        }; 
+
+         boardModel = ArticulatedModel::Specification {
+            filename = "ifs/square.ifs";
+            scale = 170;
+            preprocess = {
+                setMaterial(all(), 
+                    UniversalMaterial::Specification {
+                        emissive = Texture::Specification{ 
+                            filename = "background.png"; 
+                            encoding = Texture::Encoding { 
+                                readMultiplyFirst = Color4(Color3(0.5f), 1.0f);  
+                            };
+                        };
+                        lambertian = Color4(Color3(0.0f), 1.0f);
+                    });
+            };
+        };
+    }; 
+    
+    name = "Planet"; 
+} 
